@@ -8,24 +8,12 @@ FactoryGirl.define do
     password_confirmation 'password'
   end
 
-  factory :article do
-    sequence(:name) {|n| "article#{n}" }
-    sequence(:url) {|n| "http://www.stackoverflow#{n}.com"}
-    description 'Lies and the lying liars who tell them.'
-    vote_count 0
 
-    user
-  end
 
   factory :admin_user, parent: :user do
     role 'admin'
-  end  
-
-  factory :review do
-    body "This is the super body of a super review. yeahhhhhhh"
-    
-    article
-    user
   end
-  
+
+
+
 end

@@ -85,6 +85,7 @@ GEM
     foundation-rails (5.5.0.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0, < 3.4)
+    geocoder (1.2.6)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -234,10 +235,12 @@ DEPENDENCIES
   devise
   factory_girl
   foundation-rails
+  geocoder
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
   launchy
+  nokogiri
   pg
   pry-rails
   rails (= 4.2.0)

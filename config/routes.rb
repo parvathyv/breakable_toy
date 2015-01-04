@@ -1,19 +1,24 @@
 Rails.application.routes.draw do
-  root 'articles#index'
+
   devise_for :users
 
-  resources :articles
+  get 'homepages/index'
 
-  namespace :admin do
-    resources :articles, only: [:destroy, :edit]
-    resources :users, only: [:index, :destroy, :edit]
+
+  root to: "homepages#index"
+
+
+  resources :locations, only: [:create, :index, :show, :new]
+  resources :hunts
+
+  resources :locations do
+    resources :hunts
   end
 
-  resources :reviews, only: [:destroy]
 
-
-  resources :articles do
-    resources :reviews, only: [:create, :new, :edit, :update]
+  resources :hunts do
+    resources :quizzes
   end
+
 
 end

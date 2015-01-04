@@ -1,4 +1,3 @@
-# rubbit
-[![Build Status](https://travis-ci.org/parvathyv/rubbit.svg?branch=master)](https://travis-ci.org/parvathyv/rubbit)
-[![Code Climate](https://codeclimate.com/github/parvathyv/rubbit/badges/gpa.svg)](https://codeclimate.com/github/parvathyv/rubbit)
-[![Coverage Status](https://coveralls.io/repos/parvathyv/rubbit/badge.png?branch=master)](https://coveralls.io/r/parvathyv/rubbit?branch=master)
+# breakable_toy
+[![Build Status](https://travis-ci.org/parvathyv/breakable_toy.svg?branch=master)](https://travis-ci.org/parvathyv/breakable_toy)
+[![Coverage Status](https://coveralls.io/repos/parvathyv/breakable_toy/badge.png?branch=master)](https://coveralls.io/r/parvathyv/breakable_toy?branch=master)

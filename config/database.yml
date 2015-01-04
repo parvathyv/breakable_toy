@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: rubbit_development
+  database: mapquest_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: rubbit_test
+  database: mapquest_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: rubbit_production
-  username: rubbit
-  password: <%= ENV['RUBBIT_DATABASE_PASSWORD'] %>
+  database: mapquest_production
+  username: mapquest
+  password: <%= ENV['MAPQUEST_DATABASE_PASSWORD'] %>

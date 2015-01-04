@@ -1,0 +1,16 @@
+<h1>Edit Your Review!!</h1>
+<%= form_for(@review, :url => {:action => 'update', :id => @review.id}) do |f| %>
+
+<div class="field">
+  <%= f.label :body %><br />
+  <%= f.text_field :body %>
+</div>
+
+<div class="actions">
+  <%= f.submit "Save" %>
+</div>
+
+<% end %>
+
+
+<%= button_to "Delete", @review, :method => :delete %>

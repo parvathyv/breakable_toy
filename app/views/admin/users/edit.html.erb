@@ -1,0 +1,4 @@
+<li><%= @user.name %></li>
+
+<%= button_to 'Delete user', admin_user_path(@user), method: 'delete', data: { confirm: 'Are you sure?' } %>
+

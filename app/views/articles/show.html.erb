@@ -1,0 +1,26 @@
+<%= @article.name %>
+<%= @article.description %>
+<%= @article.url %>
+<%if current_user.id == @article.user_id%>
+	<%= button_to "Edit", edit_article_path, :class => "button", :method => "get" %>
+<%end%>
+
+
+<%= form_for [@article, @review] do |f| %>
+
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Review" %>
+  </div>
+
+<% end %>
+
+<% @reviews.each do |review| %>
+
+  <h4><%= review.body %></h4>
+  <%= link_to "Edit Review", edit_article_review_path(@article, review) %>
+<% end %>

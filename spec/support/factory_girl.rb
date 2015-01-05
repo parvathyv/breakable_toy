@@ -8,6 +8,9 @@ FactoryGirl.define do
     password_confirmation 'password'
   end
 
+  factory :location do
+    sequence(:address) { |n| "#{n}Seattle, WA"}
+  end
 
 
   factory :admin_user, parent: :user do

@@ -1,9 +1,0 @@
-<h1>Articles</h1>
-<%= paginate @articles %>
-<%= link_to "Add New Article", new_article_path %>
-  <ul>
-    <% @articles.each do |article| %>
-      <li><%= link_to article.name, article_path(article) %></li>
-   <% end %>
-      <li><%= link_to "Add new article", new_article_path %></li>
-  </ul>

@@ -15,9 +15,8 @@ Rails.application.routes.draw do
     resources :hunts
   end
 
-
   resources :hunts do
-    resources :quizzes
+    resources :questionsets
   end
 
 

@@ -1,0 +1,33 @@
+
+
+<div class="row">
+ <div class="large-8 large-offset-2 columns blue-box">
+  <h3>New Location</h3><br>
+  <%= form_for @location, action: "create", html: {class: "nifty_form"} do |f| %>
+    <ul>
+      <% if @location.errors.any? %>
+        <% @location.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      <%end%>
+    </ul>
+
+  <h3> Choose from existing </h3>
+    <% if @locations.empty? == false %>
+     <%= f.collection_select :id, @locations, :id, :address, selected: @locations.first.id %>
+    <%end%>
+    <div>&nbsp</div>
+    <h3>Provide a new one </h3>
+    <li><%= f.label :address, "1", :class => "signinlabelforms" %></li>
+    <li><%= f.text_field :address, placeholder: "Address"%></li>
+    <div class="row">
+      <div class="large-4 large-offset-4 columns blue-box">
+       <li><%= f.submit "Create", :class => "secondary large button"%></li>
+      </div>
+    </div>
+  <%end%>
+
+  <%= link_to "VIEW ALL", locations_path,:class => "secondary small button" %>
+ </div>
+</div>
+

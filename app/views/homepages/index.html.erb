@@ -1,21 +1,38 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All locations</title>
-</head>
-
-<body>
-
   <div class="row">
-    <div class="large-4 large-offset-4 columns medium-6 medium-offset-3 columns small-6 small-offset-3 columns">
+    <div class="large-6 large-offset-3 columns medium-6 medium-offset-3 columns small-6 small-offset-3 columns about-box">
       <div class="title-box">
            <h3>game title</h3>
       </div>
     </div>
   </div>
 
+ <div class="row">
+    <div class="large-4 large-offset-4 columns medium-4 medium-offset-4 columns small-4 small-offset-4 columns about-box">
+      <div class="blue-box">
+        <div class="button-group">
+        <% if user_signed_in? == false %>
+            <li class="github large button"><%= link_to "Sign in with Github", new_user_registration_path%></li><br>
+            <li class="github large button"><%= link_to "Sign in with Google", new_user_session_path%></li> <br>
+            </div>
+        <%else%>
+           <li>What is your path this iteration ? </li>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
 
-</body>
-</html>
+  <div class="row">
+    <div class="large-6 large-offset-3 columns medium-6 medium-offset-3 columns small-6 small-offset-3 columns about-box">
+       <div class="blue-box">
+          <div class="button-group">
+          <li class="secondary large button"><%= link_to "EXPERIENCE", locations_path%></li>
+          <li class="secondary large button"><%= link_to "CREATE", new_location_path%></li>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+

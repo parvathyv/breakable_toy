@@ -1,0 +1,14 @@
+
+<%= form_for @location, action: "update", html: {class: "nifty_form"} do |f| %>
+  <ul>
+    <% if @location.errors.any? %>
+      <% @location.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <li>Title <%= f.text_field :address %></li><br>
+  <%= f.submit "Update" %>
+<% end %>
+

@@ -13,7 +13,7 @@ feature 'user leaves home', %Q{
     visit root_path
     click_link 'CREATE'
 
-    expect(page).to have_content('New Location')
+    expect(page).to have_content("Your hunt's location")
   end
 
   scenario 'have access to view all locations' do

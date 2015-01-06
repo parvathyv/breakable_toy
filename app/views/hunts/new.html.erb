@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enter your question</title>
+</head>
+<body>
+ <%= form_for([@location, @hunt]) do |f| %>
+  <ul>
+    <% if @hunt.errors.any? %>
+      <% @hunt.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    <% end %><br>
+  </ul>
+
+  <div class="row">
+    <div class="large-8 columns">
+      <%= f.label :name %><br>
+      <%= f.text_field :name%><br>
+      <%= f.label :description %><br>
+      <%= f.text_area :description%><br>
+      <%= f.submit "Create" %>
+    </div>
+  </div>
+
+ <% end %>
+
+</body>
+</html>

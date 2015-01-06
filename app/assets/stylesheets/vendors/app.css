@@ -121,8 +121,9 @@ font-size:28px;padding-top:5px;}
 
 .black-box{background-color:black;padding:5px;}
 .black-box h3{font-family:'Poiret One';font-weight:bold;color:white;font-size:1.2em;}
-.blue-box{background-color:transparent;padding:10px;font-weight:900;}
+.blue-box{background-color:transparent;padding:20px;font-weight:900;}
 .blue-box h3{font-family:'Poiret One';font-weight:bold;color:white;}
+#inputloc .text_boxes{border-radius:5px;width:500px;}
 
 .black-box p{font-weight:200;}
 .secondary.small.button{font-family:'Poiret One';font-size:1em;color:white;
@@ -158,6 +159,10 @@ height:45px;}
 .row .main-wrapper li{font-weight:bold;}
 .about-content{background-color:blue;box-shadow:2px 2px 10px rgba(0,0,0,0.1);}
 
+
+#drop2{background-color: rgba(0,0,125,0.5);border:1px solid rgb(0,0,200);border-radius:5px;}
+#drop2 p{font-family:'Poiret One';font-size:1em;color:white;}
+
 .button-group li .button{border:0!important;}
 .signin .main-wrapper .button-group li{margin-left:5px;}
 .signinlinks{color:white; background-color: transparent;border:0;}
@@ -173,7 +178,7 @@ background-color:transparent;}footer p,footer a{font-size:14px;}
 .hero{height:100%;
 background-image:url("../img4.png");
 background-size:cover;box-shadow:inset 0px 0px 0 2000px rgba(0,0,0,0.2);}
-
+.signin .main-wrapper .top-bar{background-color:#071665;border:1px solid rgba(0,0,175,0.75); }
 .signin{padding-bottom:50px;height:100%;
 background-color:#071665;
 background-size:cover;box-shadow:inset 0px 0px 0 2000px rgba(0,0,0,0.2);}
@@ -184,10 +189,10 @@ background-size:cover;}
 .side-nav li{
     margin-top:-10%;
 }
-.footer_social{margin-left:85%;
+.footer_social{margin-left:90%;
 background-color:#071665;
 background-size:cover;box-shadow:inset 0px 0px 0 2000px rgba(0,0,0,0.2);}
-.footer_social img{margin-top:-35%;}
+.footer_social img{margin-top:-110%;}
 
 .homebkgnd{padding-bottom:50px;height:100%;
 background-color:#071665;

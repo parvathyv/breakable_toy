@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to LaunchOverflow</title>
+</head>
+<body>
+  <div class="row">
+    <div class="large-8 large-offset-2 columns blue-box">
+    <h3>All hunts</h3><br>
+
+    <%@hunts.each do|hunt|%>
+      <li><%=link_to ">> #{hunt.name}", hunt_path(hunt)%> -  <%=hunt.location.address.split(',').first%></li>
+    <%end%><br>
+
+    <li><%=link_to "Create hunt", new_location_path%></li>
+  </div>
+</div>
+
+</body>
+</html>

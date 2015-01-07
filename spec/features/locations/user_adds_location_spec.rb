@@ -11,14 +11,13 @@ feature 'user adds a location', %Q{
 } do
 
   let!(:user) { FactoryGirl.create(:user) }
-  let!(:location) { FactoryGirl.build(:location) }
-  let!(:location1) { FactoryGirl.create(:location) }
+  let!(:location) { FactoryGirl.create(:location) }
 
   scenario 'user signs in and adds an location' do
     sign_in_as(user)
     visit new_location_path
 
-    fill_in 'Address', with: location.address
+    fill_in 'Address', with: 'Boston, MA'
     click_button 'Create'
 
     expect(page).to have_content('Location was successfully created')
@@ -31,9 +30,9 @@ feature 'user adds a location', %Q{
     visit new_location_path
 
 
-    select location1.address, from: 'location_id'
+    select location.address, from: 'location_id'
     click_button 'Create'
-    visit new_location_hunt_path(location1)
+    visit new_location_hunt_path(location)
 
     expect(page).to have_content('Name')
   end

@@ -14,8 +14,22 @@
     <div class="large-12 columns blue-box">
 
       <h3>Hunt</h3>
-      <li><%=@hunt.name%></li><br>
+      <li>Name : <%=@hunt.name%></li><br>
+       <li>Location : <%=@hunt.location.address.split(',').first%></li><br>
       <h3>Your itenirary</h3>
+
+      <%@hunt.quizzes.each do|quiz|%>
+        <li><%=quiz.question_no%>.  <%=quiz.question.capitalize%></li>
+      <%end%>
+
+
+
+
+
+
+
+
+
 
       <li>Where to next ?</li>
       <li><%=link_to "New hunt", new_location_path%></li>

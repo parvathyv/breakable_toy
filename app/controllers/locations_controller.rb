@@ -1,8 +1,7 @@
 class LocationsController < ApplicationController
 
-  before_action :authenticate_user!, only: [:destroy, :delete, :new, :create, :edit, :update]
+  before_action :authenticate_user!
 
-  # GET /questions
   def index
 
     @locations = Location.all
@@ -12,53 +11,40 @@ class LocationsController < ApplicationController
        @location_array << [loc.latitude, loc.longitude]
     end
 
-    @location_zoom = 4
-
-    @flag = 1
-    @mapcenterlat = 39.8282
-    @mapcenterlong = -98.5795
   end
 
-  # GET /questions/1
+
   def show
 
     @location = Location.find(params[:id])
-
     @hunts = @location.hunts
 
   end
 
-  # GET /questions/new
+
   def new
     @location = Location.new
     @locations = Location.all
-
   end
 
   def redirect_new_hunt
-
-     redirect_to new_location_hunt_path(params[:location][:id])
+    redirect_to new_location_hunt_path(params[:location][:id])
   end
-  # POST /questions
+
   def create
+
     address = params[:location][:address]
-    id = params[:location][:id]
-    flag = true
-    if address == '' or address == nil
-      flag = false
-    else
-      @checklocation = Location.where("address=?", address)
-      if @checklocation.empty? == false
-        flag = false
-      end
-    end
+    #id = params[:location][:id]
+
+
+    flag = Location.new.address_type?(address)
 
 
 
     if flag == true
       @location= Location.create(location_params)
 
-      @locations = Location.all
+      #@locations = Location.all
 
       if @location.save
         redirect_to new_location_path, notice: 'Location was successfully created.'
@@ -66,8 +52,7 @@ class LocationsController < ApplicationController
         render action: 'new'
       end
     else
-
-      #redirect_new_hunt
+        redirect_new_hunt
     end
   end
 

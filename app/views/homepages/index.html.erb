@@ -12,8 +12,8 @@
       <div class="blue-box">
         <div class="button-group">
         <% if user_signed_in? == false %>
-            <li class="github large button"><%= link_to "Sign in with Github", new_user_registration_path%></li><br>
-            <li class="github large button"><%= link_to "Sign in with Google", new_user_session_path%></li> <br>
+            <li style="margin-left:-10%;"class="github large button"><%= link_to "Sign in with Github", new_user_registration_path%></li><br>
+            <li style="margin-left:-10%;"class="github large button"><%= link_to "Sign in with Google", new_user_session_path%></li> <br>
             </div>
         <%else%>
            <li>What is your path this iteration ? </li>
@@ -25,14 +25,24 @@
 
   <div class="row">
     <div class="large-6 large-offset-3 columns medium-6 medium-offset-3 columns small-6 small-offset-3 columns about-box">
-       <div class="blue-box">
+
           <div class="button-group">
           <li class="secondary large button"><%= link_to "EXPERIENCE", locations_path%></li>
           <li class="secondary large button"><%= link_to "CREATE", new_location_path%></li>
-          </div>
+
       </div>
     </div>
   </div>
+   <br>
+   <br>
 
+   <div class="row">
+    <div class="large-3 large-offset-5 columns ">
 
-
+      <a style ="font-family:'Poiret One';color:orange;font-size:1.2em;margin-left:7%" data-dropdown="drop2" aria-controls="drop2" aria-expanded="false"> HUNT RULES </a>
+      <div id="drop2" data-dropdown-content class="f-dropdown content mega" aria-hidden="true" tabindex="-1">
+      <li> Gotta answer all 5 questions in one session ! </li>
+      <li> Create your hunt</li>
+      </div>
+    </div>
+  </div>

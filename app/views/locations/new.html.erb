@@ -1,8 +1,8 @@
 
 
 <div class="row">
- <div class="large-8 large-offset-2 columns blue-box">
-  <h3>New Location</h3><br>
+ <div class="large-8 large-offset-2 columns blue-box" id ="inputloc">
+  <h3>Your hunt's location</h3><br>
   <%= form_for @location, action: "create", html: {class: "nifty_form"} do |f| %>
     <ul>
       <% if @location.errors.any? %>
@@ -14,12 +14,17 @@
 
   <h3> Choose from existing </h3>
     <% if @locations.empty? == false %>
-     <%= f.collection_select :id, @locations, :id, :address, selected: @locations.first.id %>
+     <%= f.collection_select :id, @locations, :id, :address, selected: @locations.first.id,:class => "text_boxes"  %>
     <%end%>
     <div>&nbsp</div>
     <h3>Provide a new one </h3>
-    <li><%= f.label :address, "1", :class => "signinlabelforms" %></li>
-    <li><%= f.text_field :address, placeholder: "Address"%></li>
+      <div class="row">
+        <div class="large-4 large-offset-1 columns blue-box">
+          <li><%= f.label :address %></li>
+          <li><%= f.text_field :address, placeholder: "Address", :class => "text_boxes"%></li>
+        </div>
+      </div>
+
     <div class="row">
       <div class="large-4 large-offset-4 columns blue-box">
        <li><%= f.submit "Create", :class => "secondary large button"%></li>
@@ -27,7 +32,11 @@
     </div>
   <%end%>
 
-  <%= link_to "VIEW ALL", locations_path,:class => "secondary small button" %>
- </div>
+
+    <li><%= link_to "VIEW ALL", locations_path,:class => "secondary small button" %><li><br>
+
+
+
+
 </div>
 

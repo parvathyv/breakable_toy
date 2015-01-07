@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hunt Details</title>
+</head>
+<body>
+	<% if flash.any? %>
+    <div class="flash">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="large-12 columns blue-box">
+
+      <h3>Hunt</h3>
+      <li><%=@hunt.name%></li><br>
+      <h3>Your itenirary</h3>
+
+      <li>Where to next ?</li>
+      <li><%=link_to "New hunt", new_location_path%></li>
+
+
+      <li><%=link_to "Edit hunt name", edit_location_hunt_path(@location, @hunt)%></li>
+      <li><%= button_to "Delete", @hunt, :method => :delete,:class => "signinlinks" %></li>
+
+      <li><%=link_to "All hunts", hunts_path%></li>
+
+
+    </div>
+  </div>
+
+</body>
+</html>

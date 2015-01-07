@@ -18,9 +18,9 @@
 
 
    <section class="signin">
-       <div class="row">
-          <div class="large-12 columns">
+
             <div class="main-wrapper">
+              <nav class="top-bar" data-topbar role="navigation">
               <div class="button-group">
 
                 <%- if current_user -%>
@@ -38,27 +38,26 @@
                     </li>
 
                 <%end%>
+                  <div class="row">
+                    <div class="large-12 columns medium-8 columns small-6 columns">
 
                 <div class = "footer_social">
-                  <div class="row">
-                    <div class="large-12 columns">
 
-                        <div class="button-group">
-                         <a href="https://twitter.com/share" class="twittersharebutton" data-count="none" data-hashtags="Maps,Game,Travel,Tresurehunts"><img src="http://localhost:3000/assets/twitter.png"></a>
+
+                        <li> <a href="https://twitter.com/share" class="twittersharebutton" data-count="none" data-hashtags="Maps,Game,Travel,Tresurehunts"><img src="http://localhost:3000/assets/twitter.png"></a>
                           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
                           </script>
-                          <a href="//www.pinterest.com/pin/create/button/"><img src="http://localhost:3000/assets/pin.png"/></a>
-                      </div>
+                       <a href="//www.pinterest.com/pin/create/button/"><img src="http://localhost:3000/assets/pin.png"/></a></li>
+
                     </div>
                 </div>
 
             </div>
 
           </div>
+         </nav>
         </div>
-      </div>
 
-    </div>
 
   <%= yield %>
 

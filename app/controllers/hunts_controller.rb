@@ -51,9 +51,9 @@ class HuntsController < ApplicationController
     @location = @hunt.location
 
     if @hunt.destroy
-      redirect_to location_path(@location), notice: "Review deleted"
+      redirect_to location_path(@location), notice: "Hunt successfully deleted"
     else
-      flash[:notice] = "Review was not deleted"
+      flash[:notice] = "Hunt was not deleted"
       render 'show'
     end
 

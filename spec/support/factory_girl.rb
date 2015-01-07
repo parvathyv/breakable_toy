@@ -12,6 +12,16 @@ FactoryGirl.define do
     sequence(:address) { |n| "#{n}Seattle, WA"}
   end
 
+  factory :hunt do
+    sequence(:name) { |n| "#{n}nnn"}
+    description "Discover SanFran on a foggy day"
+
+    user
+    location
+  end
+
+
+
 
   factory :admin_user, parent: :user do
     role 'admin'

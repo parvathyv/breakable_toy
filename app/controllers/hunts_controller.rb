@@ -3,15 +3,19 @@ class HuntsController < ApplicationController
   before_filter :user_signed_in?, :only => [:edit, :update, :destroy]
   # GET /hunts
   def index
-    @hunts = Hunt.all
+   @hunts = Hunt.all
 
   end
 
   # GET /hunts/1
   def show
     @hunt = Hunt.find(params[:id])
-    @quiz = Quiz.new
-    @quizzes = @hunt.quizzes.order(question_no: :desc)
+    @location = @hunt.location
+
+    #@location = Location.find(params[:location_id])
+
+    #@quiz = Quiz.new
+    #@quizzes = @hunt.quizzes.order(question_no: :desc)
 
   end
 
@@ -33,7 +37,8 @@ class HuntsController < ApplicationController
     @hunt.user = current_user
 
     if @hunt.save
-      redirect_to new_hunt_quiz_path(@hunt), notice: 'Hunt was successfully created.'
+      redirect_to location_hunt_path(@location, @hunt), notice: 'Hunt was successfully created.'
+      #redirect_to new_hunt_quiz_path(@hunt), notice: 'Hunt was successfully created.'
     else
 
       redirect_to new_location_hunt_path(@location), notice: 'Hunt was not created.'
@@ -42,27 +47,38 @@ class HuntsController < ApplicationController
 
 
   def destroy
-    @hunt = Hunt.find(params[:id]).destroy
-    @quiz = @hunt.quizzes.destroy
-    binding.pry
-    redirect_to hunts_path, notice: 'Hunt was successfully deleted'
+   @hunt= Hunt.find(params[:id])
+    @location = @hunt.location
+
+    if @hunt.destroy
+      redirect_to location_path(@location), notice: "Review deleted"
+    else
+      flash[:notice] = "Review was not deleted"
+      render 'show'
+    end
+
   end
 
 
   def edit
 
      @hunt = Hunt.find(params[:id])
+     @location = @hunt.location
 
   end
 
   def update
+
     @hunt = Hunt.find(params[:id])
+    #@location = Location.find(params[:location_id])
+    @location = @hunt.location
 
     @hunt.update(hunt_params)
 
     if @hunt.save
-      redirect_to @hunt, notice: 'Hunt was successfully updated.'
+      redirect_to location_hunt_path(@location, @hunt), notice: 'Hunt was successfully updated.'
     else
+      flash[:notice] = 'Hunt was not updated.'
       render action: 'edit'
     end
   end

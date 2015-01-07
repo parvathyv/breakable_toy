@@ -165,7 +165,7 @@ height:45px;}
 
 .button-group li .button{border:0!important;}
 .signin .main-wrapper .button-group li{margin-left:5px;}
-.signinlinks{color:white; background-color: transparent;border:0;}
+.signinlinks{color:white; background-color: transparent;border:0;font-family:'Poiret One';font-size:1em; }
 .logsigninlinks{color:white; background-color: transparent;border:1px!important;border-color:white;border-radius:2px;
     font-family:'Poiret One';font-size:1.2em;
 margin-left:-5px;  }

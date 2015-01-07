@@ -9,10 +9,9 @@
         <%@hunts.each do|hunt|%>
 
           <li><%=hunt.name%></li>
-          <li><%=link_to "Edit", edit_location_hunt_path(@location, hunt), :class => "editdelete"%></li>
+           <li><%= link_to ">>", location_hunt_path(@location, hunt) %></li>
 
-          <li><%=link_to "Delete", location_hunt_path(@location, hunt), method:"delete", :class => "editdelete"%>
-          </li>
+
         <%end%>
         <h3> Create your hunt </h3>
         <li><%= link_to ">>", new_location_hunt_path(@location) %></li>

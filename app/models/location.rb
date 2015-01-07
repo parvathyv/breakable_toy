@@ -1,6 +1,6 @@
 class Location < ActiveRecord::Base
 
-  has_many :hunts
+  has_many :hunts,  dependent:  :destroy
   has_many :users, through: :hunts
 
   validates :address, presence: true

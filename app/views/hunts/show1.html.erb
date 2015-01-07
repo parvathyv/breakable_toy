@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hunt Details</title>
+</head>
+<body>
+	<% if flash.any? %>
+    <div class="flash">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="large-12 columns blue-box">
+
+      <h3>Hunt</h3>
+      <li><%=@hunt.name%></li><br>
+      <h3>Your itenirary</h3>
+      <%@hunt.quizzes.each do|quiz|%>
+        <li><%=quiz.question_no%>.  <%=quiz.question.capitalize%></li>
+      <%end%>
+      <br>
+
+      <% if @quizzes.empty? == false %>
+        <% if (5 - @quizzes.maximum(:question_no)) != 0 %>
+          <li> You have <%= 5 - @quizzes.maximum(:question_no)%> questions left to complete <%=@hunt.name%> </li>
+          <li><%=link_to "Add a question", new_hunt_quiz_path(@hunt)%></li>
+          <br>
+        <%else%>
+          <li><%=@hunt.name%> Complete</li><br>
+          <li>Where to next ?</li>
+          <li><%=link_to "New hunt", new_location_path%></li>
+        <%end%>
+      <%else%>
+        <li><%=link_to "Add a question", new_hunt_quiz_path(@hunt)%></li>
+      <%end%>
+
+      <li><%=link_to "Edit hunt name", edit_hunt_path%></li>
+      <li><%=link_to "Delete hunt", hunt_path, method:"delete" %></li>
+      <li><%=link_to "All hunts", hunts_path%></li>
+
+
+    </div>
+  </div>
+
+</body>
+</html>

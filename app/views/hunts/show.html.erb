@@ -27,6 +27,7 @@
           <li> You have <%= 5 - @questionsets.maximum(:question_no)%> questions left to complete <%=@hunt.name%> </li>
           <li><%=link_to "Add a question", new_hunt_questionset_path(@hunt)%></li>
           <br>
+             <li><%=link_to "Play", hunt_questionset_path(@hunt, @questionsets.first)%></li>
         <%else%>
           <li><%=@hunt.name%> Complete</li><br>
           <li>Where to next ?</li>
@@ -37,7 +38,7 @@
       <%end%>
 
 
-       <li><%=link_to "Play", hunt_questionset_path(@hunt, @questionsets.first)%></li>
+
 
 
 

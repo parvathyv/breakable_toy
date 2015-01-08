@@ -26,15 +26,5 @@ feature "user can view all locations", %q(
 
   end
 
-  scenario "unauthorized user cannot view all locations" do
 
-    visit locations_path
-
-
-    expect(page).to_not have_content('Choose your location')
-    expect(page).to have_content('Sign In')
-
-    expect(page).to_not have_content(location.address.split(',').first)
-
-  end
 end

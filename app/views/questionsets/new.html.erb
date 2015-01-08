@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enter your question</title>
+</head>
+<body>
+  <h1>Quiz</h1>
+  <h3><%=@hunt.name%></h3>
+
+  <%= form_for([@hunt, @questionset]) do |f| %>
+    <ul>
+      <% if @questionset.errors.any? %>
+        <% @questionset.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      <% end %><br>
+    </ul>
+
+    <div class="row">
+      <div class="large-8 columns">
+        <%= f.label :question %><br>
+        <%= f.text_field :question%><br>
+        <%= f.label :address %><br>
+        <%= f.text_field :address%><br>
+        <%= f.submit "Create" %>
+      </div>
+    </div>
+
+    <p><%=link_to "See hunt details", hunt_path(@hunt)%></p>
+  <% end %>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question Details</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var map_array = <%= [@questionset.latitude, @questionset.longitude] %>
+    var my_zoom =  <%= 10 %>
+    var mapcenterlat = <%= @questionset.latitude %>
+    var mapcenterlong = <%= @questionset.longitude %>
+    var flag = <%= 2 %>
+    var quiz_id = <%= @questionset.id %>
+    var hunt_id = <%= @questionset.hunt.id %>
+  </script>
+
+
+  <div id="map_canvas" style="height:70%;width:100%"></div>
+
+  <% if @flm == 0 %>
+
+
+    <div class="row">
+      <div class="large-8 large-offset-2 columns blue-box">
+        <h3>Experience <%=@hunt.name%></h3>
+         <li> <%=@msg%></li>
+        <li>Q <%=@questionset.question_no%>.  <%=@questionset.question%></li>
+      </div>
+    </div>
+
+    <section class="signinwhite">
+
+      <div class="row">
+        <div class="large-8 large-offset-2 columns blue-box">
+          <%= form_tag(hunt_questionset_path, :method => :get ) do%>
+            <%= label :address, "Address" %>
+            <%= text_field :address, :address, :class => "address" %>
+            <div class="row">
+              <div class="large-4 large-offset-4 columns blue-box">
+                <li><%= submit_tag("Answer",:class => "answer large button") %></li>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+
+
+    </section>
+  <%else%>
+
+    <div class="row">
+      <div class="large-8 large-offset-2 columns blue-box">
+        <li> <%=@msg%></li>
+        <% if @questionset.next %>
+          <li><%= link_to 'Next', hunt_questionset_path(@hunt, @questionset.next) %></li>
+        <%end%>
+      </div>
+    </div>
+  <%end%>
+
+</body>
+</html>

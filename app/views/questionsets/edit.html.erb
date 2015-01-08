@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit your question</title>
+</head>
+<body>
+  <%= form_for [@hunt, @questionset], url: {action: "update"}, html: {class: "nifty_form"} do |f| %>
+    <%= f.text_field :question%><br>
+    <%= f.submit "Update" %>
+  <% end %>
+
+</body>
+</html>

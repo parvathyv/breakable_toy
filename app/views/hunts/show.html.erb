@@ -18,14 +18,26 @@
        <li>Location : <%=@hunt.location.address.split(',').first%></li><br>
       <h3>Your itenirary</h3>
 
-      <%@hunt.quizzes.each do|quiz|%>
-        <li><%=quiz.question_no%>.  <%=quiz.question.capitalize%></li>
+      <%@hunt.questionsets.each do|question|%>
+        <li><%=question.question_no%>.  <%=question.question.capitalize%></li>
+      <%end%>
+
+      <% if @questionsets.empty? == false %>
+        <% if (5 - @questionsets.maximum(:question_no)) != 0 %>
+          <li> You have <%= 5 - @questionsets.maximum(:question_no)%> questions left to complete <%=@hunt.name%> </li>
+          <li><%=link_to "Add a question", new_hunt_questionset_path(@hunt)%></li>
+          <br>
+        <%else%>
+          <li><%=@hunt.name%> Complete</li><br>
+          <li>Where to next ?</li>
+          <li><%=link_to "New hunt", new_location_path%></li>
+        <%end%>
+      <%else%>
+        <li><%=link_to "Add a question", new_hunt_questionset_path(@hunt)%></li>
       <%end%>
 
 
-
-
-
+       <li><%=link_to "Play", hunt_questionset_path(@hunt, @questionsets.first)%></li>
 
 
 

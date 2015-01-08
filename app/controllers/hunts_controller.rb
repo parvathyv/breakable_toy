@@ -14,8 +14,9 @@ class HuntsController < ApplicationController
 
     #@location = Location.find(params[:location_id])
 
-    #@quiz = Quiz.new
-    #@quizzes = @hunt.quizzes.order(question_no: :desc)
+
+
+    @questionsets = @hunt.questionsets.order(question_no: :desc)
 
   end
 

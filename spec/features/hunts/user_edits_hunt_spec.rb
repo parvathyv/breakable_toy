@@ -12,11 +12,12 @@ feature 'User edits an article', %q(
   [x] Only the user who posted the article can edit it
 ) do
 
-  let!(:hunt) { FactoryGirl.create(:hunt) }
 
-  scenario 'User edits an article' do
-    sign_in_as(hunt.user)
-    visit location_hunt_path(hunt.location, hunt)
+  let!(:questionset){ FactoryGirl.create(:questionset) }
+
+  scenario 'User edits an hunt' do
+    sign_in_as(questionset.hunt.user)
+    visit location_hunt_path(questionset.hunt.location, questionset.hunt)
 
     click_link 'Edit hunt name'
 
@@ -33,7 +34,7 @@ feature 'User edits an article', %q(
   end
 
   scenario 'User must be logged in' do
-    visit location_hunt_path(hunt.location, hunt)
+    visit location_hunt_path(questionset.hunt.location, questionset.hunt)
     expect(page).to have_content 'Sign In'
     expect(page).to have_content 'Sign Up'
   end

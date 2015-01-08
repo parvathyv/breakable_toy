@@ -4,11 +4,13 @@
 
   <div class="row">
     <div class="large-12 columns">
+      <h3 style="font-family:'Oswald';color:Orange"><%=@location.address.split(',').first.upcase%><h3>
 
       <h3>Choose your hunt</h3>
         <%@hunts.each do|hunt|%>
 
-          <li><%=hunt.name%></li>
+          <li>Name : <%=hunt.name%></li>
+          <li>What : <%=hunt.description%></li>
            <li><%= link_to ">>", location_hunt_path(@location, hunt) %></li>
 
 

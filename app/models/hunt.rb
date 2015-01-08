@@ -2,8 +2,7 @@ class Hunt < ActiveRecord::Base
 
   belongs_to :location
   belongs_to :user
-  has_many :quizzes
-  #, dependent:  :destroy
+  has_many :questionsets, dependent:  :destroy
 
   validates :name, presence: true,
   length: {

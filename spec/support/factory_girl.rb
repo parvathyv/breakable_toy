@@ -20,6 +20,15 @@ FactoryGirl.define do
     location
   end
 
+  factory :questionset do
+    sequence(:question) { |n| "#{n}What is the oldest public garden in the US"}
+    sequence(:address) { |n| "#{n}Boston Commons, Boston, MA"}
+    sequence(:question_no) { |n| "#{n}1"}
+
+    hunt
+
+  end
+
 
 
 

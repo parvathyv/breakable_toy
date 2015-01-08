@@ -1,6 +1,6 @@
 
 class HuntsController < ApplicationController
-  before_filter :user_signed_in?, :only => [:edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [:edit, :update, :destroy]
   # GET /hunts
   def index
    @hunts = Hunt.all
@@ -85,8 +85,6 @@ class HuntsController < ApplicationController
   end
 
 
-
-
   #private
 
   # Never trust parameters from the scary internet, only allow the white list through.
@@ -94,7 +92,5 @@ class HuntsController < ApplicationController
     params.require(:hunt).permit(:name, :category, :description, :user_id, :location_id)
   end
 
-  def user_signed_in?
-    redirect_to root_path unless current_user
-  end
+
 end

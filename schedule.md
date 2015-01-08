@@ -1,6 +1,6 @@
 Functionality(to be completed by friday)
 
-1. Question sets
+1.[X] Question sets
 2. Tests for basic functionality
 3. Basic Unit tests
 4. Nokogiri for wiki

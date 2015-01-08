@@ -1,6 +1,6 @@
 
 class QuestionsetsController < ApplicationController
-  before_filter :user_signed_in?, :only => [:edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [:show, :edit, :update, :destroy]
   # GET /quizzes
   def index
 
@@ -17,6 +17,9 @@ class QuestionsetsController < ApplicationController
     @itinerary = @questionset.upto
 
     if params[:address] != nil
+      @msg = @questionset.check_answer(params[:address][:address])
+
+=begin
       @flm = @questionset.is_answer?(params[:address][:address])
 
       if @flm == 0
@@ -32,8 +35,10 @@ class QuestionsetsController < ApplicationController
          @msg = "Great job on guessing #{@questionset.address.split(',').first}.
          #{5 - @questionset.question_no} questions to go "
       end
-
+=end
     end
+
+
 
   end
 

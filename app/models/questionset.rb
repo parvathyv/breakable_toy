@@ -49,6 +49,27 @@ class Questionset < ActiveRecord::Base
     @nonmatch
   end
 
+  def check_answer(address)
+
+     flm = self.is_answer?(address)
+
+      if flm == 0
+
+        if self.get_nonmatch == 'dist'
+
+          dist = self.get_distance(address).round(1)
+          msg = " Sorry, you are about #{dist} miles off, try again"
+        else
+           msg = "Sorry, try again"
+        end
+      else
+
+         msg = "Great job on guessing #{self.address.split(',').first}.
+         #{5 - self.question_no} questions to go "
+      end
+     msg
+
+  end
 
 
 

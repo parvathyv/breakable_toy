@@ -10,10 +10,11 @@ class QuestionsetsController < ApplicationController
   def show
     @hunt = Hunt.find(params[:hunt_id])
     @questionset = Questionset.find(params[:id])
+
     @flm = 0
     @msg = "Let's go..."
 
-
+    @itinerary = @questionset.upto
 
     if params[:address] != nil
       @flm = @questionset.is_answer?(params[:address][:address])

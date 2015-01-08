@@ -10,6 +10,12 @@ class Questionset < ActiveRecord::Base
     hunt.questionsets.where("id > ?", id).order("id ASC").first
   end
 
+  def upto
+
+    hunt.questionsets.where("id < ?", id).order("id ASC")
+
+  end
+
   def get_distance(address)
 
       lat = address.split(',').first.to_f

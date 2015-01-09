@@ -26,7 +26,7 @@ class QuestionsetsController < ApplicationController
         end
     end
 
-    binding.pry
+
   end
 
   # GET /quizzes/ne

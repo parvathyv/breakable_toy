@@ -78,6 +78,59 @@ class Questionset < ActiveRecord::Base
 
   end
 
+  def get_clue
+
+    paragraphs = []
+    search_item = self.address.split(', ').first
+
+    search_item = search_item.split(' ').each { | word | word.capitalize! }.join(' ')
+
+    if search_item.strip.size > 1
+      search_item = search_item.split(' ').join('_')
+    end
+
+    search_parameter = search_item
+
+    begin
+
+      url = "https://en.wikipedia.org/wiki/"+ "#{search_parameter}"
+
+
+      doc = Nokogiri::HTML(open(url).read) do
+
+
+      characters = doc.css("#mw-content-text p")
+
+
+      if characters[1].to_s.length > 100 && characters[0].to_s.length < 10
+        paragraphs << characters[1].to_s.split(',').first
+        paragraphs << characters[1].to_s.split(',')[1]
+        paragraphs << characters[1].to_s.split(',')[2]
+      else
+        paragraphs << characters[0].to_s.split(',').first
+        paragraphs << characters[0].to_s.split(',')[1]
+        paragraphs << characters[0].to_s.split(',')[2]
+      end
+
+      search_parameter = search_parameter.split('_').join(' ')
+     end
+
+
+     rescue OpenURI::HTTPError => e
+      if e.message == '404 Not Found'
+        paragraphs << "Clue not found"
+        paragraphs << "Please try being more specific"
+        paragraphs << "Else answer the question the best you can"
+      else
+          raise e
+      end
+    end
+
+    paragraphs
+
+
+  end
+
 
 
 

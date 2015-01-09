@@ -10,6 +10,9 @@ class QuestionsetsController < ApplicationController
   def show
     @hunt = Hunt.find(params[:hunt_id])
     @questionset = Questionset.find(params[:id])
+    #@clues = @questionset.get_clue
+    #@firstone = @clues[0].to_s
+    #binding.pry
 
     @flm = 0
     @msg = "Let's go..."
@@ -18,8 +21,12 @@ class QuestionsetsController < ApplicationController
 
     if params[:address] != nil
       @msg = @questionset.check_answer(params[:address][:address])
+        if !@msg.include?'Sorry'
+          @flm = 1
+        end
     end
 
+    binding.pry
   end
 
   # GET /quizzes/ne

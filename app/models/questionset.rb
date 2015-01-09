@@ -3,6 +3,13 @@ class Questionset < ActiveRecord::Base
 
   belongs_to :hunt
 
+  validates :address, presence: true
+  validates :latitude, presence: true
+  validates :longitude, presence: true
+  validates :question_no, presence: true
+  validates :question, presence: true
+
+
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
@@ -49,6 +56,27 @@ class Questionset < ActiveRecord::Base
     @nonmatch
   end
 
+  def check_answer(address)
+
+     flm = self.is_answer?(address)
+
+      if flm == 0
+
+        if self.get_nonmatch == 'dist'
+
+          dist = self.get_distance(address).round(1)
+          msg = " Sorry, you are about #{dist} miles off, try again"
+        else
+           msg = "Sorry, try again"
+        end
+      else
+
+         msg = "Great job on guessing #{self.address.split(',').first}.
+         #{5 - self.question_no} questions to go "
+      end
+     msg
+
+  end
 
 
 

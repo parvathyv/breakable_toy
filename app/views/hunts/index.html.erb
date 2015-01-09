@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Welcome to LaunchOverflow</title>
+  <title>Hunts</title>
 </head>
 <body>
   <div class="row">
     <div class="large-8 large-offset-2 columns blue-box">
     <h3>All hunts</h3><br>
-
+     <h3> Your hunts </h3>
     <%@hunts.each do|hunt|%>
+
+    <% if hunt.user == current_user%>
+
       <li><%=link_to ">> #{hunt.name}", hunt_path(hunt)%> -  <%=hunt.location.address.split(',').first%></li>
+    <%else%>
+
+     <li>Creator : <%=hunt.user.name%>  <%=link_to "#{hunt.name}", hunt_path(hunt)%> -  <%=hunt.location.address.split(',').first%></li>
+
+     <%end%>
+
     <%end%><br>
 
     <li><%=link_to "Create hunt", new_location_path%></li>

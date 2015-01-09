@@ -20,6 +20,8 @@
 
       <%@hunt.questionsets.each do|question|%>
         <li><%=question.question_no%>.  <%=question.question.capitalize%></li>
+        <li><%=link_to "Edit question", edit_hunt_questionset_path(@hunt, question)%>
+        </li>
       <%end%>
 
       <% if @questionsets.empty? == false %>

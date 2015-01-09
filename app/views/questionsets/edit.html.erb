@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Edit your question</title>
-</head>
-<body>
-  <%= form_for [@hunt, @questionset], url: {action: "update"}, html: {class: "nifty_form"} do |f| %>
-    <%= f.text_field :question%><br>
-    <%= f.submit "Update" %>
-  <% end %>
 
-</body>
-</html>
+
+  <div class="row">
+    <div class="large-12 columns blue-box">
+      <%= form_for [@hunt, @questionset], url: {action: "update"}, html: {class: "nifty_form"} do |f| %>
+        <%= f.label :question %><br>
+        <%= f.text_field :question%><br>
+        <%= f.label :address %><br>
+        <%= f.text_field :address%><br>
+        <%= f.submit "Update" %>
+      <% end %>
+    </div>
+  </div>

@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Question Details</title>
-</head>
-<body>
+
   <script type="text/javascript">
     var map_array = <%= [@questionset.latitude, @questionset.longitude] %>
     var my_zoom =  <%= 10 %>
@@ -43,7 +38,7 @@
       <div class="row">
         <div class="large-6 columns">
           <%= form_tag(hunt_questionset_path, :method => :get ) do%>
-            <%= label :address, "Address" %>
+            <%= label :address, "Address"%>
             <%= text_field :address, :address, :class => "address" %>
              <div class="row">
               <div class="large-4 large-offset-4 columns blue-box">
@@ -67,10 +62,9 @@
     </div>
   <%end%>
 
+ <div id="wordtree_basic" style="width: 900px; height: 500px;"></div>
 
 
 
 
 
-</body>
-</html>

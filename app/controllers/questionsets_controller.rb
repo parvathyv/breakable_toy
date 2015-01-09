@@ -1,6 +1,6 @@
 
 class QuestionsetsController < ApplicationController
-  before_filter :user_signed_in?, :only => [:edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [:show, :edit, :update, :destroy]
   # GET /quizzes
   def index
 
@@ -17,22 +17,7 @@ class QuestionsetsController < ApplicationController
     @itinerary = @questionset.upto
 
     if params[:address] != nil
-      @flm = @questionset.is_answer?(params[:address][:address])
-
-      if @flm == 0
-
-        if @questionset.get_nonmatch == 'dist'
-
-          dist = @questionset.get_distance(params[:address][:address]).round(1)
-          @msg = " Sorry, you are about #{dist} miles off, try again"
-        else
-           @msg = "Sorry, try again"
-        end
-      else
-         @msg = "Great job on guessing #{@questionset.address.split(',').first}.
-         #{5 - @questionset.question_no} questions to go "
-      end
-
+      @msg = @questionset.check_answer(params[:address][:address])
     end
 
   end
@@ -72,36 +57,30 @@ class QuestionsetsController < ApplicationController
   end
 
 
-  def destroy
-    @questionset = Questionset.find(params[:id]).destroy
-    redirect_to @questionset, notice: 'Questionset was successfully deleted'
-  end
-
-
   def edit
-      binding.pry
+
      @questionset = Questionset.find(params[:id])
 
   end
 
   def update
 
-    @hunt = Hunt.find(params[:question_id])
-    @questionset = Questionset.update(quiz_params)
-    #@questionset = @hunt.questionset.update(answer_params)
+    @hunt = Hunt.find(params[:hunt_id])
+    @questionset = Questionset.find(params[:id])
+    @questionset.update(quiz_params)
+
     redirect_to @hunt, notice: 'Questionset was successfully updated'
+
   end
 
 
 
-  #private
+  private
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def quiz_params
     params.require(:questionset).permit(:hunt_id, :question, :question_no, :address, :latitude, :longitude)
   end
 
-  def user_signed_in?
-    redirect_to root_path unless current_user
-  end
+
 end

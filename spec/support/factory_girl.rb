@@ -23,7 +23,6 @@ FactoryGirl.define do
   factory :questionset do
     sequence(:question) { |n| "#{n}What is the oldest public garden in the US"}
     address "King's Chapel, Boston, MA"
-
     add_attribute :latitude, 41.9990
     add_attribute :longitude, 119.2378
     add_attribute :question_no, 1

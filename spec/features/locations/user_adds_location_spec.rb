@@ -13,7 +13,26 @@ feature 'user adds a location', %Q{
   let!(:user) { FactoryGirl.create(:user) }
   let!(:location) { FactoryGirl.create(:location) }
 
+
   scenario 'user signs in and adds an location' do
+
+=begin    Geocoder.configure(:lookup => :test)
+
+    Geocoder::Lookup::Test.add_stub(
+    #"New York, NY", [
+    #  {
+        'latitude'     => 40.7143528,
+        'longitude'    => -74.0059731,
+        'address'      => 'New York, NY, USA',
+        'state'        => 'New York',
+        'state_code'   => 'NY',
+        'country'      => 'United States',
+        'country_code' => 'US'
+      }
+     ]
+    )
+=end
+
     sign_in_as(user)
     visit new_location_path
 

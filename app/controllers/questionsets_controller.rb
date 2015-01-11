@@ -1,8 +1,21 @@
-
+require 'json'
 class QuestionsetsController < ApplicationController
   before_action :authenticate_user!, :only => [:show, :edit, :update, :destroy]
   # GET /quizzes
   def index
+    @my_hash = {"name"=>"Cities",
+      "children"=>[{"name"=>"Boston",
+      "children"=>[{"name"=>"Freedom Trail",
+      "children"=>[{"name"=>"Faneiul Hall", "size"=>3938},
+      {"name"=>"Boston Commons", "size"=>3812},
+      {"name"=>"King's Chapel", "size"=>6714},
+      {"name"=>"Bunker Hill", "size"=>743}]},
+      {"name"=>"Eat Boston", "children"=>[{"name"=>"Wagamama", "size"=>3534}, {"name"=>"Dumpling King", "size"=>5731}]},
+      {"name"=>"Beantown Sports", "children"=>[{"name"=>"Fenway", "size"=>7074}]}]}]}
+
+
+    #binding.pry
+
 
   end
 
@@ -14,6 +27,7 @@ class QuestionsetsController < ApplicationController
     #@firstone = @clues[0].to_s
     #binding.pry
 
+
     @flm = 0
     @msg = "Let's go..."
 
@@ -22,6 +36,9 @@ class QuestionsetsController < ApplicationController
     if params[:address] != nil
       @msg = @questionset.check_answer(params[:address][:address])
         if !@msg.include?'Sorry'
+
+
+         # binding.pry
           @flm = 1
         end
     end
@@ -88,6 +105,9 @@ class QuestionsetsController < ApplicationController
   def quiz_params
     params.require(:questionset).permit(:hunt_id, :question, :question_no, :address, :latitude, :longitude)
   end
+
+
+
 
 
 end

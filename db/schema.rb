@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150104204542) do
+ActiveRecord::Schema.define(version: 20150110230917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20150104204542) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "huntsplayedusers", force: :cascade do |t|
+    t.integer  "hunt_id",         null: false
+    t.integer  "user_id",         null: false
+    t.integer  "question_no",     null: false
+    t.string   "user_session_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "huntsplayedusers", ["user_session_id", "hunt_id"], name: "index_huntsplayedusers_on_user_session_id_and_hunt_id", unique: true, using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.string   "address",    null: false
@@ -63,9 +74,13 @@ ActiveRecord::Schema.define(version: 20150104204542) do
     t.string   "name",                                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "avatar_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
 end

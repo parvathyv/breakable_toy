@@ -23,6 +23,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'kaminari'
 gem 'nokogiri'
 gem 'geocoder'
+gem 'json'
+gem 'omniauth-github'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -46,6 +49,9 @@ end
 
 group :test do
   gem 'coveralls', require: false
+  gem 'minitest'
+  gem 'vcr'
+  gem 'fakeweb'
 end
 
 gem 'rspec-rails', group: [:development, :test]

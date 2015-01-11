@@ -1,0 +1,33 @@
+{
+ "name": "Cities",
+ "children": [
+  {
+   "name": "Boston",
+   "children": [
+    {
+     "name": "Freedom Trail",
+     "children": [
+      {"name": "Faneiul Hall", "size": 3938},
+      {"name": "Boston Commons", "size": 3812},
+      {"name": "King's Chapel", "size": 6714},
+      {"name": "Bunker Hill", "size": 743}
+     ]
+    },
+    {
+     "name": "Eat Boston",
+     "children": [
+      {"name": "Wagamama", "size": 3534},
+      {"name": "Dumpling King", "size": 5731}
+      ]
+    },
+    {
+     "name": "Beantown Sports",
+     "children": [
+      {"name": "Fenway", "size": 7074}
+     ]
+    }
+   ]
+  }
+
+ ]
+}

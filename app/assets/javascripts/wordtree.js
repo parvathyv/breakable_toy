@@ -1,41 +1,47 @@
 
 
- google.load("visualization", "1.1", {packages:["wordtree"]});
-      google.setOnLoadCallback(drawChart);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable(
-          [ ['Phrases'],
-            ['cats are better than dogs'],
-            ['cats eat kibble'],
-            ['cats are better than hamsters'],
-            ['cats are awesome'],
-            ['cats are people too'],
-            ['cats eat mice'],
-            ['cats meowing'],
-            ['cats in the cradle'],
-            ['cats eat mice'],
-            ['cats in the cradle lyrics'],
-            ['cats eat kibble'],
-            ['cats for adoption'],
-            ['cats are family'],
-            ['cats eat mice'],
-            ['cats are better than kittens'],
-            ['cats are evil'],
-            ['cats are weird'],
-            ['cats eat mice'],
-          ]
-        );
+var width = 960,
+    height = 2200;
 
-        var options = {
-          wordtree: {
-            format: 'implicit',
-            word: 'cats'
-          }
-        };
+var cluster = d3.layout.cluster()
+    .size([height, width - 160]);
 
-        var chart = new google.visualization.WordTree(document.getElementById('wordtree_basic'));
-        chart.draw(data, options);
-      }
+var diagonal = d3.svg.diagonal()
+    .projection(function(d) { return [d.y, d.x]; });
+
+var svg = d3.select("#collapsibletree").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(40,0)");
+
+d3.json(my_hash, function(error, root) {
+  var nodes = cluster.nodes(root),
+      links = cluster.links(nodes);
+
+  var link = svg.selectAll(".link")
+      .data(links)
+    .enter().append("path")
+      .attr("class", "link")
+      .attr("d", diagonal);
+
+  var node = svg.selectAll(".node")
+      .data(nodes)
+    .enter().append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+
+  node.append("circle")
+      .attr("r", 4.5);
+
+  node.append("text")
+      .attr("dx", function(d) { return d.children ? -8 : 8; })
+      .attr("dy", 3)
+      .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+      .text(function(d) { return d.name; });
+});
+
+d3.select(self.frameElement).style("height", height + "px");
 
 

@@ -10,7 +10,8 @@ class LocationsController < ApplicationController
     @locations.each do|loc|
        @location_array << [loc.latitude, loc.longitude]
     end
-
+    #sess = session["warden.user.user.key"]
+    #binding.pry
   end
 
 

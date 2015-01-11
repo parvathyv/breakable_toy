@@ -8,6 +8,8 @@ require File.join(File.dirname(__FILE__), 'support/valid_attribute')
 require File.join(File.dirname(__FILE__), 'support/factory_girl')
 require 'capybara/rspec'
 require 'pry-rails'
+require 'minitest/autorun'
+require 'vcr'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -52,6 +54,8 @@ RSpec.configure do |config|
   #
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
+
+
   config.infer_spec_type_from_file_location!
   config.include AuthenticationHelper
   #config.include ArticleHelper

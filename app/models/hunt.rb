@@ -2,6 +2,7 @@ class Hunt < ActiveRecord::Base
 
   belongs_to :location
   belongs_to :user
+  belongs_to :huntsplayeduser
   has_many :questionsets, dependent:  :destroy
 
   validates :name, presence: true,

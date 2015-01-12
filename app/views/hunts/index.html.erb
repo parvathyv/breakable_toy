@@ -17,8 +17,11 @@
 
      <li>Creator : <%=hunt.user.name%>  <%=link_to "#{hunt.name}", hunt_path(hunt)%> -  <%=hunt.location.address.split(',').first%></li>
 
-     <%end%>
 
+     <%end%>
+       <% if hunt.questionsets.count == 5 %>
+       <li><%=link_to "Play", hunt_questionset_path(hunt, hunt.questionsets.first)%></li>
+       <%end%>
     <%end%><br>
 
     <li><%=link_to "Create hunt", new_location_path%></li>

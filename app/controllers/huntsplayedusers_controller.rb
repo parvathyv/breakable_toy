@@ -37,7 +37,7 @@ class HuntsplayedusersController < ApplicationController
          @msg = @questionset.check_answer(params[:huntsplayeduser][:address])
           if !@msg.include?'Sorry'
             @flm = 1
-            binding.pry
+
             @is_order = true
           end
       end

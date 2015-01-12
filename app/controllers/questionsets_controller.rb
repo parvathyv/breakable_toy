@@ -21,12 +21,12 @@ class QuestionsetsController < ApplicationController
     @questionset = Questionset.find(params[:id])
     @itinerary = @questionset.upto
     @huntsplayed = Huntsplayeduser.if_exists?(params[:hunt_id], session.id)
-    binding.pry
+
     if @huntsplayed.empty? == false
       maxquestion_no = Huntsplayeduser.hunt_check(@huntsplayed.last.question_no, params[:hunt_id])
 
       if maxquestion_no.question_no < 6
-        binding.pry
+
         if @questionset.question_no == maxquestion_no.question_no
           @questionset = @questionset.next
           @huntsplayed = Huntsplayeduser.new
@@ -69,7 +69,7 @@ class QuestionsetsController < ApplicationController
     @hunt = Hunt.find(params[:hunt_id])
 
     @questionset = @hunt.questionsets.build(questionset_params)
-    binding.pry
+
     @last_quiz = Questionset.where("hunt_id=?", @hunt.id)
 
     if @last_quiz == nil || @last_quiz.empty?

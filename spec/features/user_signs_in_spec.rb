@@ -18,7 +18,7 @@ feature 'user signs in', %Q{
     visit root_path
     click_link 'Sign in with Github'
     fill_in 'Username or Email', with: 'something'
-    fill_in 'Password', with: 'supersecret'
+    fill_in 'Password', with: 'password'
     click_button 'Sign in'
 
     expect(page).to have_content('This repository Explore Features Enterprise Blog Incorrect username or password.')

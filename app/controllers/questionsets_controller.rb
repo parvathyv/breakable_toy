@@ -12,11 +12,6 @@ class QuestionsetsController < ApplicationController
       {"name"=>"Bunker Hill", "size"=>743}]},
       {"name"=>"Eat Boston", "children"=>[{"name"=>"Wagamama", "size"=>3534}, {"name"=>"Dumpling King", "size"=>5731}]},
       {"name"=>"Beantown Sports", "children"=>[{"name"=>"Fenway", "size"=>7074}]}]}]}
-
-
-    #binding.pry
-
-
   end
 
   # GET /quizzes/1

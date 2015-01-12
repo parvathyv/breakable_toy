@@ -4,6 +4,7 @@ FactoryGirl.define do
   factory :user do
     sequence(:email) {|n| "user#{n}@example.com" }
     name 'Coolguy123'
+
     password 'password'
     password_confirmation 'password'
   end
@@ -23,9 +24,9 @@ FactoryGirl.define do
   factory :questionset do
     sequence(:question) { |n| "#{n}What is the oldest public garden in the US"}
     address "King's Chapel, Boston, MA"
-    add_attribute :latitude, 41.9990
-    add_attribute :longitude, 119.2378
-    add_attribute :question_no, 1
+    latitude 41.9990
+    longitude 119.2378
+    question_no 1
 
 
     hunt

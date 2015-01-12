@@ -7,6 +7,7 @@ class LocationsController < ApplicationController
     @locations = Location.all
     @location_array = []
 
+
     @locations.each do|loc|
        @location_array << [loc.latitude, loc.longitude]
     end

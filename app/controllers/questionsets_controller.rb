@@ -21,28 +21,43 @@ class QuestionsetsController < ApplicationController
 
   # GET /quizzes/1
   def show
+
     @hunt = Hunt.find(params[:hunt_id])
     @questionset = Questionset.find(params[:id])
-    #@clues = @questionset.get_clue
-    #@firstone = @clues[0].to_s
-    #binding.pry
+    @itinerary = @questionset.upto
+    @huntsplayed = Huntsplayeduser.if_exists?(params[:hunt_id], session.id)
+    binding.pry
+    if @huntsplayed.empty? == false
+      maxquestion_no = Huntsplayeduser.hunt_check(@huntsplayed.last.question_no, params[:hunt_id])
+
+      if maxquestion_no.question_no < 6
+        binding.pry
+        if @questionset.question_no == maxquestion_no.question_no
+          @questionset = @questionset.next
+          @huntsplayed = Huntsplayeduser.new
+
+        else
+          if @questionset.question_no - maxquestion_no.question_no <= 1
+
+            @questionset = Questionset.where("question_no=?", maxquestion_no.question_no+1).first
+            binding.pry
+            @huntsplayed = Huntsplayeduser.new
+          else
+            @msg = "Please play in order"
+          end
+        end
+
+      end
+
+   else
+    @huntsplayed = Huntsplayeduser.new
 
 
-    @flm = 0
     @msg = "Let's go..."
 
-    @itinerary = @questionset.upto
-
-    if params[:address] != nil
-      @msg = @questionset.check_answer(params[:address][:address])
-        if !@msg.include?'Sorry'
 
 
-         # binding.pry
-          @flm = 1
-        end
-    end
-
+   end
 
   end
 
@@ -58,7 +73,8 @@ class QuestionsetsController < ApplicationController
   def create
     @hunt = Hunt.find(params[:hunt_id])
 
-    @questionset = @hunt.questionsets.build(quiz_params)
+    @questionset = @hunt.questionsets.build(questionset_params)
+    binding.pry
     @last_quiz = Questionset.where("hunt_id=?", @hunt.id)
 
     if @last_quiz == nil || @last_quiz.empty?
@@ -69,12 +85,13 @@ class QuestionsetsController < ApplicationController
 
     if @questionset.save
 
-      if @questionset.question_no < 5
+      if @questionset.question_no < 6
         redirect_to new_hunt_questionset_path(@hunt), notice: 'Question was successfully created.'
       else
         redirect_to hunt_path(@hunt), notice: 'Question was successfully created.'
       end
     else
+
         redirect_to hunt_path(@hunt), notice: 'Question was not created.'
     end
 
@@ -102,7 +119,7 @@ class QuestionsetsController < ApplicationController
   private
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def quiz_params
+  def questionset_params
     params.require(:questionset).permit(:hunt_id, :question, :question_no, :address, :latitude, :longitude)
   end
 

@@ -12,7 +12,7 @@
 
  <div id="map_canvas" style="height:70%;width:100%"></div>
 
- <% if @flm == 0 %>
+
     <div class="row">
       <div class="large-8 columns blue-box">
          <li> <%=@msg%></li>
@@ -29,43 +29,24 @@
       </div>
     </div>
 
-
-
-
-
     <section class="signinwhite">
+
+
 
       <div class="row">
         <div class="large-6 columns">
-          <%= form_tag(hunt_questionset_path, :method => :get ) do%>
-            <%= label :address, "Address"%>
-            <%= text_field :address, :address, :class => "address" %>
-             <div class="row">
-              <div class="large-4 large-offset-4 columns blue-box">
-                <li><%= submit_tag("Answer",:class => "answer large button") %></li>
-              </div>
-          </div>
+          <%= form_for [@questionset, @huntsplayed] do |f| %>
+            <li><%= f.label :address %></li>
+            <li><%= f.text_field :address, placeholder: "Address", :class => "address"%></li>
+            <%= submit_tag "Answer", :class => "answer large button" %>
           <% end %>
+
+
+
         </div>
       </div>
+
+
     </section>
-
-  <%else%>
-
-    <div class="row">
-      <div class="large-8 large-offset-2 columns blue-box">
-        <li> <%=@msg%></li>
-        <% if @questionset.next %>
-          <li><%= link_to 'Next', hunt_questionset_path(@hunt, @questionset.next) %></li>
-        <%end%>
-      </div>
-    </div>
-  <%end%>
-
-
-
-
-
-
 
 

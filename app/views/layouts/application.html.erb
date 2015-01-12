@@ -15,34 +15,31 @@
     <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
 
-
-
-
    <section class="signin">
 
-            <div class="main-wrapper">
-              <nav class="top-bar" data-topbar role="navigation">
-              <div class="button-group">
+  <div class="main-wrapper">
+    <nav class="top-bar" data-topbar role="navigation">
+    <div class="button-group">
 
-                <%- if current_user -%>
-                   <li><%=current_user.name%></li>
-                  <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "signinlinks" %></li>
+      <% if current_user %>
+         <li><%=current_user.name%></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "signinlinks" %></li>
 
-                <%- else -%>
-                  <li><%= link_to 'Sign Up', new_user_registration_path, :class => "signinlinks" %></li>
+      <% else %>
+        <li><%= link_to 'Sign Up', new_user_registration_path, :class => "signinlinks" %></li>
 
-                  <li><%= link_to 'Sign In', new_user_session_path, :class => "signinlinks" %></li>
-                <%- end -%>
-                 <% if flash.any? %>
-                    <li class="flash">
-                      <%= flash[:notice] %>
-                    </li>
+        <li><%= link_to 'Sign In', new_user_session_path, :class => "signinlinks" %></li>
+      <%- end -%>
+       <% if flash.any? %>
+          <li class="flash">
+            <%= flash[:notice] %>
+          </li>
 
-                <%end%>
+      <%end%>
 
 
 
-      <a href="#" data-reveal-id="firstModal" class="secondary large button" style="margin-left:20%">RULES</a>
+      <a href="#" data-reveal-id="firstModal" class="rules large button">RULES</a>
 
       <div id="firstModal" class="reveal-modal modal-box" data-reveal>
        <div class="row">
@@ -54,7 +51,7 @@
         <div class="row">
         <div class="large-4 large-offset-4 columns">
           <a href="#" data-reveal-id="secondModal"
-          class="secondary large button" >PLAY</a>
+          class="rules large button blankit" >PLAY</a>
          </div>
          </div>
 
@@ -73,7 +70,7 @@
         <div class="row">
         <div class="large-4 large-offset-4 columns">
           <a href="#" data-reveal-id="firstModal"
-          class="secondary large button" >CREATE</a>
+          class="rules large button">CREATE</a>
          </div>
          </div>
 
@@ -98,25 +95,25 @@
 
 
 
-                  <div class="row">
-                    <div class="large-12 columns medium-8 columns small-6 columns">
+        <div class="row">
+          <div class="large-12 columns medium-8 columns small-6 columns">
 
-                <div class = "footer_social">
+            <div class = "footer_social">
 
 
-                        <li> <a href="https://twitter.com/share" class="twittersharebutton" data-count="none" data-hashtags="Maps, Game, Travel,Tresurehunts"><img src="http://localhost:3000/assets/twitter.png"></a>
-                          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-                          </script>
-                       <a href="//www.pinterest.com/pin/create/button/"><img src="http://localhost:3000/assets/pin.png"/></a></li>
+              <li> <a href="https://twitter.com/share" class="twittersharebutton" data-count="none" data-hashtags="Maps, Game, Travel,Tresurehunts"><img src="http://localhost:3000/assets/twitter.png"></a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+                </script>
+             <a href="//www.pinterest.com/pin/create/button/"><img src="http://localhost:3000/assets/pin.png"/></a></li>
 
-                    </div>
-                </div>
-
-            </div>
-
+              </div>
           </div>
-         </nav>
-        </div>
+
+      </div>
+
+      </div>
+     </nav>
+    </div>
 
 
   <%= yield %>

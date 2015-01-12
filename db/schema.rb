@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110230917) do
+ActiveRecord::Schema.define(version: 20150111211501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,9 +33,10 @@ ActiveRecord::Schema.define(version: 20150110230917) do
     t.string   "user_session_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "address",         null: false
   end
 
-  add_index "huntsplayedusers", ["user_session_id", "hunt_id"], name: "index_huntsplayedusers_on_user_session_id_and_hunt_id", unique: true, using: :btree
+  add_index "huntsplayedusers", ["hunt_id", "question_no", "user_session_id"], name: "byhuntquestionuser", unique: true, using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.string   "address",    null: false

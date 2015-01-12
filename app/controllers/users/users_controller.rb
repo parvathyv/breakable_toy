@@ -11,11 +11,11 @@ before_action :authenticate_user!
     @user = User.find(params[:id])
   end
 
- 
-  
-  
-  
-  #private
+
+
+
+
+  private
 
   # Never trust parameters from the scary internet, only allow the white list through.
   #def question_params

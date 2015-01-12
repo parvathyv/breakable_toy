@@ -12,6 +12,7 @@ body {
 .blankit{
 background-color:transparent;
 color:orange;
+border:0px;
 font-family:'Oswald';
 font-size:1.25em;
 }
@@ -176,6 +177,11 @@ height:45px;width:300px;}
 solid;border-radius:8px;padding:10px 20px 0px 20px;margin:0;margin-top:10px;font-family: 'Poiret One';
 height:45px;}
 .answer.large.button:hover{background-color:rgba(0,0,255,0.25);color:white;}
+
+
+.rules.large.button{background-color:transparent;color:blue;border:0px;
+    font-family: 'Poiret One';text-align: center;}
+.rules.large.button:hover{background-color:transparent;color:white;}
 
 .row .main-wrapper{color:#fff;}
 .row .main-wrapper li{font-weight:bold;}

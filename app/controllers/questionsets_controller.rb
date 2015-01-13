@@ -1,8 +1,12 @@
-require 'json'
 class QuestionsetsController < ApplicationController
   before_action :authenticate_user!, :only => [:show, :edit, :update, :destroy]
   # GET /quizzes
   def index
+
+    @hunt = Hunt.find(params[:hunt_id])
+    @questionsets = @hunt.questionsets
+
+
     @my_hash = {"name"=>"Cities",
       "children"=>[{"name"=>"Boston",
       "children"=>[{"name"=>"Freedom Trail",
@@ -12,6 +16,11 @@ class QuestionsetsController < ApplicationController
       {"name"=>"Bunker Hill", "size"=>743}]},
       {"name"=>"Eat Boston", "children"=>[{"name"=>"Wagamama", "size"=>3534}, {"name"=>"Dumpling King", "size"=>5731}]},
       {"name"=>"Beantown Sports", "children"=>[{"name"=>"Fenway", "size"=>7074}]}]}]}
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @my_hash }
+    end
   end
 
   # GET /quizzes/1
@@ -19,10 +28,12 @@ class QuestionsetsController < ApplicationController
 
     @hunt = Hunt.find(params[:hunt_id])
     @questionset = Questionset.find(params[:id])
-    @itinerary = @questionset.upto
-    @huntsplayed = Huntsplayeduser.if_exists?(params[:hunt_id], session.id)
+    @itinerary =['You have to play']
+    @huntsplayed = Huntsplayeduser.if_exists?(params[:hunt_id], session.id, current_user.id)
 
-    if @huntsplayed.empty? == false
+    if @huntsplayed.empty? == false && @huntsplayed.count < 5
+      @itinerary = @huntsplayed.each{|hunt| hunt}
+
       maxquestion_no = Huntsplayeduser.hunt_check(@huntsplayed.last.question_no, params[:hunt_id])
 
       if maxquestion_no.question_no < 6
@@ -32,23 +43,37 @@ class QuestionsetsController < ApplicationController
           @huntsplayed = Huntsplayeduser.new
 
         else
-          if @questionset.question_no - maxquestion_no.question_no <= 1
+          if @questionset.question_no - maxquestion_no.question_no > 1 || maxquestion_no.question_no > @questionset.question_no
 
-            @questionset = Questionset.where("question_no=?", maxquestion_no.question_no+1).first
-            binding.pry
+            @questionset = Questionset.where("question_no=?", maxquestion_no.question_no + 1).first
+
             @huntsplayed = Huntsplayeduser.new
-          else
             @msg = "Please play in order"
+
+          else
+
+               if @questionset.question_no - maxquestion_no.question_no == 1
+
+                @huntsplayed = Huntsplayeduser.new
+               end
+
+
           end
         end
 
       end
 
    else
-    @huntsplayed = Huntsplayeduser.new
+    if @huntsplayed.count == 5
 
 
-    @msg = "Let's go..."
+      redirect_to root_path, notice: 'You already played this hunt this session, sign out if you want to repeat'
+    else
+      @huntsplayed = Huntsplayeduser.new
+
+
+      @msg = "Let's go..."
+    end
 
 
 

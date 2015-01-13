@@ -1,7 +1,7 @@
 
   <script type="text/javascript">
     var map_array = <%= [@questionset.latitude, @questionset.longitude] %>
-    var my_zoom =  <%= 10 %>
+    var my_zoom =  <%= 13 %>
     var mapcenterlat = <%= @questionset.latitude %>
     var mapcenterlong = <%= @questionset.longitude %>
     var flag = <%= 2 %>
@@ -10,7 +10,8 @@
   </script>
 
 
- <div id="map_canvas" style="height:70%;width:100%"></div>
+  <div id="map_canvas" style="height:70%;width:100%"></div>
+
 
 
     <div class="row">
@@ -21,11 +22,15 @@
       </div>
 
       <div class="large-4 columns ">  <br>
-       <% if @itinerary.empty? == false %>
+       <% if @itinerary.size >= 1 %>
+         <% if @itinerary[0] = 'You have to play' %>
+
+         <%else%>
            <% @itinerary.each_with_index do|stop, index|%>
               <li style="line-height:4px;"><%=index+1%>. <%=stop.address.split(',').first%><li>
             <%end%>
-        <%end%>
+          <%end%>
+       <%end%>
       </div>
     </div>
 

@@ -44,6 +44,7 @@ class Questionset < ActiveRecord::Base
       end
     else
       if self.address.include? address
+        binding.pry
         flag = 1
       else
         @nonmatch = 'address'

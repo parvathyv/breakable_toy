@@ -22,3 +22,10 @@ To be done
 8. parallax scrolling integration
 9. front end
 10. Refactor(AJAX)
+
+
+
+-------------------------------------
+correct messages
+nokogiri
+polygon on map

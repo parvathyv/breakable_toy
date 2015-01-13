@@ -2,6 +2,11 @@ class QuestionsetsController < ApplicationController
   before_action :authenticate_user!, :only => [:show, :edit, :update, :destroy]
   # GET /quizzes
   def index
+
+    @hunt = Hunt.find(params[:hunt_id])
+    @questionsets = @hunt.questionsets
+
+
     @my_hash = {"name"=>"Cities",
       "children"=>[{"name"=>"Boston",
       "children"=>[{"name"=>"Freedom Trail",

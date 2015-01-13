@@ -70,6 +70,8 @@ GEM
       simplecov (>= 0.7)
       term-ansicolor
       thor
+    d3-rails (3.5.2)
+      railties (>= 3.1)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     devise (3.4.1)
@@ -128,10 +130,13 @@ GEM
       nokogiri (~> 1.4)
       ntlm-http (~> 0.1, >= 0.1.1)
       webrobots (>= 0.0.9, < 0.2)
+    metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.1)
     minitest (5.5.0)
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -281,6 +286,7 @@ DEPENDENCIES
   capybara-mechanize
   coffee-rails (~> 4.1.0)
   coveralls
+  d3-rails
   devise
   factory_girl
   fakeweb
@@ -292,6 +298,7 @@ DEPENDENCIES
   kaminari
   launchy
   minitest
+  mocha
   nokogiri
   omniauth-github
   pg

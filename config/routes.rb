@@ -11,17 +11,18 @@ Rails.application.routes.draw do
   resources :locations, only: [:create, :index, :show, :new]
   resources :hunts
 
-  resources :locations do
+  resources :locations, only: [:create, :index, :show, :new] do
     resources :hunts
   end
 
   resources :hunts do
-    resources :questionsets
+    resources :questionsets, only: [:create, :index, :show, :new, :update, :edit]
   end
 
-  resources :questionsets do
-    resources :huntsplayedusers
+  resources :questionsets, only: [:create, :index, :show, :new, :update, :edit] do
+    resources :huntsplayedusers, only: [:create, :index, :show, :new]
   end
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }, except: :destroy
+ # resources :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }, except: [:destroy]
 
 end

@@ -1,9 +1,9 @@
- function initialize() {
-
+  function initialize() {
 
   var styles = [
     {
-        "featureType": "landscape",
+
+       "featureType": "landscape",
         "stylers": [
             {
                 "hue": "#F1FF00"

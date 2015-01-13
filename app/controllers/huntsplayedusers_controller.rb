@@ -27,13 +27,14 @@ class HuntsplayedusersController < ApplicationController
 
     @hunt = @questionset.hunt
     user_session_id = session.id
-    @huntcheck = Huntsplayeduser.if_exists?(@hunt.id, user_session_id)
+    @huntcheck = Huntsplayeduser.if_exists?(@hunt.id, user_session_id, current_user.id)
 
 
     if @huntcheck.empty? == false
       maxquestion_no = Huntsplayeduser.hunt_check(@questionset.question_no,@hunt.id)
 
       if maxquestion_no.question_no == @questionset.question_no - 1
+
          @msg = @questionset.check_answer(params[:huntsplayeduser][:address])
           if !@msg.include?'Sorry'
             @flm = 1
@@ -57,7 +58,7 @@ class HuntsplayedusersController < ApplicationController
       #@huntsplayeduser.user = current_user
       @flm = 1
       if @huntsplayeduser.save
-        if @questionset.question_no < 6
+        if @huntsplayeduser.question_no < 5
           @prize = 0
           if @questionset.next
             redirect_to hunt_questionset_path(@hunt, @questionset.next), notice: 'Huntsplayeduser was successfully created.'
@@ -66,6 +67,7 @@ class HuntsplayedusersController < ApplicationController
           end
           else
           @prize = 1
+
           redirect_to root_path, notice: 'You are done ! Congrats'
         end
       else
@@ -90,7 +92,7 @@ class HuntsplayedusersController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def huntsplayeduser_params
 
-   params.require(:huntsplayeduser).permit(:hunt_id, :user_id, :question_no, :address, :user_session_id)
+   params.require(:huntsplayeduser).permit(:hunt_id, :user_id, :question_no,:user_session_id)
   end
 
 

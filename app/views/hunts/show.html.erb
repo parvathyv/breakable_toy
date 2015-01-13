@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Hunt Details</title>
-</head>
-<body>
+
 	<% if flash.any? %>
     <div class="flash">
       <%= flash[:notice] %>
@@ -41,15 +36,6 @@
 
 
 
-
-
-
-
-
-      <li>Where to next ?</li>
-      <li><%=link_to "New hunt", new_location_path%></li>
-
-
       <li><%=link_to "Edit hunt name", edit_location_hunt_path(@location, @hunt)%></li>
       <li><%= button_to "Delete", @hunt, :method => :delete,:class => "signinlinks" %></li>
 
@@ -59,5 +45,4 @@
     </div>
   </div>
 
-</body>
-</html>
+

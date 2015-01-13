@@ -25,6 +25,7 @@ gem 'nokogiri'
 gem 'geocoder'
 gem 'json'
 gem 'omniauth-github'
+gem 'd3-rails'
 
 
 # Use ActiveModel has_secure_password
@@ -53,6 +54,7 @@ group :test do
   gem 'vcr'
   gem 'fakeweb'
   gem 'capybara-mechanize'
+  gem 'mocha'
 end
 
 gem 'rspec-rails', group: [:development, :test]

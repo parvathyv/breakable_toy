@@ -9,6 +9,15 @@ body {
 
 }
 
+.italictext{
+    font-style:italic;
+    font-size:1em;
+    color:orange;
+}
+#collapsibletree{
+    font-family:'Poiret-One';
+}
+
 .blankit{
 background-color:transparent;
 color:orange;

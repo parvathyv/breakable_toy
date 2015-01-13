@@ -13,30 +13,20 @@ feature 'user adds a location', %Q{
   let!(:user) { FactoryGirl.create(:user) }
   let!(:location) { FactoryGirl.create(:location) }
 
+  #before(:each) do
+    #Location.any_instance.stub(:geocode).and_return([1,1])
+   # location.stub(:geocode).and_return([1,1])
+  #end
 
-  scenario 'user signs in and adds an location' do
-
-=begin    Geocoder.configure(:lookup => :test)
-
-    Geocoder::Lookup::Test.add_stub(
-    #"New York, NY", [
-    #  {
-        'latitude'     => 40.7143528,
-        'longitude'    => -74.0059731,
-        'address'      => 'New York, NY, USA',
-        'state'        => 'New York',
-        'state_code'   => 'NY',
-        'country'      => 'United States',
-        'country_code' => 'US'
-      }
-     ]
-    )
-=end
-
+  scenario 'user signs in and adds an location',focus: true do
+    #setup
+    #location.stub(:geocode).and_return([1,1])
     sign_in_as(user)
     visit new_location_path
 
-    fill_in 'Address', with: 'Boston, MA'
+
+
+    fill_in 'Address', with: 'New York, NY, USA'
     click_button 'Create'
 
     expect(page).to have_content('Location was successfully created')

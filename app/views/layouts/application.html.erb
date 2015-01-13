@@ -21,25 +21,7 @@
     <nav class="top-bar" data-topbar role="navigation">
     <div class="button-group">
 
-      <% if current_user %>
-         <li><%=current_user.name%></li>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "signinlinks" %></li>
-
-      <% else %>
-        <li><%= link_to 'Sign Up', new_user_registration_path, :class => "signinlinks" %></li>
-
-        <li><%= link_to 'Sign In', new_user_session_path, :class => "signinlinks" %></li>
-      <%- end -%>
-       <% if flash.any? %>
-          <li class="flash">
-            <%= flash[:notice] %>
-          </li>
-
-      <%end%>
-
-
-
-      <a href="#" data-reveal-id="firstModal" class="rules large button">RULES</a>
+     <a href="#" data-reveal-id="firstModal" class="rules large button">RULES</a>
 
       <div id="firstModal" class="reveal-modal modal-box" data-reveal>
        <div class="row">
@@ -79,20 +61,21 @@
         <a class="close-reveal-modal">&#215;</a>
       </div>
 
+      <% if current_user %>
+         <li><%=current_user.name%></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "signinlinks" %></li>
 
+      <% else %>
+        <li><%= link_to 'Sign Up', new_user_registration_path, :class => "signinlinks" %></li>
 
+        <li><%= link_to 'Sign In', new_user_session_path, :class => "signinlinks" %></li>
+      <%- end -%>
+       <% if flash.any? %>
+          <li class="flash">
+            <%= flash[:notice] %>
+          </li>
 
-
-
-
-
-
-
-
-
-
-
-
+      <%end%>
 
 
         <div class="row">
@@ -112,6 +95,8 @@
       </div>
 
       </div>
+
+
      </nav>
     </div>
 

@@ -73,6 +73,7 @@ class QuestionsetsController < ApplicationController
 
 
    end
+   @clues = @questionset.get_clue
 
   end
 

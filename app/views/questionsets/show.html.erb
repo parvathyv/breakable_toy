@@ -51,6 +51,23 @@
         </div>
       </div>
 
+      <% if @questionset.get_clue != nil %>
+      <div class="row">
+        <div class="large-12 columns blue-box">
+          <%= button_tag "CLUE 1", :class => "clue1 small button", :type => "button" %>
+          <li id ="clue1" style="color:white"><%=@questionset.get_clue[0].to_s.html_safe%></li>
+          <%= button_tag "CLUE 2", :class => "clue2 small button", :type => "button" %>
+          <% if @questionset.get_clue[1] != nil %>
+            <li id ="clue2" style="color:white"><%=@questionset.get_clue[1].html_safe%></li>
+          <%end%>
+          <%= button_tag "CLUE 3", :class => "clue3 small button", :type => "button" %>
+          <% if @questionset.get_clue[2] != nil %>
+           <li id ="clue3" style="color:white"><%=@questionset.get_clue[2].html_safe%></li>
+          <%end%>
+        </div>
+      </div>
+      <%end%>
+
 
     </section>
 

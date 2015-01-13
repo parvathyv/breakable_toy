@@ -54,6 +54,7 @@ group :test do
   gem 'vcr'
   gem 'fakeweb'
   gem 'capybara-mechanize'
+  gem 'mocha'
 end
 
 gem 'rspec-rails', group: [:development, :test]

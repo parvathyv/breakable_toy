@@ -34,7 +34,7 @@ class HuntsplayedusersController < ApplicationController
       maxquestion_no = Huntsplayeduser.hunt_check(@questionset.question_no,@hunt.id)
 
       if maxquestion_no.question_no == @questionset.question_no - 1
-         binding.pry
+
          @msg = @questionset.check_answer(params[:huntsplayeduser][:address])
           if !@msg.include?'Sorry'
             @flm = 1
@@ -67,7 +67,7 @@ class HuntsplayedusersController < ApplicationController
           end
           else
           @prize = 1
-           binding.pry
+
           redirect_to root_path, notice: 'You are done ! Congrats'
         end
       else

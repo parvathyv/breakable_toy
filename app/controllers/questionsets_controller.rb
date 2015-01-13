@@ -25,7 +25,7 @@ class QuestionsetsController < ApplicationController
     @questionset = Questionset.find(params[:id])
     @itinerary =['You have to play']
     @huntsplayed = Huntsplayeduser.if_exists?(params[:hunt_id], session.id, current_user.id)
-    binding.pry
+
     if @huntsplayed.empty? == false && @huntsplayed.count < 5
       @itinerary = @huntsplayed.each{|hunt| hunt}
 

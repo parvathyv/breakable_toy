@@ -17,9 +17,9 @@
 require 'coveralls'
 require 'capybara/mechanize'
 
-Spec::Runner.configure do |config|
-  config.mock_with :mocha
-end
+#Spec::Runner.configure do |config|
+#  config.mock_with :mocha
+#end
 
 Coveralls.wear!('rails')
 RSpec.configure do |config|

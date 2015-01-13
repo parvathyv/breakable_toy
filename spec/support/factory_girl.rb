@@ -10,7 +10,7 @@ FactoryGirl.define do
   end
 
   factory :location do
-    sequence(:address) { |n| "#{n}Seattle, WA"}
+    sequence(:address) { |n| "#{n}New York, NY, USA"}
   end
 
   factory :hunt do
@@ -24,8 +24,7 @@ FactoryGirl.define do
   factory :questionset do
     sequence(:question) { |n| "#{n}What is the oldest public garden in the US"}
     address "King's Chapel, Boston, MA"
-    latitude 41.9990
-    longitude 119.2378
+
     question_no 1
 
 

@@ -19,7 +19,7 @@ class HuntsplayedusersController < ApplicationController
     @flm = 0
     @is_order = false
     # check if hunt exists in table
-
+    binding.pry
 
     # if maxqno is 1 less than current qno, add the record
     # if not, tell the user not to cheat
@@ -92,7 +92,7 @@ class HuntsplayedusersController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def huntsplayeduser_params
 
-   params.require(:huntsplayeduser).permit(:hunt_id, :user_id, :question_no, :address, :user_session_id)
+   params.require(:huntsplayeduser).permit(:hunt_id, :user_id, :question_no,:user_session_id)
   end
 
 

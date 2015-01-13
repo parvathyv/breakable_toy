@@ -16,8 +16,8 @@ To be done
 3. Basic Unit tests
 4. Nokogiri for wiki
 (5. omniauth google)
-4. aws, carrierwave
-6. itinerary with D3
+4. carrierwave
+6. D3 dynamic
 7. dashboard of hunts completed and created
 8. parallax scrolling integration
 9. front end

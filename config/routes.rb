@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   resources :questionsets, only: [:create, :index, :show, :new, :update, :edit] do
     resources :huntsplayedusers, only: [:create, :index, :show, :new]
   end
- # resources :users
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }, except: [:destroy]
+  resources :users, only: [:index]
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" },
+  except: [:destroy]
 
 end

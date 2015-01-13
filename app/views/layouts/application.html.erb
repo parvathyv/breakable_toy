@@ -9,10 +9,10 @@
 
   <title><%= content_for?(:title) ? yield(:title) : "Quest" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
 
    <section class="signin">
@@ -64,11 +64,12 @@
       <% if current_user %>
          <li><%=current_user.name%></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "signinlinks" %></li>
-
+         <li><%= link_to 'Dashboard', users_path, :class => "signinlinks" %></li>
       <% else %>
         <li><%= link_to 'Sign Up', new_user_registration_path, :class => "signinlinks" %></li>
 
         <li><%= link_to 'Sign In', new_user_session_path, :class => "signinlinks" %></li>
+
       <%- end -%>
        <% if flash.any? %>
           <li class="flash">

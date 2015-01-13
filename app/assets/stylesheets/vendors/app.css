@@ -8,6 +8,9 @@ body {
     list-style-type: none
 
 }
+#collapsibletree{
+    font-family:'Poiret-One';
+}
 
 .blankit{
 background-color:transparent;

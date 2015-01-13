@@ -9,9 +9,9 @@ class Huntsplayeduser < ActiveRecord::Base
 
   end
 
-  def self.if_exists?(hunt_id, usid)
+  def self.if_exists?(hunt_id, usid, uid)
 
-    where("hunt_id=? and user_session_id=?" , hunt_id, usid)
+    where("hunt_id=? and user_session_id=? and user_id=? and question_no < 6 " , hunt_id, usid, uid)
   end
 
 

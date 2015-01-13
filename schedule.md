@@ -17,7 +17,6 @@ To be done
 4. Nokogiri for wiki
 (5. omniauth google)
 4. aws, carrierwave
-(5. email)
 6. itinerary with D3
 7. dashboard of hunts completed and created
 8. parallax scrolling integration

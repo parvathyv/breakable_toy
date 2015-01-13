@@ -9,6 +9,11 @@ body {
 
 }
 
+.column.large-centered {
+margin-left: auto;
+margin-right: auto;
+float: none !important; }
+
 .italictext{
     font-style:italic;
     font-size:1em;
@@ -155,7 +160,7 @@ font-weight:900;}
 .black-box h3{font-family:'Poiret One';font-weight:bold;color:white;font-size:1.2em;}
 .blue-box{background-color:transparent;padding:20px;font-weight:900;}
 .blue-box h3{font-family:'Poiret One';font-weight:bold;color:white;}
-#inputloc .text_boxes{border-radius:5px;width:500px;}
+#inputloc .text_boxes{border-radius:5px;}
 
 .black-box p{font-weight:200;}
 .secondary.small.button{font-family:'Poiret One';font-size:1em;color:white;

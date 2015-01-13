@@ -15,7 +15,7 @@
   <div class="row">
     <div class="large-12 columns blue-box">
       <h3>Choose your location</h3>
-        <ul class="side-nav">
+       <ul class="large-block-grid-5">
           <%@locations.each do|loc|%>
             <li><%= link_to "#{loc.address.split(',').first}", location_path(loc.id) %></li>
           <%end%>
@@ -24,5 +24,7 @@
     </div>
 
   </div>
+
+
 
 

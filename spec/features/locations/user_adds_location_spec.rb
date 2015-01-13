@@ -18,13 +18,11 @@ feature 'user adds a location', %Q{
    # location.stub(:geocode).and_return([1,1])
   #end
 
-  scenario 'user signs in and adds an location',focus: true do
+  scenario 'user signs in and adds an location' do
     #setup
     #location.stub(:geocode).and_return([1,1])
     sign_in_as(user)
     visit new_location_path
-
-
 
     fill_in 'Address', with: 'New York, NY, USA'
     click_button 'Create'

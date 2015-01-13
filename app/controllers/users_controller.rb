@@ -4,19 +4,17 @@ before_action :authenticate_user!
   # GET /users
   def index
     @users = User.all
-     @user = current_user
-
+    @user = current_user
     @hunts_owned = @user.hunts
-
-
-
+    binding.pry
+   # @hunts_completed = Huntsplayeduser.where("user_id=?",current_user.id).group(:hunt_id).count(:id)
+   @hunts_completed = Huntsplayeduser.find_hunts(@user.id)
 
   end
 
   # GET /users/1
   def show
-   # @user = User.find(params[:id])
-
+   @user = User.find(params[:id])
   end
 
 

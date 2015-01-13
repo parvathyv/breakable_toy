@@ -19,7 +19,7 @@ class HuntsplayedusersController < ApplicationController
     @flm = 0
     @is_order = false
     # check if hunt exists in table
-    binding.pry
+
 
     # if maxqno is 1 less than current qno, add the record
     # if not, tell the user not to cheat

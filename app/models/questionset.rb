@@ -43,8 +43,11 @@ class Questionset < ActiveRecord::Base
         @nonmatch = 'dist'
       end
     else
-      if self.address.include? address
-        binding.pry
+      correctanswer = self.address.upcase.split(',').first
+      checkanswer = address.upcase.split(',').first
+
+      if (correctanswer.include? checkanswer) || (checkanswer.include? correctanswer)
+
         flag = 1
       else
         @nonmatch = 'address'

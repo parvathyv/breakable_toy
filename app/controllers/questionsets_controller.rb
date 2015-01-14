@@ -2,6 +2,8 @@ class QuestionsetsController < ApplicationController
   before_action :authenticate_user!, :only => [:show, :edit, :update, :destroy]
   # GET /quizzes
   def index
+
+
     @my_hash = {"name"=>"Cities",
       "children"=>[{"name"=>"Boston",
       "children"=>[{"name"=>"Freedom Trail",
@@ -11,6 +13,12 @@ class QuestionsetsController < ApplicationController
       {"name"=>"Bunker Hill", "size"=>743}]},
       {"name"=>"Eat Boston", "children"=>[{"name"=>"Wagamama", "size"=>3534}, {"name"=>"Dumpling King", "size"=>5731}]},
       {"name"=>"Beantown Sports", "children"=>[{"name"=>"Fenway", "size"=>7074}]}]}]}
+
+
+
+
+
+
 
     respond_to do |format|
       format.html { render :index }

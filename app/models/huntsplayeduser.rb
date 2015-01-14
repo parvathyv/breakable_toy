@@ -5,9 +5,9 @@ class Huntsplayeduser < ActiveRecord::Base
 
 
 
-  def self.hunt_check(qno, hunt_id)
+  def self.hunt_check(qno, hunt_id, usid)
 
-    where("question_no <= ? and hunt_id=?", qno, hunt_id).last
+    where("question_no <= ? and hunt_id=? and user_session_id=?", qno, hunt_id,usid).last
 
   end
 

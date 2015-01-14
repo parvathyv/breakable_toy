@@ -31,7 +31,7 @@ class HuntsplayedusersController < ApplicationController
 
 
     if @huntcheck.empty? == false
-      maxquestion_no = Huntsplayeduser.hunt_check(@questionset.question_no,@hunt.id)
+      maxquestion_no = Huntsplayeduser.hunt_check(@questionset.question_no,@hunt.id, session.id)
 
       if maxquestion_no.question_no == @questionset.question_no - 1
 
@@ -92,7 +92,7 @@ class HuntsplayedusersController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def huntsplayeduser_params
 
-   params.require(:huntsplayeduser).permit(:hunt_id, :user_id, :question_no,:user_session_id)
+   params.require(:huntsplayeduser).permit(:hunt_id, :user_id, :address, :question_no,:user_session_id)
   end
 
 

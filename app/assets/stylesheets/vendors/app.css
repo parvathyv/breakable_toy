@@ -121,6 +121,9 @@ li {
 #clue3{
     display:none;
 }
+.bkgnd{
+    display:none;
+}
 
 #slideshow > #picOne, #picTwo {
     position: absolute;
@@ -217,9 +220,7 @@ margin-left:-5px;  }
 text-align:center;box-shadow:0 0 0;}
 .button:hover{color:rgba(255,255,255,0.7);
 background-color:transparent;}footer p,footer a{font-size:14px;}
-.hero{height:100%;
-background-image:url("../img4.png");
-background-size:cover;box-shadow:inset 0px 0px 0 2000px rgba(0,0,0,0.2);}
+
 .signin .main-wrapper .top-bar{background-color:#071665;border:1px solid rgba(0,0,175,0.75); }
 .signin{padding-bottom:50px;height:100%;
 background-color:#071665;
@@ -231,6 +232,14 @@ background-size:cover;}
 .side-nav li{
     margin-top:-10%;
 }
+
+.whyme{
+    position:absolute;
+    z-index: 1;
+    background-color:transparent;
+}
+
+
 .footer_social{margin-left:90%;
 background-color:#071665;
 background-size:cover;box-shadow:inset 0px 0px 0 2000px rgba(0,0,0,0.2);}

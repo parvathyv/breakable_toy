@@ -1,7 +1,7 @@
-$(document).ready(function() { 
-   
+$(document).ready(function() {
+
 $('#slideshow > div:gt(0)').hide();
-setInterval(function() { 
+setInterval(function() {
   $('#slideshow > div:first')
     .fadeOut(1000)
     .next()
@@ -24,6 +24,6 @@ $('.clue3.small.button').click(function(){
     $('#clue3').toggle("slow");
 });
 
-
+ $(".bkgnd").delay(1000).fadeIn(4000);
 
 });

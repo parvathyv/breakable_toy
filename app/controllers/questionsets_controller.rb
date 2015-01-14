@@ -124,7 +124,7 @@ class QuestionsetsController < ApplicationController
 
     @hunt = Hunt.find(params[:hunt_id])
     @questionset = Questionset.find(params[:id])
-    @questionset.update(quiz_params)
+    @questionset.update(questionset_params)
 
     redirect_to @hunt, notice: 'Questionset was successfully updated'
 

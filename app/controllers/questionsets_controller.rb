@@ -29,7 +29,7 @@ class QuestionsetsController < ApplicationController
     if @huntsplayed.empty? == false && @huntsplayed.count < 5
       @itinerary = @huntsplayed.each{|hunt| hunt}
 
-      maxquestion_no = Huntsplayeduser.hunt_check(@huntsplayed.last.question_no, params[:hunt_id])
+      maxquestion_no = Huntsplayeduser.hunt_check(@huntsplayed.last.question_no, params[:hunt_id], session.id)
 
       if maxquestion_no.question_no < 6
 
@@ -40,16 +40,21 @@ class QuestionsetsController < ApplicationController
         else
           if @questionset.question_no - maxquestion_no.question_no > 1 || maxquestion_no.question_no > @questionset.question_no
 
-            @questionset = Questionset.where("question_no=?", maxquestion_no.question_no + 1).first
+            @questionset = Questionset.where("question_no=? and hunt_id=?", maxquestion_no.question_no + 1, params[:hunt_id]).first
 
             @huntsplayed = Huntsplayeduser.new
-            @msg = "Please play in order"
+            if @questionset.question_no - maxquestion_no.question_no > 1
+              @msg = "Please play in order"
+            else
+              @msg = "Welcome back"
+            end
 
           else
 
                if @questionset.question_no - maxquestion_no.question_no == 1
 
                 @huntsplayed = Huntsplayeduser.new
+
                end
 
 

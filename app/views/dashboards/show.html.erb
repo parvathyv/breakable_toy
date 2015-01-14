@@ -1,0 +1,23 @@
+
+
+  <div class="row">
+    <div class="large-12 columns blue-box">
+      <h3>Hunts Created</h3>
+        <ul class="side-nav">
+          <%@hunts_owned.each do|hunt|%>
+            <li><%= hunt.name %></li><br>
+          <%end%>
+        </ul>
+        <h3>Hunts Played</h3>
+        <ul class="side-nav">
+          <%@hunts_completed.each do|hunt, questions|%>
+
+            <li><%= Hunt.find(hunt).name%></li><br>
+            <li><%=questions%></li><br>
+
+          <%end%>
+        </ul>
+
+    </div>
+
+  </div>

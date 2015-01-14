@@ -26,7 +26,7 @@
       <% if current_user %>
          <li><%=current_user.name%></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "signinlinks" %></li>
-         <li><%= link_to 'Dashboard', users_path, :class => "signinlinks" %></li>
+         <li><%= link_to 'Dashboard', dashboard_path(current_user), :class => "signinlinks" %></li>
           <li><%= link_to 'Home', root_path, :class => "signinlinks" %></li>
       <% else %>
         <li><%= link_to 'Sign Up', new_user_registration_path, :class => "signinlinks" %></li>

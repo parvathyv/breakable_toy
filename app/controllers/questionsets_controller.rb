@@ -2,9 +2,60 @@ class QuestionsetsController < ApplicationController
   before_action :authenticate_user!, :only => [:show, :edit, :update, :destroy]
   # GET /quizzes
   def index
+=begin
+    @locations = Location.find(1).address
+    @hunts = Location.find(1).hunts
+    #.map{|hunt| hunt.name}
+    #@questionsets = ['F1','F2','F3','F4']
+    @my_hash1 = {}
+    hash = {}
+    hash1= {}
+    arr = []
+    arr1 = []
+    arr2=[]
 
 
+    1.times do |n|
+
+      @my_hash1["name"] = @locations[n]
+
+
+    # @hunts.size.times do |n1|
+      @hunts.each do|hunt|
+        hash = {}
+        arr = []
+        hash["name"] = hunt.name
+        # @hunts[n1]
+        arr1 << hash
+
+
+        #@questionsets.size.times do |n2|
+        hunt.questionsets.each do|ques|
+          hash1={}
+          #arr = []
+          hash1["name"] = ques.address
+          #@questionsets[n2]
+          hash1["size"] = 1000 + rand(120)
+          arr << hash1
+
+         end
+         hash["children"] = arr
+         @my_hash1["children"] = arr1
+
+        end
+          # @my_hash1["children"] = hash
+
+         # binding.pry
+
+   binding.pry
+
+
+    end
+
+
+=end
     @my_hash = {"name"=>"Cities",
+
       "children"=>[{"name"=>"Boston",
       "children"=>[{"name"=>"Freedom Trail",
       "children"=>[{"name"=>"Faneiul Hall", "size"=>3938},
@@ -16,19 +67,17 @@ class QuestionsetsController < ApplicationController
 
 
 
-
-
-
-
     respond_to do |format|
       format.html { render :index }
       format.json { render json: @my_hash }
     end
+
+#binding.pry
   end
 
   # GET /quizzes/1
   def show
-
+    arr = []
     @hunt = Hunt.find(params[:hunt_id])
     @questionset = Questionset.find(params[:id])
     @itinerary =['You have to play']
@@ -36,6 +85,7 @@ class QuestionsetsController < ApplicationController
 
     if @huntsplayed.empty? == false && @huntsplayed.count < 5
       @itinerary = @huntsplayed.each{|hunt| hunt}
+      #@itinerary_array = @itinerary.each do{|iter| arr < [iter.latitude, iter.longitude]}
 
       maxquestion_no = Huntsplayeduser.hunt_check(@huntsplayed.last.question_no, params[:hunt_id], session.id)
 
@@ -142,6 +192,7 @@ class QuestionsetsController < ApplicationController
     redirect_to @hunt, notice: 'Questionset was successfully updated'
 
   end
+
 
 
 

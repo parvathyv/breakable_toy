@@ -72,20 +72,23 @@ class QuestionsetsController < ApplicationController
       format.json { render json: @my_hash }
     end
 
-#binding.pry
+
   end
 
   # GET /quizzes/1
   def show
     arr = []
     @hunt = Hunt.find(params[:hunt_id])
+
     @questionset = Questionset.find(params[:id])
     @itinerary =['You have to play']
+    @itinerary_array = [@hunt.location.latitude, @hunt.location.longitude]
     @huntsplayed = Huntsplayeduser.if_exists?(params[:hunt_id], session.id, current_user.id)
 
     if @huntsplayed.empty? == false && @huntsplayed.count < 5
       @itinerary = @huntsplayed.each{|hunt| hunt}
-      #@itinerary_array = @itinerary.each do{|iter| arr < [iter.latitude, iter.longitude]}
+
+      @itinerary_array = @itinerary.each {|iter| arr < [iter.latitude, iter.longitude]}
 
       maxquestion_no = Huntsplayeduser.hunt_check(@huntsplayed.last.question_no, params[:hunt_id], session.id)
 

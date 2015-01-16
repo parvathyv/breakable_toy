@@ -1,14 +1,14 @@
 
   <script type="text/javascript">
-    var map_array = <%= [@questionset.latitude, @questionset.longitude] %>
+    var map_array = <%= @itinerary_array %>
     var my_zoom =  <%= 13 %>
-    var mapcenterlat = <%= @questionset.latitude %>
-    var mapcenterlong = <%= @questionset.longitude %>
+    var mapcenterlat = <%= @hunt.location.latitude %>
+    var mapcenterlong = <%= @hunt.location.longitude %>
     var flag = <%= 2 %>
     var quiz_id = <%= @questionset.id %>
     var hunt_id = <%= @questionset.hunt.id %>
-  </script>
-
+    var iter = <%= @itinerary_array%>
+   </script>
 
   <div id="map_canvas" style="height:70%;width:100%"></div>
 
@@ -21,18 +21,10 @@
 
       </div>
 
-      <div class="large-4 columns ">  <br>
-       <% if @itinerary.size >= 1 %>
-         <% if @itinerary[0] = 'You have to play' %>
 
-         <%else%>
-           <% @itinerary.each_with_index do|stop, index|%>
-              <li style="line-height:4px;"><%=index+1%>. <%=stop.address.split(',').first%><li>
-            <%end%>
-          <%end%>
-       <%end%>
+
       </div>
-    </div>
+
 
     <section class="signinwhite">
 
@@ -51,24 +43,9 @@
         </div>
       </div>
 
-    <% if @questionset.get_clue != nil %>
-    <div class="row">
-      <div class="large-12 columns blue-box">
-        <%= button_tag "CLUE 1", :class => "clue1 small button", :type => "button" %>
-        <li id ="clue1" style="color:white"><%=@questionset.get_clue[0].to_s.html_safe%></li>
-        <%= button_tag "CLUE 2", :class => "clue2 small button", :type => "button" %>
-        <% if @questionset.get_clue[1] != nil %>
-          <li id ="clue2" style="color:white"><%=@questionset.get_clue[1].html_safe%></li>
-        <%end%>
-        <%= button_tag "CLUE 3", :class => "clue3 small button", :type => "button" %>
-        <% if @questionset.get_clue[2] != nil %>
-         <li id ="clue3" style="color:white"><%=@questionset.get_clue[2].html_safe%></li>
-        <%end%>
-      </div>
-    </div>
-    <%end%>
 
 
     </section>
+
 
 

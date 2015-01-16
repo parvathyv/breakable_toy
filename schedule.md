@@ -14,10 +14,10 @@ To be done
 0. Messages on the hunts being played
 1. Tests for questionsets and usersessions
 3. Basic Unit tests
-4. Nokogiri for wiki
-(5. omniauth google)
+ Nokogiri for wiki
+
 4. carrierwave
-6. D3 dynamic
+
 7. dashboard of hunts completed and created
 8. parallax scrolling integration
 9. front end

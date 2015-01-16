@@ -11,16 +11,27 @@ class Questionset < ActiveRecord::Base
 
   validates :address, presence: true
 
-
+  geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
   def next
     hunt.questionsets.where("id > ?", id).order("id ASC").first
   end
 
+
+
   def upto
 
     hunt.questionsets.where("id < ?", id).order("id ASC")
+
+  end
+
+  def uptoquestion(qno)
+
+    objarr = hunt.questionsets.where("question_no < ?", qno).order("id ASC")
+    arr = objarr.map{|x| [x.latitude, x.longitude]}
+    return arr
+
 
   end
 
@@ -143,6 +154,8 @@ class Questionset < ActiveRecord::Base
 
 
   end
+
+
 
 
 

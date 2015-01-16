@@ -14,15 +14,18 @@ Rails.application.routes.draw do
   end
 
   resources :hunts do
-    resources :questionsets, only: [:create, :index, :show, :new, :update, :edit]
+    resources :questionsets, only: [:show, :index, :new, :create, :update, :edit]
   end
 
-  resources :questionsets, only: [:create, :index, :show, :new, :update, :edit] do
+  resources :questionsets, only: [:show, :index, :create, :new, :update, :edit] do
     resources :huntsplayedusers, only: [:create, :index, :show, :new]
   end
 
+  #get '/questionsets/index'
  # resources :users, only: [:index, :show]
   resources :dashboards, only: [:show]
+  resources :trees, only: [:index]
+
 
 
 

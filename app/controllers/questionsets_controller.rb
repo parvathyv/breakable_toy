@@ -2,42 +2,36 @@ class QuestionsetsController < ApplicationController
   before_action :authenticate_user!, :only => [:show, :edit, :update, :destroy]
   # GET /quizzes
   def index
-
-
-    @my_hash = {"name"=>"Cities",
-      "children"=>[{"name"=>"Boston",
-      "children"=>[{"name"=>"Freedom Trail",
-      "children"=>[{"name"=>"Faneiul Hall", "size"=>3938},
-      {"name"=>"Boston Commons", "size"=>3812},
-      {"name"=>"King's Chapel", "size"=>6714},
-      {"name"=>"Bunker Hill", "size"=>743}]},
-      {"name"=>"Eat Boston", "children"=>[{"name"=>"Wagamama", "size"=>3534}, {"name"=>"Dumpling King", "size"=>5731}]},
-      {"name"=>"Beantown Sports", "children"=>[{"name"=>"Fenway", "size"=>7074}]}]}]}
-
-
-
-
-
+    ctr = Location.all.count
+    @my_hash1 = Location.get_tree(1)
 
 
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @my_hash }
+      format.json { render json: @my_hash1}
     end
+
+
   end
 
   # GET /quizzes/1
   def show
 
     @hunt = Hunt.find(params[:hunt_id])
+    @itinerary_array = []
+
+
     @questionset = Questionset.find(params[:id])
     @itinerary =['You have to play']
+    @itinerary_array = [@hunt.location.latitude, @hunt.location.longitude]
     @huntsplayed = Huntsplayeduser.if_exists?(params[:hunt_id], session.id, current_user.id)
 
     if @huntsplayed.empty? == false && @huntsplayed.count < 5
-      @itinerary = @huntsplayed.each{|hunt| hunt}
 
       maxquestion_no = Huntsplayeduser.hunt_check(@huntsplayed.last.question_no, params[:hunt_id], session.id)
+      @itinerary_array = @questionset.uptoquestion(maxquestion_no.question_no)
+
+
 
       if maxquestion_no.question_no < 6
 
@@ -142,6 +136,7 @@ class QuestionsetsController < ApplicationController
     redirect_to @hunt, notice: 'Questionset was successfully updated'
 
   end
+
 
 
 

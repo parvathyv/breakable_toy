@@ -3,10 +3,10 @@ class Location < ActiveRecord::Base
   has_many :hunts,  dependent:  :destroy
   has_many :users, through: :hunts
 
-  #validates :address, presence: true
-  geocoded_by :address
+  validates :address, presence: true
 
-  after_validation :geocode, :if => :address_present?
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
 
   def address_type?(address)
 

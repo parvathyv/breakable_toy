@@ -35,15 +35,16 @@ class LocationsController < ApplicationController
 
   def create
 
-    address = params[:location][:address]
-    #id = params[:location][:id]
+    params[:address] = params[:location][:address]
+    params[:id] = params[:location][:id]
 
 
-    flag = Location.new.address_type?(address)
+    flag = Location.new.address_type?(params[:address])
 
 
 
     if flag == true
+        binding.pry
       @location= Location.create(location_params)
 
       #@locations = Location.all
@@ -76,7 +77,7 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
 
 
-    @location.update(question_params)
+    @location.update(location_params)
 
 
     if @location.save

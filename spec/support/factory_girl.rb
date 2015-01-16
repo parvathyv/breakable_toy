@@ -10,7 +10,7 @@ FactoryGirl.define do
   end
 
   factory :location do
-    sequence(:address) { |n| "#{n}New York, NY, USA"}
+    #sequence(:address) { |n| "#{n}New York, NY, USA"}
   end
 
   factory :hunt do

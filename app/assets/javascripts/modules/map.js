@@ -174,7 +174,7 @@
 
     var lineSymbol = {
     path: google.maps.SymbolPath.CIRCLE,
-    scale: 4,
+    scale: 0,
     strokeColor: '#FFCC00'
     };
 
@@ -199,11 +199,9 @@
        flightPath.setMap(map);
     }
 
-
-          animateCircle();
-
-
-   //animateCircle();
+    if (map_array.length == 4){
+         // animateCircle();
+    }
 
 
 }
@@ -233,7 +231,7 @@
 
 function animateCircle() {
     var count = 0;
-    window.setInterval(function() {
+   window.setInterval(function() {
       count = (count + 1) % 200;
 
       var icons = flightPath.get('icons');

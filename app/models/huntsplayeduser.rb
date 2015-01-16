@@ -22,4 +22,6 @@ class Huntsplayeduser < ActiveRecord::Base
 
   end
 
+
+
 end

@@ -18,6 +18,7 @@
        <ul class="large-block-grid-5">
           <%@locations.each do|loc|%>
             <li><%= link_to "#{loc.address.split(',').first}", location_path(loc.id) %></li>
+
           <%end%>
         </ul>
 

@@ -11,16 +11,27 @@ class Questionset < ActiveRecord::Base
 
   validates :address, presence: true
 
-
+  geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
   def next
     hunt.questionsets.where("id > ?", id).order("id ASC").first
   end
 
+
+
   def upto
 
     hunt.questionsets.where("id < ?", id).order("id ASC")
+
+  end
+
+  def uptoquestion(qno)
+
+    objarr = hunt.questionsets.where("question_no < ?", qno).order("id ASC")
+    arr = objarr.map{|x| [x.latitude, x.longitude]}
+    return arr
+
 
   end
 
@@ -145,60 +156,6 @@ class Questionset < ActiveRecord::Base
   end
 
 
-  def self.get_tree(qid)
-    @hunt = Questionset.find(qid).hunts
-    @locations = @hunts.locations.first.address
-    @hunts = @hunts.locations.first.hunts
-    #.map{|hunt| hunt.name}
-    #@questionsets = ['F1','F2','F3','F4']
-    @my_hash1 = {}
-    hash = {}
-    hash1= {}
-    arr = []
-    arr1 = []
-    arr2=[]
-
-
-    1.times do |n|
-
-      @my_hash1["name"] = @locations[n]
-
-
-    # @hunts.size.times do |n1|
-      @hunts.each do|hunt|
-        hash = {}
-        arr = []
-        hash["name"] = hunt.name
-        # @hunts[n1]
-        arr1 << hash
-
-
-        #@questionsets.size.times do |n2|
-        hunt.questionsets.each do|ques|
-          hash1={}
-          #arr = []
-          hash1["name"] = ques.address
-          #@questionsets[n2]
-          hash1["size"] = 1000 + rand(120)
-          arr << hash1
-
-         end
-         hash["children"] = arr
-         @my_hash1["children"] = arr1
-
-        end
-          # @my_hash1["children"] = hash
-
-         # binding.pry
-
-
-
-
-    end
-
-
-
-  end
 
 
 

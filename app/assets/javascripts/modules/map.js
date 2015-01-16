@@ -129,21 +129,12 @@
   map.mapTypes.set('map_style', styledMap);
   map.setMapTypeId('map_style');
 
-  if (flag === 1 || iter.size > 0) {
-     if iter.size > 0 {
-
-     }
-     else{
-
-     }
+  if (flag === 1 || flag === 2) {
 
    for (var i = 0; i < map_array.length; i++){
-      if iter.size > 0 {
-        var location = new google.maps.LatLng(iter[i][0], iter[i][1]);
-      }
-      else{
-         var location = new google.maps.LatLng(map_array[i][0], map_array[i][1]);s
-      }
+
+        var location = new google.maps.LatLng(map_array[i][0], map_array[i][1]);
+
 
 
       var marker = new google.maps.Marker({

@@ -1,3 +1,10 @@
-<div id="collapsibletree1"></div>
+  <script type="text/javascript">
+    var map_array = <%= @itinerary_array %>
+    var my_zoom =  <%= 14 %>
+    var mapcenterlat = <%= @hunt.location.latitude %>
+    var mapcenterlong = <%= @hunt.location.longitude %>
+    var flag = <%= 2 %>
 
-<%= javascript_include_tag "collapsible" %>
+   </script>
+
+  <div id="map_canvas" style="height:70%;width:100%"></div>

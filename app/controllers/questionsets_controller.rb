@@ -4,6 +4,7 @@ class QuestionsetsController < ApplicationController
   def index
     ctr = Location.all.count
     @my_hash1 = Location.get_tree(1)
+    #@my_hash1 = Location.get_tree1
 
 
     respond_to do |format|
@@ -30,8 +31,6 @@ class QuestionsetsController < ApplicationController
 
       maxquestion_no = Huntsplayeduser.hunt_check(@huntsplayed.last.question_no, params[:hunt_id], session.id)
       @itinerary_array = @questionset.uptoquestion(maxquestion_no.question_no)
-
-
 
       if maxquestion_no.question_no < 6
 

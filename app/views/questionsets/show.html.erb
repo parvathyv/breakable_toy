@@ -7,7 +7,7 @@
     var flag = <%= 2 %>
     var quiz_id = <%= @questionset.id %>
     var hunt_id = <%= @questionset.hunt.id %>
-    var iter = <%= @itinerary_array%>
+
    </script>
 
   <div id="map_canvas" style="height:70%;width:100%"></div>
@@ -35,7 +35,10 @@
           <%= form_for [@questionset, @huntsplayed] do |f| %>
             <li><%= f.label :address %></li>
             <li><%= f.text_field :address, placeholder: "Address", :class => "address"%></li>
+            <% if flash[:notice] != "You are done ! Congrats" %>
+
             <%= submit_tag "Answer", :class => "answer large button" %>
+            <%end%>
           <% end %>
 
 

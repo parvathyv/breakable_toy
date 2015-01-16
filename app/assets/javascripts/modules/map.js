@@ -153,6 +153,7 @@
     }
 
 
+
     function createinfoWindow(marker, contentString){
 
     var infowindow = new google.maps.InfoWindow({
@@ -164,6 +165,46 @@
     infowindow.open(map,marker);
     });
   }
+
+
+    if (flag === 2) {
+
+
+    var flightPlanCoordinates = [map_array.length];
+
+    var lineSymbol = {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 4,
+    strokeColor: '#FFCC00'
+    };
+
+    for (var m = 0; m < map_array.length; m++){
+
+       flightPlanCoordinates[m] = new google.maps.LatLng(map_array[m][0], map_array[m][1]);
+    }
+
+
+      var flightPath = new google.maps.Polyline({
+          path: flightPlanCoordinates,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2,
+          icons: [{
+      icon: lineSymbol,
+      offset: '100%'
+    }]
+
+        });
+       flightPath.setMap(map);
+    }
+
+
+          animateCircle();
+
+
+   //animateCircle();
+
 
 }
 
@@ -188,6 +229,17 @@
     map: map
   });
 
+}
+
+function animateCircle() {
+    var count = 0;
+    window.setInterval(function() {
+      count = (count + 1) % 200;
+
+      var icons = flightPath.get('icons');
+      icons[0].offset = (count / 2) + '%';
+      flightPath.set('icons', icons);
+  }, 30);
 }
 
 

@@ -4,15 +4,13 @@ class TreesController < ApplicationController
 
   # GET /users
   def index
-   @my_hash1 = Location.get_tree(params[:format])
-    respond_to do |format|
-      format.html { render :index}
-      format.json { render json: @my_hash1 }
-    end
+   binding.pry
+   # @questionset =
+   # @itinerary_array = @questionset.uptoquestion(maxquestion_no.question_no)
 
   end
 
-  # GET /users/1
+
   def show
 
 

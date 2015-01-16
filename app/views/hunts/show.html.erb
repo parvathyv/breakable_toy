@@ -26,9 +26,9 @@
         <div class="row">
 
         <%@hunt.questionsets.each do|question|%>
-         <div class="large-3 columns" style="border:1px;border-color:white">
-        <li><%=question.question_no%>.  <%=question.question.capitalize%></li>
-        <li><%=link_to "Edit question", edit_hunt_questionset_path(@hunt, question)%>
+         <div class="large-5 columns question-boxes hvr-float">
+        <li class="question-color"><%=question.question_no%>.  <%=question.question.capitalize%></li>
+        <li class="lineborder"><%=link_to "Edit question", edit_hunt_questionset_path(@hunt, question)%>
         </li>
 
         </div>

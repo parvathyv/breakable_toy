@@ -28,7 +28,7 @@ class Questionset < ActiveRecord::Base
 
   def uptoquestion(qno)
 
-    objarr = hunt.questionsets.where("question_no < ?", qno).order("id ASC")
+    objarr = hunt.questionsets.where("question_no <= ?", qno).order("id ASC")
     arr = objarr.map{|x| [x.latitude, x.longitude]}
     return arr
 
@@ -154,9 +154,6 @@ class Questionset < ActiveRecord::Base
 
 
   end
-
-
-
 
 
 

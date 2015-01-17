@@ -9,6 +9,8 @@ body {
 
 }
 
+.five .row .five { width: 120%; }
+
 .column.large-centered {
 margin-left: auto;
 margin-right: auto;

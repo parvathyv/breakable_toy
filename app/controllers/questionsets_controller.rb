@@ -2,6 +2,7 @@ class QuestionsetsController < ApplicationController
   before_action :authenticate_user!, :only => [:show, :edit, :update, :destroy]
   # GET /quizzes
   def index
+    binding.pry
     ctr = Location.all.count
     @my_hash1 = Location.get_tree(1)
     #@my_hash1 = Location.get_tree1
@@ -35,6 +36,7 @@ class QuestionsetsController < ApplicationController
       if maxquestion_no.question_no < 6
 
         if @questionset.question_no == maxquestion_no.question_no
+
           @questionset = @questionset.next
           @huntsplayed = Huntsplayeduser.new
 
@@ -45,9 +47,10 @@ class QuestionsetsController < ApplicationController
 
             @huntsplayed = Huntsplayeduser.new
             if @questionset.question_no - maxquestion_no.question_no > 1
+
               @msg = "Please play in order"
             else
-              @msg = "Welcome back"
+              @msg = "Try again"
             end
 
           else
@@ -67,8 +70,8 @@ class QuestionsetsController < ApplicationController
    else
     if @huntsplayed.count == 5
 
+        redirect_to root_path, notice: 'You already played this hunt this session, sign out if you want to repeat'
 
-      redirect_to root_path, notice: 'You already played this hunt this session, sign out if you want to repeat'
     else
       @huntsplayed = Huntsplayeduser.new
 

@@ -40,6 +40,7 @@ class HuntsplayedusersController < ApplicationController
             @flm = 1
 
             @is_order = true
+
           end
       end
     end
@@ -61,14 +62,14 @@ class HuntsplayedusersController < ApplicationController
         if @huntsplayeduser.question_no < 5
           @prize = 0
           if @questionset.next
-            redirect_to hunt_questionset_path(@hunt, @questionset.next), notice: 'Huntsplayeduser was successfully created.'
+            redirect_to hunt_questionset_path(@hunt, @questionset.next), notice: 'Correct, move on!'
           else
             redirect_to root_path, notice: 'Hunt incomplete'
           end
           else
           @prize = 1
 
-          redirect_to root_path, notice: 'You are done ! Congrats'
+          redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'You are done ! Congrats'
         end
       else
 
@@ -76,7 +77,8 @@ class HuntsplayedusersController < ApplicationController
       end
 
     else
-        redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'Please play in order'
+
+        redirect_to hunt_questionset_path(@hunt, @hunt.questionsets.first), notice: 'Please play in order'
     end
 
 

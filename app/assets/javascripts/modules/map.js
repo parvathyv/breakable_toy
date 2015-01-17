@@ -124,7 +124,7 @@
 
   var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
-  var icon = 'http://localhost:3000/assets/search.png';
+  //var icon = 'search.png';
 
   map.mapTypes.set('map_style', styledMap);
   map.setMapTypeId('map_style');
@@ -139,8 +139,8 @@
 
       var marker = new google.maps.Marker({
         position: location,
-        map: map,
-        icon: icon
+        map: map
+       // icon: icon
 
       });
 

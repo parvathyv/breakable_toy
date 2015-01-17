@@ -55,7 +55,7 @@ class Location < ActiveRecord::Base
         hunt.questionsets.each do|ques|
           hash1={}
           #arr = []
-          hash1["name"] = ques.address
+          hash1["name"] = ques.question
           #@questionsets[n2]
           hash1["size"] = 1000 + rand(120)
           arr << hash1

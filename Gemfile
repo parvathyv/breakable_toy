@@ -28,6 +28,10 @@ gem 'omniauth-github'
 gem 'd3-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog'
+group :development, :test do
+  gem 'dotenv-rails'
+end
 
 
 # Use ActiveModel has_secure_password

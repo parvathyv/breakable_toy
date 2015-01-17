@@ -73,12 +73,12 @@ class HuntsplayedusersController < ApplicationController
         end
       else
 
-        redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'Try again'
+        redirect_to hunt_questionset_path(@hunt, @questionset), notice: @msg
       end
 
     else
 
-        redirect_to hunt_questionset_path(@hunt, @hunt.questionsets.first), notice: 'Please play in order'
+        redirect_to hunt_questionset_path(@hunt, @hunt.questionsets.first), notice: @msg
     end
 
 

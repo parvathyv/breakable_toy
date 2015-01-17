@@ -2,9 +2,15 @@ class QuestionsetsController < ApplicationController
   before_action :authenticate_user!, :only => [:show, :edit, :update, :destroy]
   # GET /quizzes
   def index
-    binding.pry
-    ctr = Location.all.count
-    @my_hash1 = Location.get_tree(1)
+
+    hunts = Hunt.all
+
+    locs = hunts.map{|hunt| hunt.location_id}.uniq!
+
+    index = locs.sample
+
+
+    @my_hash1 = Location.get_tree(index)
     #@my_hash1 = Location.get_tree1
 
 

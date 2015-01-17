@@ -6,58 +6,48 @@
 
     width: 100%">-->
 
-
-
-
 <div class="row">
   <div class="large-6 large-offset-3 columns medium-6 medium-offset-3 columns small-6 small-offset-3 columns about-box" style="z-index:1">
     <div class="title-box">
-         <h3>game title</h3>
+        <h3>game title</h3>
     </div>
   </div>
 </div>
 
- <div class="row">
-    <div class="large-4 large-offset-4 columns medium-4 medium-offset-4 columns small-4 small-offset-4 columns about-box">
-      <div class="blue-box" style="z-index:1">
-        <div class="button-group">
+<div class="row">
+  <div class="large-4 large-offset-4 columns medium-4 medium-offset-4 columns small-4 small-offset-4 columns about-box">
+    <div class="blue-box" style="z-index:1">
+      <div class="button-group">
+
         <% if user_signed_in? == false %>
-             <li style="margin-left:-10%;" class="github large button"><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></li><br>
+            <li style="margin-left:-10%;" class="github large button"><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></li><br>
             <li style="margin-left:-10%;"class="github large button"><%= link_to "Sign in with Google", new_user_session_path%></li> <br>
-            </div>
+
         <%else%>
            <li>What is your path this iteration ? </li>
         <%end%>
+
       </div>
     </div>
   </div>
 </div>
 
-  <div class="row">
-    <div class="large-6 large-offset-3 columns medium-6 medium-offset-3 columns small-6 small-offset-3 columns about-box" style="z-index:1">
-
-          <div class="button-group">
-          <li class="secondary large button"><%= link_to "EXPERIENCE", locations_path%></li>
-          <li class="secondary large button"><%= link_to "CREATE", new_location_path%></li>
-
-      </div>
-    </div>
-  </div>
-   <br>
-   <br>
-
-<% if @prize == 1 %>
 <div class="row">
-    <div class="large-3 large-offset-5 columns" style="z-index:1">
+  <div class="large-6 large-offset-3 columns medium-6 medium-offset-3 columns small-6 small-offset-3 columns about-box" style="z-index:1">
 
-      <a style ="font-family:'Poiret One';color:orange;font-size:1.2em;margin-left:7%" data-dropdown="drop2" aria-controls="drop2" aria-expanded="false"> YOU WON </a>
-      <div id="drop2" data-dropdown-content class="f-dropdown content mega" aria-hidden="true" tabindex="-1">
-      <li>  </li>
-      <li> </li>
-      </div>
+    <div class="button-group">
+    <li class="secondary large button"><%= link_to "EXPERIENCE", locations_path%></li>
+    <li class="secondary large button"><%= link_to "CREATE", new_location_path%></li>
+
     </div>
   </div>
- <%end%>
+</div>
+
+<br>
+<br>
+
+
+
 
 
 

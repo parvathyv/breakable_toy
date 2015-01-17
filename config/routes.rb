@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   #get '/questionsets/index'
  # resources :users, only: [:index, :show]
   resources :dashboards, only: [:show]
-  resources :trees, only: [:index]
+  resources :trees, only: [:show]
 
 
 

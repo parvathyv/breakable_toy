@@ -1,8 +1,8 @@
 //= require d3
 
 var m = [20, 120, 20, 120],
-    w = 1280 - m[1] - m[3],
-    h = 800 - m[0] - m[2],
+    w = 900 - m[1] - m[3],
+    h = 600 - m[0] - m[2],
     i = 0,
     root;
 
@@ -60,11 +60,15 @@ function update(source) {
   var nodeEnter = node.enter().append("svg:g")
       .attr("class", "node")
       .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-      .on("click", function(d) { toggle(d); update(d); });
+      .style("fill","orange")
+      .style("font-size","12px")
+
+      .on("click", function(d) { toggle(d); update(d); })
+
 
   nodeEnter.append("svg:circle")
       .attr("r", 1e-6)
-      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+      .style("fill", function(d) { return d._children ? "orange" : "blue"; });
 
   nodeEnter.append("svg:text")
       .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
@@ -79,8 +83,8 @@ function update(source) {
       .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
 
   nodeUpdate.select("circle")
-      .attr("r", 4.5)
-      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+      .attr("r", 6)
+      .style("fill", function(d) { return d._children ? "white" : "blue"; });
 
   nodeUpdate.select("text")
       .style("fill-opacity", 1);

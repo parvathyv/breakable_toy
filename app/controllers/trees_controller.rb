@@ -2,16 +2,14 @@
 class TreesController < ApplicationController
   before_action :authenticate_user!
 
-  # GET /users
-  def index
-   binding.pry
-   # @questionset =
-   # @itinerary_array = @questionset.uptoquestion(maxquestion_no.question_no)
-
-  end
-
-
   def show
+
+    @hunt = Hunt.find(params[:id])
+
+    @itinerary_array = @hunt.questionsets.first.uptoquestion(5)
+    @places_array = @hunt.questionsets.map{|ques| ques.address}
+    #binding.pry
+
 
 
   end

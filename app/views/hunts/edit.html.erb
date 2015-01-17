@@ -1,10 +1,7 @@
-
 <br>
 <div class="row">
   <div class="large-8 columns blue-box">
-   <%= form_for(@hunt, :url => {:action => 'update', :id => @hunt.id}) do |f| %>
-
-
+    <%= form_for(@hunt, :url => {:action => 'update', :id => @hunt.id}) do |f| %>
       <div class="row">
         <div class="large-8 columns blue-box">
           <%= f.label :name %><br>
@@ -20,7 +17,6 @@
         </div>
       </div>
     <% end %>
-
   </div>
 </div>
 

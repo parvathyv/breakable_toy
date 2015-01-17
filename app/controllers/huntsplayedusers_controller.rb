@@ -69,16 +69,16 @@ class HuntsplayedusersController < ApplicationController
           else
           @prize = 1
 
-          redirect_to root_path, notice: 'You are done ! Congrats'
+          redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'You are done ! Congrats'
         end
       else
 
-        redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'Try again'
+        redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'Please play in order'
       end
 
     else
 
-        redirect_to hunt_questionset_path(@hunt, @hunt.questionsets.first), notice: 'Please play in order'
+        redirect_to hunt_questionset_path(@hunt, @hunt.questionsets.first), notice: @msg
     end
 
 

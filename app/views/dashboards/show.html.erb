@@ -1,26 +1,26 @@
+<div class="row">
+  <div class="large-12 columns blue-box">
 
-
-  <div class="row">
-    <div class="large-12 columns blue-box">
     <% unless current_user.blank? %>
       <%= image_tag(current_user.profile_photo) %>
     <% end %>
-      <h3>Hunts Created</h3>
-        <ul class="side-nav">
-          <%@hunts_owned.each do|hunt|%>
-            <li><%= hunt.name %></li><br>
-          <%end%>
-        </ul>
-        <h3>Hunts Played</h3>
-        <ul class="side-nav">
-          <%@hunts_completed.each do|hunt, questions|%>
 
-            <li><%= Hunt.find(hunt).name%></li><br>
-            <li><%=questions%></li><br>
+    <h3>Hunts Created</h3>
 
-          <%end%>
-        </ul>
+    <ul class="side-nav">
+      <%@hunts_owned.each do|hunt|%>
+        <li><%= hunt.name %></li><br>
+      <%end%>
+    </ul>
 
-    </div>
+    <h3>Hunts Played</h3>
+
+    <ul class="side-nav">
+      <%@hunts_completed.each do|hunt, questions|%>
+        <li><%= Hunt.find(hunt).name%></li><br>
+        <li><%=questions%></li><br>
+      <%end%>
+    </ul>
 
   </div>
+</div>

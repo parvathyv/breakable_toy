@@ -2,7 +2,8 @@ class Location < ActiveRecord::Base
 
   has_many :hunts,  dependent:  :destroy
   has_many :users, through: :hunts
-
+  validates :latitude, numericality: true
+  validates :longitude, numericality: true
   validates :address, presence: true
 
   geocoded_by :address
@@ -21,6 +22,7 @@ class Location < ActiveRecord::Base
     end
     flag
   end
+
 
 
   def self.get_tree(lid)
@@ -52,7 +54,11 @@ class Location < ActiveRecord::Base
         arr1 << hash
 
         #@questionsets.size.times do |n2|
-        hunt.questionsets.each do|ques|
+        sample_order = hunt.questionsets.shuffle
+
+
+       # hunt.questionsets.each do|ques|
+          sample_order.each do|ques|
           hash1={}
           #arr = []
           hash1["name"] = ques.address
@@ -70,69 +76,6 @@ class Location < ActiveRecord::Base
 
 
 
-
-    end
-
-  @my_hash1
-
-  end
-
-
-  def self.get_tree1
-    @locations = Locations.all
-   # @hunts = Location.find(lid).hunts
-
-
-
-
-    @my_hash1 = {}
-    hash = {}
-    hash1= {}
-    hashmain={}
-    arr = []
-    arr1 = []
-    arr2=[]
-
-
-    1.times do |n|
-
-      @my_hash1["name"] = 'Locations'
-
-
-    # @hunts.size.times do |n1|
-      @locations.each do|loc|
-        hash = {}
-        arr = []
-        hash["name"] = loc.address
-        # @hunts[n1]
-        arr1 << hash
-
-        loc.hunts.each do|hunt|
-        hashmain = {}
-        arr = []
-        hash["name"] = loc.address
-        # @hunts[n1]
-        arr1 << hash
-
-        #@questionsets.size.times do |n2|
-        hunt.questionsets.each do|ques|
-          hash1={}
-          #arr = []
-          hash1["name"] = ques.address
-          #@questionsets[n2]
-          hash1["size"] = 1000 + rand(120)
-          arr << hash1
-
-         end
-         hash["children"] = arr
-         @my_hash1["children"] = arr1
-
-        end
-          # @my_hash1["children"] = hash
-
-
-
-    end
 
     end
 

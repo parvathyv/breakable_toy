@@ -2,6 +2,9 @@
 
   <div class="row">
     <div class="large-12 columns blue-box">
+    <% unless current_user.blank? %>
+      <%= image_tag(current_user.profile_photo) %>
+    <% end %>
       <h3>Hunts Created</h3>
         <ul class="side-nav">
           <%@hunts_owned.each do|hunt|%>

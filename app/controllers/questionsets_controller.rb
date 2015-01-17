@@ -48,7 +48,7 @@ class QuestionsetsController < ApplicationController
             @huntsplayed = Huntsplayeduser.new
             if @questionset.question_no - maxquestion_no.question_no > 1
 
-              @msg = "Please play in order"
+              @msg = "Try again"
             else
               @msg = "Try again"
             end
@@ -82,7 +82,7 @@ class QuestionsetsController < ApplicationController
 
 
    end
-   @clues = @questionset.get_clue
+   #@clues = @questionset.get_clue
 
   end
 
@@ -146,7 +146,7 @@ class QuestionsetsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def questionset_params
-    params.require(:questionset).permit(:hunt_id, :question, :question_no, :address, :latitude, :longitude)
+    params.require(:questionset).permit(:hunt_id, :hunt_photo, :question, :question_no, :address, :latitude, :longitude)
   end
 
 

@@ -5,18 +5,11 @@
     </div>
   <% end %>
 
-<div class="row">
-        <div class="large-4 columns">
-
-        </div>
-
-        </div>
-
 
 
 
   <div class="row">
-    <div class="large-60 columns blue-box">
+    <div class="large-12 columns blue-box">
 
       <h3>Hunt</h3>
       <li>Name : <%=@hunt.name%></li><br>
@@ -24,9 +17,16 @@
       <h3>Your itenirary</h3>
 
         <div class="row">
-        <div class="five row five">
+
         <%@hunt.questionsets.each do|question|%>
-         <div class="large-5 columns question-boxes hvr-float">
+         <div class="large-4 medium-4 small-4 columns question-boxes hvr-float">
+
+            <div class="large-6 medium-6 small-6 columns">
+              <% unless question.hunt_photo.blank? %>
+                <%= image_tag(question.hunt_photo, :class => "imgmar") %>
+              <%end%>
+            </div>
+
         <li class="question-color"><%=question.question_no%>.  <%=question.question.capitalize%></li>
         <li class="lineborder"><%=link_to "Edit question", edit_hunt_questionset_path(@hunt, question)%>
         </li>
@@ -35,7 +35,7 @@
       <%end%>
        </div>
        </ul>
-     </div>
+
      </div>
 
        <div class="row">
@@ -52,7 +52,7 @@
 
         <%else%>
           <li><%=@hunt.name%> Complete</li><br>
-         <div class="large-3 columns question-boxes hvr-float">
+         <div class="large-5 columns question-boxes hvr-float">
           <li><%=link_to "New hunt", new_location_path%></li>
         <%end%>
       <%else%>

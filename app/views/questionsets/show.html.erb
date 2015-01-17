@@ -16,6 +16,9 @@
 
     <div class="row">
       <div class="large-8 columns blue-box">
+        <% unless @questionset.hunt_photo.blank? %>
+          <%= image_tag(@questionset.hunt_photo) %>
+        <%end%>
          <li> <%=@msg%></li>
         <li>Q <%=@questionset.question_no%>.  <%=@questionset.question%></li>
 

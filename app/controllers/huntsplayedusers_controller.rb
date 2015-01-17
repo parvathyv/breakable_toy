@@ -69,11 +69,11 @@ class HuntsplayedusersController < ApplicationController
           else
           @prize = 1
 
-          redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'You are done ! Congrats'
+          redirect_to root_path, notice: 'You are done ! Congrats'
         end
       else
 
-        redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'Huntsplayeduser was not created.'
+        redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'Try again'
       end
 
     else

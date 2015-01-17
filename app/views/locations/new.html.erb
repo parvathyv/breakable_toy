@@ -1,59 +1,47 @@
-
-
 <div class="row">
- <div class="large-8 large-offset-2 columns blue-box" id ="inputloc">
-  <h3>Your hunt's location</h3><br>
-  <%= form_for @location, action: "create", html: {class: "nifty_form"} do |f| %>
-    <ul>
-      <% if @location.errors.any? %>
-        <% @location.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+  <div class="large-8 large-offset-2 columns blue-box" id ="inputloc">
+    <h3>Your hunt's location</h3><br>
+    <%= form_for @location, action: "create", html: {class: "nifty_form"} do |f| %>
+      <ul>
+        <% if @location.errors.any? %>
+          <% @location.errors.full_messages.each do |msg| %>
+            <li>
+              <%= msg %>
+            </li>
+          <% end %>
         <% end %>
-      <%end%>
-    </ul>
+      </ul>
 
-  <h3> Choose from existing </h3>
-    <% if @locations.empty? == false %>
-     <%= f.collection_select :id, @locations, :id, :address, selected: @locations.first.id,:class => "text_boxes"  %>
-    <%end%>
-    <div>&nbsp</div>
-    <h3>Provide a new one </h3>
-     </div>
-    </div>
+      <h3> Choose from existing </h3>
+      <% if @locations.empty? == false %>
+        <%= f.collection_select :id, @locations, :id, :address, selected: @locations.first.id, class: "text_boxes"  %>
+      <% end %>
+      <div>&nbsp</div>
+      <h3>Provide a new one </h3>
 
-
-
-
-
-
-    <div class="row">
-     <div class="large-8 large-offset-2 columns" id="inputloc">
-      <li class="italictext"> Enter location in (Location, State, Country) format <li>
-      <li><%= f.label :address %></li>
-      <li><%= f.text_field :address, placeholder: "Address", :class => "text_boxes"%></li>
-       </div>
+      <div class="row">
+        <div class="large-8 large-offset-2 columns" id="inputloc">
+          <li class="italictext"> Enter location in (Location, State, Country) format <li>
+          <li>
+            <%= f.label :address %>
+          </li>
+          <li>
+            <%= f.text_field :address, placeholder: "Address", :class => "text_boxes"%>
+          </li>
+        </div>
       </div>
 
       <div class="row">
+        <li>
+          <%= f.submit "Create", :class => "large-4 large-offset-4 columns answer large button"%>
+        </li>
 
-
-        <li><%= f.submit "Create", :class => "large-4 large-offset-4 columns answer large button"%></li>
-
-
-        <li><%= link_to "VIEW ALL", locations_path,:class => "large-4 large-offset-4 columns secondary small button" %><li><br>
-
+        <li>
+          <%= link_to "VIEW ALL", locations_path,:class => "large-4 large-offset-4 columns secondary small button" %>
+        </li>
+        <br>
       </div>
 
-
-
-
-
-  <%end%>
-
-
-
-
-
-
-
-
+    <% end %>
+  </div>
+</div>

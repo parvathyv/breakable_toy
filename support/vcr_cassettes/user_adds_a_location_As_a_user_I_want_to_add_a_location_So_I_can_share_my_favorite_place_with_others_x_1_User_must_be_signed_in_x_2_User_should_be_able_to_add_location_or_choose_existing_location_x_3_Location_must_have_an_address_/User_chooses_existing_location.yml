@@ -1,0 +1,2854 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: geocoder/json?address=9New+York%2C+NY%2C+USA&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Sat, 17 Jan 2015 01:26:42 GMT
+      expires:
+      - Sun, 18 Jan 2015 01:26:42 GMT
+      cache-control:
+      - public, max-age=86400
+      access-control-allow-origin:
+      - '*'
+      server:
+      - mafe
+      x-xss-protection:
+      - 1; mode=block
+      x-frame-options:
+      - SAMEORIGIN
+      alternate-protocol:
+      - 80:quic,p=0.02
+      accept-ranges:
+      - none
+      vary:
+      - Accept-Encoding
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "9",
+                       "short_name" : "9",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown",
+                       "short_name" : "Midtown",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10119",
+                       "short_name" : "10119",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#9, New York, NY 10119, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.7503221,
+                          "lng" : -73.99381869999999
+                       },
+                       "southwest" : {
+                          "lat" : 40.7502088,
+                          "lng" : -73.99395319999999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.7502654,
+                       "lng" : -73.99389549999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.75161443029149,
+                          "lng" : -73.9925369697085
+                       },
+                       "southwest" : {
+                          "lat" : 40.74891646970849,
+                          "lng" : -73.9952349302915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "9",
+                       "short_name" : "9",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown",
+                       "short_name" : "Midtown",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10001",
+                       "short_name" : "10001",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#9, New York, NY 10001, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7482295,
+                       "lng" : -73.9864149
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7495784802915,
+                          "lng" : -73.9850659197085
+                       },
+                       "southwest" : {
+                          "lat" : 40.7468805197085,
+                          "lng" : -73.98776388029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "9",
+                       "short_name" : "9",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown",
+                       "short_name" : "Midtown",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10018",
+                       "short_name" : "10018",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#9, New York, NY 10018, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7504826,
+                       "lng" : -73.98431309999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7518315802915,
+                          "lng" : -73.98296411970848
+                       },
+                       "southwest" : {
+                          "lat" : 40.7491336197085,
+                          "lng" : -73.9856620802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "9",
+                       "short_name" : "9",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown",
+                       "short_name" : "Midtown",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10010",
+                       "short_name" : "10010",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#9, New York, NY 10010, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7421107,
+                       "lng" : -73.98549129999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7434596802915,
+                          "lng" : -73.98414231970848
+                       },
+                       "southwest" : {
+                          "lat" : 40.7407617197085,
+                          "lng" : -73.9868402802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "9",
+                       "short_name" : "9",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown",
+                       "short_name" : "Midtown",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10016",
+                       "short_name" : "10016",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#9, New York, NY 10016, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7472388,
+                       "lng" : -73.98085189999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7485877802915,
+                          "lng" : -73.97950291970848
+                       },
+                       "southwest" : {
+                          "lat" : 40.7458898197085,
+                          "lng" : -73.9822008802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "9",
+                       "short_name" : "9",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Downtown Brooklyn",
+                       "short_name" : "Downtown Brooklyn",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Brooklyn",
+                       "short_name" : "Brooklyn",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "Kings County",
+                       "short_name" : "Kings County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "11201",
+                       "short_name" : "11201",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#9, Brooklyn, NY 11201, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.694247,
+                       "lng" : -73.98439429999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.6955959802915,
+                          "lng" : -73.98304531970848
+                       },
+                       "southwest" : {
+                          "lat" : 40.6928980197085,
+                          "lng" : -73.9857432802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "9",
+                       "short_name" : "9",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Hell's Kitchen",
+                       "short_name" : "Hell's Kitchen",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10036",
+                       "short_name" : "10036",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#9, Manhattan, NY 10036, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.7614326,
+                          "lng" : -74.00092699999999
+                       },
+                       "southwest" : {
+                          "lat" : 40.7612648,
+                          "lng" : -74.00106079999999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.7613502,
+                       "lng" : -74.0009943
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7626976802915,
+                          "lng" : -73.99964491970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.7599997197085,
+                          "lng" : -74.00234288029149
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "9",
+                       "short_name" : "9",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "East Bronx",
+                       "short_name" : "East Bronx",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Bronx",
+                       "short_name" : "Bronx",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "Bronx County",
+                       "short_name" : "Bronx County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10469",
+                       "short_name" : "10469",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "9, Bronx, NY 10469, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.8615327,
+                       "lng" : -73.83255989999999
+                    },
+                    "location_type" : "GEOMETRIC_CENTER",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.86288168029149,
+                          "lng" : -73.8312109197085
+                       },
+                       "southwest" : {
+                          "lat" : 40.86018371970849,
+                          "lng" : -73.8339088802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "route" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "9",
+                       "short_name" : "9",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown East",
+                       "short_name" : "Midtown East",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10170",
+                       "short_name" : "10170",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#9, New York, NY 10170, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.7519891,
+                          "lng" : -73.9759866
+                       },
+                       "southwest" : {
+                          "lat" : 40.7519077,
+                          "lng" : -73.976108
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.7519406,
+                       "lng" : -73.9760584
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.75329738029149,
+                          "lng" : -73.97469831970848
+                       },
+                       "southwest" : {
+                          "lat" : 40.75059941970849,
+                          "lng" : -73.9773962802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: '1.1'
+  recorded_at: Sat, 17 Jan 2015 01:26:42 GMT
+- request:
+    method: get
+    uri: geocoder/json?address=2New+York%2C+NY%2C+USA&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Sat, 17 Jan 2015 01:29:38 GMT
+      expires:
+      - Sun, 18 Jan 2015 01:29:38 GMT
+      cache-control:
+      - public, max-age=86400
+      access-control-allow-origin:
+      - '*'
+      server:
+      - mafe
+      x-xss-protection:
+      - 1; mode=block
+      x-frame-options:
+      - SAMEORIGIN
+      alternate-protocol:
+      - 80:quic,p=0.02
+      accept-ranges:
+      - none
+      vary:
+      - Accept-Encoding
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "2",
+                       "short_name" : "2",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown",
+                       "short_name" : "Midtown",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10119",
+                       "short_name" : "10119",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#2, New York, NY 10119, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.75016189999999,
+                          "lng" : -73.99333659999999
+                       },
+                       "southwest" : {
+                          "lat" : 40.7500545,
+                          "lng" : -73.99344979999999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.7501165,
+                       "lng" : -73.99339049999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7514571802915,
+                          "lng" : -73.99204421970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.7487592197085,
+                          "lng" : -73.9947421802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "2",
+                       "short_name" : "2",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Upper East Side",
+                       "short_name" : "UES",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10021",
+                       "short_name" : "10021",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#2, New York, NY 10021, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7716175,
+                       "lng" : -73.9606342
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.77296648029149,
+                          "lng" : -73.95928521970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.7702685197085,
+                          "lng" : -73.96198318029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "2",
+                       "short_name" : "2",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown",
+                       "short_name" : "Midtown",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10003",
+                       "short_name" : "10003",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#2, New York, NY 10003, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7385052,
+                       "lng" : -73.988801
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.73985418029149,
+                          "lng" : -73.98745201970848
+                       },
+                       "southwest" : {
+                          "lat" : 40.7371562197085,
+                          "lng" : -73.99014998029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "2",
+                       "short_name" : "2",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Lower Manhattan",
+                       "short_name" : "Lower Manhattan",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10013",
+                       "short_name" : "10013",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#2, New York, NY 10013, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.71649,
+                       "lng" : -73.9973694
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7178389802915,
+                          "lng" : -73.99602041970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.7151410197085,
+                          "lng" : -73.99871838029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "2",
+                       "short_name" : "2",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Crown Heights",
+                       "short_name" : "Crown Heights",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Brooklyn",
+                       "short_name" : "Brooklyn",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Kings County",
+                       "short_name" : "Kings County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "11213",
+                       "short_name" : "11213",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#2, Brooklyn, NY 11213, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.6688798,
+                          "lng" : -73.94192699999999
+                       },
+                       "southwest" : {
+                          "lat" : 40.6688032,
+                          "lng" : -73.9419858
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.6688495,
+                       "lng" : -73.9419637
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.6701904802915,
+                          "lng" : -73.94060741970848
+                       },
+                       "southwest" : {
+                          "lat" : 40.6674925197085,
+                          "lng" : -73.94330538029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "2",
+                       "short_name" : "2",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown East",
+                       "short_name" : "Midtown East",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10170",
+                       "short_name" : "10170",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#2, New York, NY 10170, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.7521655,
+                          "lng" : -73.97605349999999
+                       },
+                       "southwest" : {
+                          "lat" : 40.752093,
+                          "lng" : -73.9761615
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.75212080000001,
+                       "lng" : -73.9761044
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7534782302915,
+                          "lng" : -73.97475851970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.7507802697085,
+                          "lng" : -73.97745648029149
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "2",
+                       "short_name" : "2",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown",
+                       "short_name" : "Midtown",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10018",
+                       "short_name" : "10018",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#2, New York, NY 10018, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7509995,
+                       "lng" : -73.9843212
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7523484802915,
+                          "lng" : -73.98297221970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.7496505197085,
+                          "lng" : -73.98567018029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "2",
+                       "short_name" : "2",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Hell's Kitchen",
+                       "short_name" : "Hell's Kitchen",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10036",
+                       "short_name" : "10036",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#2, New York, NY 10036, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7650894,
+                       "lng" : -73.9976142
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7664383802915,
+                          "lng" : -73.9962652197085
+                       },
+                       "southwest" : {
+                          "lat" : 40.7637404197085,
+                          "lng" : -73.99896318029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "2",
+                       "short_name" : "2",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown",
+                       "short_name" : "Midtown",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10016",
+                       "short_name" : "10016",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#2, New York, NY 10016, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.745968,
+                       "lng" : -73.97148399999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.74731698029149,
+                          "lng" : -73.97013501970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.74461901970849,
+                          "lng" : -73.9728329802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "2",
+                       "short_name" : "2",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "4509",
+                       "short_name" : "4509",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "39th Place",
+                       "short_name" : "39th Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Sunnyside",
+                       "short_name" : "Sunnyside",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Queens",
+                       "short_name" : "Queens",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "Queens County",
+                       "short_name" : "Queens County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "11104",
+                       "short_name" : "11104",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "4509 39th Place #2, Sunnyside, NY 11104, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7434382,
+                       "lng" : -73.92530549999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7447871802915,
+                          "lng" : -73.92395651970848
+                       },
+                       "southwest" : {
+                          "lat" : 40.7420892197085,
+                          "lng" : -73.9266544802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Art Studio",
+                       "short_name" : "Art Studio",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Lower Manhattan",
+                       "short_name" : "Lower Manhattan",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10014",
+                       "short_name" : "10014",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "Art Studio, Manhattan, NY 10014, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.7275214,
+                          "lng" : -74.0077976
+                       },
+                       "southwest" : {
+                          "lat" : 40.7274391,
+                          "lng" : -74.0079204
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.7274894,
+                       "lng" : -74.0078633
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7288292302915,
+                          "lng" : -74.0065100197085
+                       },
+                       "southwest" : {
+                          "lat" : 40.7261312697085,
+                          "lng" : -74.00920798029152
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "2",
+                       "short_name" : "2",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Gateway National Recreation Area",
+                       "short_name" : "Gateway National Recreation Area",
+                       "types" : [ "establishment" ]
+                    },
+                    {
+                       "long_name" : "Brooklyn",
+                       "short_name" : "Brooklyn",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "Kings County",
+                       "short_name" : "Kings County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "11234",
+                       "short_name" : "11234",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "Gateway National Recreation Area, #2, Brooklyn, NY 11234, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.5902795,
+                          "lng" : -73.89893189999999
+                       },
+                       "southwest" : {
+                          "lat" : 40.5902025,
+                          "lng" : -73.8990343
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.5902408,
+                       "lng" : -73.89897499999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.5915899802915,
+                          "lng" : -73.8976341197085
+                       },
+                       "southwest" : {
+                          "lat" : 40.5888920197085,
+                          "lng" : -73.90033208029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "2",
+                       "short_name" : "2",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "156",
+                       "short_name" : "156",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Garfield Place",
+                       "short_name" : "Garfield Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Park Slope",
+                       "short_name" : "Park Slope",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Brooklyn",
+                       "short_name" : "Brooklyn",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "Kings County",
+                       "short_name" : "Kings County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "11215",
+                       "short_name" : "11215",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "156 Garfield Place #2, Brooklyn, NY 11215, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.67311189999999,
+                       "lng" : -73.9788884
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.67446088029149,
+                          "lng" : -73.97753941970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.67176291970849,
+                          "lng" : -73.9802373802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "2",
+                       "short_name" : "2",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown East",
+                       "short_name" : "Midtown East",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10017",
+                       "short_name" : "10017",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#2, New York, NY 10017, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.7553749,
+                          "lng" : -73.97294579999999
+                       },
+                       "southwest" : {
+                          "lat" : 40.755312,
+                          "lng" : -73.9730455
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.7553469,
+                       "lng" : -73.97300509999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.75669243029149,
+                          "lng" : -73.97164666970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.75399446970849,
+                          "lng" : -73.97434463029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: '1.1'
+  recorded_at: Sat, 17 Jan 2015 01:29:38 GMT
+- request:
+    method: get
+    uri: geocoder/json?address=1New+York%2C+NY%2C+USA&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Sat, 17 Jan 2015 01:30:32 GMT
+      expires:
+      - Sun, 18 Jan 2015 01:30:32 GMT
+      cache-control:
+      - public, max-age=86400
+      access-control-allow-origin:
+      - '*'
+      server:
+      - mafe
+      x-xss-protection:
+      - 1; mode=block
+      x-frame-options:
+      - SAMEORIGIN
+      alternate-protocol:
+      - 80:quic,p=0.02
+      accept-ranges:
+      - none
+      vary:
+      - Accept-Encoding
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Hell's Kitchen",
+                       "short_name" : "Hell's Kitchen",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10019",
+                       "short_name" : "10019",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#1, New York, NY 10019, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7656342,
+                       "lng" : -73.9908569
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7669831802915,
+                          "lng" : -73.98950791970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.7642852197085,
+                          "lng" : -73.99220588029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown",
+                       "short_name" : "Midtown",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10003",
+                       "short_name" : "10003",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#1, New York, NY 10003, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7363212,
+                       "lng" : -73.98441889999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7376701802915,
+                          "lng" : -73.9830699197085
+                       },
+                       "southwest" : {
+                          "lat" : 40.7349722197085,
+                          "lng" : -73.9857678802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown",
+                       "short_name" : "Midtown",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10119",
+                       "short_name" : "10119",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#1, New York, NY 10119, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.75014059999999,
+                          "lng" : -73.993285
+                       },
+                       "southwest" : {
+                          "lat" : 40.7500328,
+                          "lng" : -73.993398
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.7500907,
+                       "lng" : -73.9933446
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.75143568029149,
+                          "lng" : -73.99199251970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.7487377197085,
+                          "lng" : -73.9946904802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Carnegie Hill",
+                       "short_name" : "Carnegie Hill",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10028",
+                       "short_name" : "10028",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#1, New York, NY 10028, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7819629,
+                       "lng" : -73.9597795
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7833118802915,
+                          "lng" : -73.95843051970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.7806139197085,
+                          "lng" : -73.96112848029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown East",
+                       "short_name" : "Midtown East",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10170",
+                       "short_name" : "10170",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#1, New York, NY 10170, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.7524974,
+                          "lng" : -73.97643359999999
+                       },
+                       "southwest" : {
+                          "lat" : 40.7522287,
+                          "lng" : -73.9767178
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.7523003,
+                       "lng" : -73.9766209
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7537120302915,
+                          "lng" : -73.9752267197085
+                       },
+                       "southwest" : {
+                          "lat" : 40.7510140697085,
+                          "lng" : -73.97792468029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Upper Manhattan",
+                       "short_name" : "Upper Manhattan",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10031",
+                       "short_name" : "10031",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#1, New York, NY 10031, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.830755,
+                       "lng" : -73.94765570000001
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.83210398029149,
+                          "lng" : -73.94630671970852
+                       },
+                       "southwest" : {
+                          "lat" : 40.82940601970849,
+                          "lng" : -73.94900468029152
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Lower Manhattan",
+                       "short_name" : "Lower Manhattan",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10014",
+                       "short_name" : "10014",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#1, New York, NY 10014, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7342661,
+                       "lng" : -74.00004129999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7356150802915,
+                          "lng" : -73.99869231970848
+                       },
+                       "southwest" : {
+                          "lat" : 40.7329171197085,
+                          "lng" : -74.0013902802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Lower Manhattan",
+                       "short_name" : "Lower Manhattan",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10002",
+                       "short_name" : "10002",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#1, New York, NY 10002, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.71876899999999,
+                       "lng" : -73.99103099999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7201179802915,
+                          "lng" : -73.9896820197085
+                       },
+                       "southwest" : {
+                          "lat" : 40.7174200197085,
+                          "lng" : -73.9923799802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown",
+                       "short_name" : "Midtown",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10018",
+                       "short_name" : "10018",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#1, New York, NY 10018, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7534243,
+                       "lng" : -73.99089789999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7547732802915,
+                          "lng" : -73.98954891970848
+                       },
+                       "southwest" : {
+                          "lat" : 40.7520753197085,
+                          "lng" : -73.9922468802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Crown Heights",
+                       "short_name" : "Crown Heights",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Brooklyn",
+                       "short_name" : "Brooklyn",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Kings County",
+                       "short_name" : "Kings County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "11213",
+                       "short_name" : "11213",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#1, Brooklyn, NY 11213, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.6688875,
+                          "lng" : -73.94198059999999
+                       },
+                       "southwest" : {
+                          "lat" : 40.66880640000001,
+                          "lng" : -73.9420413
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.6688367,
+                       "lng" : -73.94200959999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.67019593029151,
+                          "lng" : -73.94066196970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.66749796970851,
+                          "lng" : -73.94335993029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Upper East Side",
+                       "short_name" : "UES",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10021",
+                       "short_name" : "10021",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#1, New York, NY 10021, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7703883,
+                       "lng" : -73.961682
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7717372802915,
+                          "lng" : -73.9603330197085
+                       },
+                       "southwest" : {
+                          "lat" : 40.7690393197085,
+                          "lng" : -73.96303098029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Upper West Side",
+                       "short_name" : "UWS",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10024",
+                       "short_name" : "10024",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#1, New York, NY 10024, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.78947,
+                       "lng" : -73.97041449999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7908189802915,
+                          "lng" : -73.96906551970848
+                       },
+                       "southwest" : {
+                          "lat" : 40.78812101970851,
+                          "lng" : -73.9717634802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown",
+                       "short_name" : "Midtown",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10016",
+                       "short_name" : "10016",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#1, New York, NY 10016, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.7468868,
+                       "lng" : -73.9852025
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7482357802915,
+                          "lng" : -73.9838535197085
+                       },
+                       "southwest" : {
+                          "lat" : 40.7455378197085,
+                          "lng" : -73.98655148029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Art Studio",
+                       "short_name" : "Art Studio",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Lower Manhattan",
+                       "short_name" : "Lower Manhattan",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10014",
+                       "short_name" : "10014",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "Art Studio, Manhattan, NY 10014, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.7275336,
+                          "lng" : -74.0079181
+                       },
+                       "southwest" : {
+                          "lat" : 40.7274499,
+                          "lng" : -74.00803139999999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.7274943,
+                       "lng" : -74.0079666
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7288407302915,
+                          "lng" : -74.00662576970848
+                       },
+                       "southwest" : {
+                          "lat" : 40.7261427697085,
+                          "lng" : -74.0093237302915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Gateway National Recreation Area",
+                       "short_name" : "Gateway National Recreation Area",
+                       "types" : [ "establishment" ]
+                    },
+                    {
+                       "long_name" : "Brooklyn",
+                       "short_name" : "Brooklyn",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "Kings County",
+                       "short_name" : "Kings County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "11234",
+                       "short_name" : "11234",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "Gateway National Recreation Area, #1, Brooklyn, NY 11234, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.59023810000001,
+                          "lng" : -73.898884
+                       },
+                       "southwest" : {
+                          "lat" : 40.5901598,
+                          "lng" : -73.8989864
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.5901956,
+                       "lng" : -73.8989291
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.5915479302915,
+                          "lng" : -73.89758621970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.58884996970851,
+                          "lng" : -73.90028418029149
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "Midtown East",
+                       "short_name" : "Midtown East",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Manhattan",
+                       "short_name" : "Manhattan",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "New York County",
+                       "short_name" : "New York County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "10017",
+                       "short_name" : "10017",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "#1, New York, NY 10017, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 40.7554139,
+                          "lng" : -73.9729169
+                       },
+                       "southwest" : {
+                          "lat" : 40.7553411,
+                          "lng" : -73.97302449999999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 40.755379,
+                       "lng" : -73.97295919999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.7567264802915,
+                          "lng" : -73.97162171970849
+                       },
+                       "southwest" : {
+                          "lat" : 40.7540285197085,
+                          "lng" : -73.97431968029152
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Ozone Park",
+                       "short_name" : "Ozone Park",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Brooklyn",
+                       "short_name" : "Brooklyn",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "Kings County",
+                       "short_name" : "Kings County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "11208",
+                       "short_name" : "11208",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "1, Brooklyn, NY 11208, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 40.6785888,
+                       "lng" : -73.86245289999999
+                    },
+                    "location_type" : "GEOMETRIC_CENTER",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 40.6799377802915,
+                          "lng" : -73.86110391970848
+                       },
+                       "southwest" : {
+                          "lat" : 40.6772398197085,
+                          "lng" : -73.8638018802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "route" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: '1.1'
+  recorded_at: Sat, 17 Jan 2015 01:30:32 GMT
+recorded_with: VCR 2.9.3

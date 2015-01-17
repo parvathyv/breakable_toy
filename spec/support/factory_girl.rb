@@ -11,6 +11,9 @@ FactoryGirl.define do
 
   factory :location do
     #sequence(:address) { |n| "#{n}New York, NY, USA"}
+    address 'New York, NY, USA'
+    #latitude 41.4222
+    #longitude -119.8888
   end
 
   factory :hunt do

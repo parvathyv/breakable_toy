@@ -23,7 +23,7 @@ http_interactions:
       server:
       - GitHub.com
       date:
-      - Fri, 16 Jan 2015 19:04:32 GMT
+      - Sat, 17 Jan 2015 01:26:39 GMT
       content-type:
       - text/html; charset=utf-8
       transfer-encoding:
@@ -47,18 +47,18 @@ http_interactions:
       x-ua-compatible:
       - IE=Edge,chrome=1
       set-cookie:
-      - logged_in=no; domain=.github.com; path=/; expires=Tue, 16-Jan-2035 19:04:32
+      - logged_in=no; domain=.github.com; path=/; expires=Wed, 17-Jan-2035 01:26:39
         GMT; secure; HttpOnly
-      - _gh_sess=eyJzZXNzaW9uX2lkIjoiMTQ3ZTMxODFlYzQ4ZWY3YzhkMDhlMzUyMTJhNDNlNGYiLCJfY3NyZl90b2tlbiI6Ik5ZNE9lQ1VNWCtLQWk5NktDenpIYWhsYk5MbG00RHkzT0Zqb3k1Zk03WU09In0%3D--d4b2bbd3d5babf4a9ecf7d12ef65f1301dcdd610;
+      - _gh_sess=eyJzZXNzaW9uX2lkIjoiMmNjNmZlOWYzNjdlMzY0YmFjMWQ5Njg2YTczYzIxOTUiLCJfY3NyZl90b2tlbiI6ImRXYVdCcUlncWtSVEJVRnpjbjRtS3BkQU9MdXh5YkFJQ0RMS0RGN3dMcVU9In0%3D--f0308739d26aa37772c26846f99817630a0dfb9b;
         path=/; secure; HttpOnly
       x-request-id:
-      - 743a66e4c62fc01680be86243ee6abfd
+      - 2e2f2a9c48f3be19c4a2979ab8fd8c50
       x-runtime:
-      - '0.008379'
+      - '0.007468'
       x-rack-cache:
       - miss
       x-github-request-id:
-      - 32F17FD1:42EE:685EAF3:54B960C0
+      - B84BC11F:54EC:324D503:54B9BA4F
       strict-transport-security:
       - max-age=31536000; includeSubdomains; preload
       x-content-type-options:
@@ -68,7 +68,7 @@ http_interactions:
       x-frame-options:
       - deny
       x-served-by:
-      - 76f8aa18dab86a06db6e70a0421dc28c
+      - df78b016db710335918cac342ae2a21d
       content-encoding:
       - gzip
     body:
@@ -155,16 +155,16 @@ http_interactions:
         LWhvc3QiIC8+PG1ldGEgY29udGVudD0iY29sbGVjdG9yLWNkbi5naXRodWIu
         Y29tIiBuYW1lPSJvY3RvbHl0aWNzLXNjcmlwdC1ob3N0IiAvPjxtZXRhIGNv
         bnRlbnQ9ImdpdGh1YiIgbmFtZT0ib2N0b2x5dGljcy1hcHAtaWQiIC8+PG1l
-        dGEgY29udGVudD0iMzJGMTdGRDE6NDJFRTo2ODVFQUYzOjU0Qjk2MEMwIiBu
+        dGEgY29udGVudD0iQjg0QkMxMUY6NTRFQzozMjRENTAzOjU0QjlCQTRGIiBu
         YW1lPSJvY3RvbHl0aWNzLWRpbWVuc2lvbi1yZXF1ZXN0X2lkIiAvPgogICAg
         CiAgICA8bWV0YSBjb250ZW50PSJSYWlscywgdmlldywgc2Vzc2lvbnMjbmV3
         IiBuYW1lPSJhbmFseXRpY3MtZXZlbnQiIC8+CgogICAgCiAgICAKICAgIDxs
         aW5rIHJlbD0iaWNvbiIgdHlwZT0iaW1hZ2UveC1pY29uIiBocmVmPSJodHRw
         czovL2Fzc2V0cy1jZG4uZ2l0aHViLmNvbS9mYXZpY29uLmljbyI+CgoKICAg
         IDxtZXRhIGNvbnRlbnQ9ImF1dGhlbnRpY2l0eV90b2tlbiIgbmFtZT0iY3Ny
-        Zi1wYXJhbSIgLz4KPG1ldGEgY29udGVudD0iNEZYRzRHQU11elUxbWJOaENz
-        bm9aZzNFaStHRjRZeXNLcFMwRzFIa2ZVRkhhc21vQW8yOG5SWmR5WTdKNGRh
-        WFMxWlpXZEI4Tk9zOFNSQ3J1QnJTb0E9PSIgbmFtZT0iY3NyZi10b2tlbiIg
+        Zi1wYXJhbSIgLz4KPG1ldGEgY29udGVudD0iZjNBNWxjc3NUZW5HNjhldGE3
+        UFhNNUhCdTdjMFdTNXJ6aFpkbURJb2VWN3RSVEo5ZUYzRy8wSng3Snh6V1BY
+        OW1VNjhvUE9aWU5mbDBsbHFuaDUxcVE9PSIgbmFtZT0iY3NyZi10b2tlbiIg
         Lz4KCiAgICA8bGluayBocmVmPSJodHRwczovL2Fzc2V0cy1jZG4uZ2l0aHVi
         LmNvbS9hc3NldHMvZ2l0aHViLTMxYWU1NmQ1NGViMDUwM2FhZTc4YmFhODUy
         YzljNDIxZWU4MWQxODQxNGNkNzhlMGI0YjUzNmNjNDZjMjQ4NTguY3NzIiBt
@@ -174,8 +174,8 @@ http_interactions:
         MjBhMDBkM2Q1ZWMyNjY1NTMxNTYzMDA5MzMwNTNlYmViZGZkMy5jc3MiIG1l
         ZGlhPSJhbGwiIHJlbD0ic3R5bGVzaGVldCIgdHlwZT0idGV4dC9jc3MiIC8+
         CiAgICAKICAgIAoKCiAgICA8bWV0YSBodHRwLWVxdWl2PSJ4LXBqYXgtdmVy
-        c2lvbiIgY29udGVudD0iYTRhODUzZmJiYjJhNTgzM2I4MWFhN2VhMWY0NDll
-        OTAiPgoKICAgICAgPG1ldGEgbmFtZT0iZGVzY3JpcHRpb24iIGNvbnRlbnQ9
+        c2lvbiIgY29udGVudD0iYzc4YzkzOGM2M2Q3M2Q1MDY0MWMyZWMyODNiZGNk
+        NWUiPgoKICAgICAgPG1ldGEgbmFtZT0iZGVzY3JpcHRpb24iIGNvbnRlbnQ9
         IkJ1aWxkIHNvZnR3YXJlIGJldHRlciwgdG9nZXRoZXIuIj4KICA8L2hlYWQ+
         CgoKICA8Ym9keSBjbGFzcz0ibG9nZ2VkX291dCAgZW52LXByb2R1Y3Rpb24i
         PgogICAgPGEgaHJlZj0iI3N0YXJ0LW9mLWNvbnRlbnQiIHRhYmluZGV4PSIx
@@ -245,9 +245,9 @@ http_interactions:
         eWxlPSJtYXJnaW46MDtwYWRkaW5nOjA7ZGlzcGxheTppbmxpbmUiPjxpbnB1
         dCBuYW1lPSJ1dGY4IiB0eXBlPSJoaWRkZW4iIHZhbHVlPSImI3gyNzEzOyIg
         Lz48aW5wdXQgbmFtZT0iYXV0aGVudGljaXR5X3Rva2VuIiB0eXBlPSJoaWRk
-        ZW4iIHZhbHVlPSJwWU9GUG9FdVhYdTl2NzFvRm85amlDZW94ZS9UNlYwUm5N
-        NXN2RTNoMWtsT04wMmQ4SFhhM0NLMEU5djFEK0xlb2JDVjUreVNKOXhESE1Q
-        TnFRVTFBUT09IiAvPjwvZGl2PiAgICAgIDxkaXYgY2xhc3M9ImF1dGgtZm9y
+        ZW4iIHZhbHVlPSJTT2t4SEtESXdKVm9vYjhwMjhyTU5IREdxNHdhS3NhL0o1
+        UnFHUEMxNDNPY2hDTGRQOGlES1BHQW43RE5ObXkyaXhWYSswQkl6RXdlUVNT
+        SGVkMXVtUT09IiAvPjwvZGl2PiAgICAgIDxkaXYgY2xhc3M9ImF1dGgtZm9y
         bS1oZWFkZXIiPgogICAgICAgIDxoMT5TaWduIGluPC9oMT4KICAgICAgPC9k
         aXY+CiAgICAgIDxkaXYgY2xhc3M9ImF1dGgtZm9ybS1ib2R5Ij4KICAgICAg
         ICA8bGFiZWwgZm9yPSJsb2dpbl9maWVsZCI+CiAgICAgICAgICBVc2VybmFt
@@ -287,7 +287,7 @@ http_interactions:
         IDxzcGFuIGNsYXNzPSJtZWdhLW9jdGljb24gb2N0aWNvbi1tYXJrLWdpdGh1
         YiIgdGl0bGU9IkdpdEh1YiI+PC9zcGFuPgogICAgPC9hPgoKICAgIDx1bCBj
         bGFzcz0ic2l0ZS1mb290ZXItbGlua3MiPgogICAgICA8bGk+JmNvcHk7IDIw
-        MTUgPHNwYW4gdGl0bGU9IjAuMDA3NjZzIGZyb20gZ2l0aHViLWZlMTQxLWNw
+        MTUgPHNwYW4gdGl0bGU9IjAuMDA2NzVzIGZyb20gZ2l0aHViLWZlMTI4LWNw
         MS1wcmQuaWFkLmdpdGh1Yi5uZXQiPkdpdEh1Yjwvc3Bhbj4sIEluYy48L2xp
         PgogICAgICAgIDxsaT48YSBocmVmPSIvc2l0ZS90ZXJtcyI+VGVybXM8L2E+
         PC9saT4KICAgICAgICA8bGk+PGEgaHJlZj0iL3NpdGUvcHJpdmFjeSI+UHJp
@@ -323,15 +323,15 @@ http_interactions:
         YT4KICAgICAgU29tZXRoaW5nIHdlbnQgd3Jvbmcgd2l0aCB0aGF0IHJlcXVl
         c3QuIFBsZWFzZSB0cnkgYWdhaW4uCiAgICA8L2Rpdj4KCgogICAgICA8c2Ny
         aXB0IGNyb3Nzb3JpZ2luPSJhbm9ueW1vdXMiIHNyYz0iaHR0cHM6Ly9hc3Nl
-        dHMtY2RuLmdpdGh1Yi5jb20vYXNzZXRzL2ZyYW1ld29ya3MtODAwN2Q3OTJk
-        Nzk4MDMwZjJiMzMyZTA0NzNjOGViZWFhM2ViNzEzNWE2ZWFjNzk2NDVkYzI3
-        ODFiNTg3YWE2ZC5qcyIgdHlwZT0idGV4dC9qYXZhc2NyaXB0Ij48L3Njcmlw
+        dHMtY2RuLmdpdGh1Yi5jb20vYXNzZXRzL2ZyYW1ld29ya3MtN2U5ODljZDM1
+        YzY3OTBhY2I1MTg5MGExZTdhYmQ2M2VkYjU5NmJlZDgzYzNiOTlhYzI5OTE4
+        MDU1MGQ1YjA5Ni5qcyIgdHlwZT0idGV4dC9qYXZhc2NyaXB0Ij48L3Njcmlw
         dD4KICAgICAgPHNjcmlwdCBhc3luYz0iYXN5bmMiIGNyb3Nzb3JpZ2luPSJh
         bm9ueW1vdXMiIHNyYz0iaHR0cHM6Ly9hc3NldHMtY2RuLmdpdGh1Yi5jb20v
-        YXNzZXRzL2dpdGh1Yi03MTI4NDJjNDY2OWFiZGUwN2NlZTIxYmFjZTVhZjNk
-        YTI3ODhjMDUxZjAzYjRhYWJkODE2ZmMyYzQ0MDdlZGQ5LmpzIiB0eXBlPSJ0
+        YXNzZXRzL2dpdGh1Yi0zNTBjMzdjNmE0YzUwY2ZiZTg3OTNlNWVkYzc5NmUx
+        ODdiNjEyNTNmMjU3ZTkxYzZjOTAyMTU5NzM0MzA4ZmZlLmpzIiB0eXBlPSJ0
         ZXh0L2phdmFzY3JpcHQiPjwvc2NyaXB0PgogICAgICAKICAgICAgCiAgPC9i
         b2R5Pgo8L2h0bWw+Cg==
     http_version: '1.1'
-  recorded_at: Fri, 16 Jan 2015 19:04:31 GMT
+  recorded_at: Sat, 17 Jan 2015 01:26:39 GMT
 recorded_with: VCR 2.9.3

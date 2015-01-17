@@ -42,9 +42,8 @@ class LocationsController < ApplicationController
     flag = Location.new.address_type?(params[:address])
 
 
-
     if flag == true
-        binding.pry
+
       @location= Location.create(location_params)
 
       #@locations = Location.all

@@ -25,10 +25,15 @@ float: none !important; }
 .question-boxes{
    border-left:2px solid;
    border-right:2px solid;
-
+   border-top:1px solid;
+   border-bottom:1px solid;
    margin:1%;
+   padding:1%;
    border-radius:6px;
-   border-color:rgba(255,102,0,0.75);
+   border-left-color:rgba(255,102,0,0.75);
+   border-right-color:rgba(255,102,0,0.75);
+   border-top-color:rgba(0,0,255,0.5);
+   border-bottom-color:rgba(0,0,255,0.5);
    background-color:rgba(0,0,255,0.1)
 }
 
@@ -39,6 +44,7 @@ float: none !important; }
 }
 .question-color{
     color:white;
+
 }
 
 
@@ -112,7 +118,13 @@ li {
     font-style:italic;
 
 }
-
+.imgmar{
+  margin:5%;
+  border:1px solid blue;
+  border-radius:3px;
+  margin-left:auto;
+  margin-right:auto;
+}
 
 .signintext{
     color:#59aff0;

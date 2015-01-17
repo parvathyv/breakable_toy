@@ -17,7 +17,7 @@ feature 'user adds a location', %Q{
   scenario 'user signs in and adds a hunt' do
     sign_in_as(questionset.hunt.user)
     visit new_hunt_questionset_path(questionset.hunt)
-
+    attach_file "questionset[hunt_photo]", "spec/data/img4.jpg"
     fill_in 'Question', with: "What is the oldest public garden in the US"
     fill_in 'Address', with: "Boston Commons, Boston, MA"
 

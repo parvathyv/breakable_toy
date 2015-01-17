@@ -39,7 +39,7 @@ class QuestionsetsController < ApplicationController
       maxquestion_no = Huntsplayeduser.hunt_check(@huntsplayed.last.question_no, params[:hunt_id], session.id)
       @itinerary_array = @questionset.uptoquestion(maxquestion_no.question_no)
 
-      if maxquestion_no.question_no < 6
+      if maxquestion_no.question_no < 5
 
         if @questionset.question_no == maxquestion_no.question_no
 
@@ -74,9 +74,10 @@ class QuestionsetsController < ApplicationController
       end
 
    else
-    if @huntsplayed.count == 5
 
-        redirect_to root_path, notice: 'You already played this hunt this session, sign out if you want to repeat'
+    if @huntsplayed.count == 5
+        #binding.pry
+        redirect_to tree_path(@questionset.hunt.id), notice: 'You are done with this hunt! If you want to play again, sign in or Sign up'
 
     else
       @huntsplayed = Huntsplayeduser.new

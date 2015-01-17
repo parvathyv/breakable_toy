@@ -49,7 +49,7 @@ class Questionset < ActiveRecord::Base
     flag = 0
     if address.split(',').first.to_f != 0
       dist = self.get_distance(address)
-      binding.pry
+      #binding.pry
       if dist < 0.5
         flag = 1
       else

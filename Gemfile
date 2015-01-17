@@ -26,6 +26,8 @@ gem 'geocoder'
 gem 'json'
 gem 'omniauth-github'
 gem 'd3-rails'
+gem 'carrierwave'
+gem 'mini_magick'
 
 
 # Use ActiveModel has_secure_password

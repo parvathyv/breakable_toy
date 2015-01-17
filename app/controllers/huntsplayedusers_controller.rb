@@ -73,7 +73,7 @@ class HuntsplayedusersController < ApplicationController
         end
       else
 
-        redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'Huntsplayeduser was not created.'
+        redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'Try again'
       end
 
     else

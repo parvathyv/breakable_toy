@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :locations, through: :hunts
   has_and_belongs_to_many :huntsplayedusers
   devise :omniauthable, :omniauth_providers => [:github]
+  mount_uploader :profile_photo, ProfilePhotoUploader
 
   def self.from_omniauth(auth)
    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

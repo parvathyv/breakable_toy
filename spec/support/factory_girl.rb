@@ -7,6 +7,7 @@ FactoryGirl.define do
 
     password 'password'
     password_confirmation 'password'
+
   end
 
   factory :location do
@@ -22,6 +23,7 @@ FactoryGirl.define do
 
     user
     location
+
   end
 
   factory :questionset do
@@ -30,12 +32,17 @@ FactoryGirl.define do
 
     question_no 1
 
-
     hunt
 
   end
 
+  factory :huntsplayeduser do
+    user_session_id "1h199199199991"
+    address "King's Chapel, Boston, MA"
 
+    question_no 1
+
+  end
 
 
   factory :admin_user, parent: :user do

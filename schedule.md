@@ -22,3 +22,11 @@ To be done
 8. parallax scrolling integration
 9. front end
 10. Refactor(AJAX)
+
+---------------------
+Tests
+Winning
+Clues
+carrierwave
+messages
+

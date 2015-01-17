@@ -16,7 +16,7 @@
 
 
   <div class="row">
-    <div class="large-12 columns blue-box">
+    <div class="large-60 columns blue-box">
 
       <h3>Hunt</h3>
       <li>Name : <%=@hunt.name%></li><br>
@@ -24,7 +24,7 @@
       <h3>Your itenirary</h3>
 
         <div class="row">
-
+        <div class="five row five">
         <%@hunt.questionsets.each do|question|%>
          <div class="large-5 columns question-boxes hvr-float">
         <li class="question-color"><%=question.question_no%>.  <%=question.question.capitalize%></li>
@@ -52,7 +52,7 @@
 
         <%else%>
           <li><%=@hunt.name%> Complete</li><br>
-          <li>Where to next ?</li>
+         <div class="large-3 columns question-boxes hvr-float">
           <li><%=link_to "New hunt", new_location_path%></li>
         <%end%>
       <%else%>
@@ -65,7 +65,7 @@
       <li><%= button_to "Delete", @hunt, :method => :delete,:class => "signinlinks" %></li>
 
       <li><%=link_to "All hunts", hunts_path%></li>
-
+     </div>
 
     </div>
   </div>

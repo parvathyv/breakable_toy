@@ -3,6 +3,8 @@ class QuestionsetsController < ApplicationController
   # GET /quizzes
   def index
 
+
+
     hunts = Hunt.all
 
     locs = hunts.map{|hunt| hunt.location_id}.uniq!
@@ -11,7 +13,6 @@ class QuestionsetsController < ApplicationController
 
 
     @my_hash1 = Location.get_tree(index)
-    #@my_hash1 = Location.get_tree1
 
 
     respond_to do |format|
@@ -22,12 +23,14 @@ class QuestionsetsController < ApplicationController
 
   end
 
+
+
   # GET /quizzes/1
   def show
 
     @hunt = Hunt.find(params[:hunt_id])
     @itinerary_array = []
-
+    @content_array = []
 
     @questionset = Questionset.find(params[:id])
     @itinerary =['You have to play']
@@ -76,7 +79,8 @@ class QuestionsetsController < ApplicationController
    else
 
     if @huntsplayed.count == 5
-        #binding.pry
+        binding.pry
+        @content_array = @hunt.questionsets.map{|question| question.description}
         redirect_to tree_path(@questionset.hunt.id), notice: 'You are done with this hunt! If you want to play again, sign in or Sign up'
 
     else
@@ -153,7 +157,7 @@ class QuestionsetsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def questionset_params
-    params.require(:questionset).permit(:hunt_id, :hunt_photo, :question, :question_no, :address, :latitude, :longitude)
+    params.require(:questionset).permit(:hunt_id, :hunt_photo, :description, :question, :question_no, :address, :latitude, :longitude)
   end
 
 

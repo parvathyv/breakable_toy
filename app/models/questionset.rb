@@ -7,6 +7,8 @@ class Questionset < ActiveRecord::Base
 
   validates :question_no, presence: true
   validates :question, presence: true
+  validates :description, presence: true
+  validates :description, length: { maximum: 500 }
 
 
   validates :address, presence: true

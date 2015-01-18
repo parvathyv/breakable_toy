@@ -89,6 +89,7 @@ function update(source) {
   nodeUpdate.select("text")
       .style("fill-opacity", 1);
 
+
   // Transition exiting nodes to the parent's new position.
   var nodeExit = node.exit().transition()
       .duration(duration)
@@ -100,6 +101,7 @@ function update(source) {
 
   nodeExit.select("text")
       .style("fill-opacity", 1e-6);
+
 
   // Update the links…
   var link = vis.selectAll("path.link")

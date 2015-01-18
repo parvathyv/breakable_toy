@@ -17,7 +17,7 @@ feature 'user adds a location', %Q{
 
 
 
-  scenario 'user signs in and answers a question correctly', focus: true do
+  scenario 'user signs in and answers a question correctly' do
     sign_in_as(huntsplayeduser.user)
     visit hunt_questionset_path(questionset.hunt_id,questionset)
     save_and_open_page

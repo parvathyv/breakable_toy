@@ -21,8 +21,7 @@ Rails.application.routes.draw do
     resources :huntsplayedusers, only: [:create, :index, :show, :new]
   end
 
-  #get '/questionsets/index'
- # resources :users, only: [:index, :show]
+
   resources :dashboards, only: [:show]
   resources :trees, only: [:show]
 

@@ -1,26 +1,27 @@
 
 <div class="row">
   <div class="large-8 large-offset-2 columns blue-box">
-  <h3>All hunts</h3><br>
-   <h3> Your hunts </h3>
-  <%@hunts.each do|hunt|%>
+    <h3>All hunts</h3><br>
+    <h3> Your hunts </h3>
+    <%@hunts.each do|hunt|%>
 
-  <% if hunt.user == current_user%>
+      <% if hunt.user == current_user%>
+        <li>Your hunt : <%=link_to ">> #{hunt.name}", hunt_path(hunt)%> -  <%=hunt.location.address.split(',').first%></li>
+      <%else%>
 
-    <li>Your hunt : <%=link_to ">> #{hunt.name}", hunt_path(hunt)%> -  <%=hunt.location.address.split(',').first%></li>
-  <%else%>
-
-   <li>Creator : <%=hunt.user.name%>  <%=link_to "#{hunt.name}", hunt_path(hunt)%> -  <%=hunt.location.address.split(',').first%></li>
+        <li>Creator : <%=hunt.user.name%>  <%=link_to "#{hunt.name}", hunt_path(hunt)%> -  <%=hunt.location.address.split(',').first%></li>
 
 
-   <%end%>
-     <% if hunt.questionsets.count == 5 %>
-     <li><%=link_to "Play", hunt_questionset_path(hunt, hunt.questionsets.first)%></li>
-     <%end%>
-  <%end%><br>
+      <%end%>
+      <% if hunt.questionsets.count == 5 %>
+         <li><%=link_to "Play", hunt_questionset_path(hunt, hunt.questionsets.first)%></li>
+      <%end%>
 
-  <li><%=link_to "Create hunt", new_location_path%></li>
-  <li><%=link_to "All Locations", locations_path%></li>
+    <%end%><br>
+
+    <li><%=link_to "Create hunt", new_location_path%></li>
+    <li><%=link_to "All Locations", locations_path%></li>
+
   </div>
 </div>
 

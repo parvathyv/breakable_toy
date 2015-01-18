@@ -15,10 +15,12 @@
 
     <div class="row">
       <div class="large-8 columns">
-        <%= f.label :question %><br>
-        <%= f.text_field :question%><br>
-       <li><%= f.label :address %></li>
-          <li><%= f.text_field :address, placeholder: "Address", :class => "text_boxes"%></li>
+        <li><%= f.label :question %></li><br>
+        <li><%= f.text_field :question%></li><br>
+        <li><%= f.label :address %></li>
+        <li><%= f.text_field :address, placeholder: "Address", :class => "text_boxes"%></li>
+        <li><%= f.label :description %></li>
+        <li><%= f.text_area :description, :class => "text_boxes"%></li>
         <%= f.submit "Create" %>
 
 

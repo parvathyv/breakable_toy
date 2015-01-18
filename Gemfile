@@ -29,7 +29,6 @@ gem 'd3-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
-gem 'kaminari'
 group :development, :test do
   gem 'dotenv-rails'
 end

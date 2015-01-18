@@ -24,6 +24,6 @@ $('.clue3.small.button').click(function(){
     $('#clue3').toggle("slow");
 });
 
- $(".bkgnd").delay(1000).fadeIn(4000);
+ $(".bkgnd").delay(200).fadeIn(200);
 
 });

@@ -29,21 +29,71 @@ float: none !important; }
    border-bottom:1px solid;
    margin:1%;
    padding:1%;
-   border-radius:6px;
+   border-radius:4px;
    border-left-color:rgba(255,102,0,0.75);
    border-right-color:rgba(255,102,0,0.75);
    border-top-color:rgba(0,0,255,0.5);
    border-bottom-color:rgba(0,0,255,0.5);
    background-color:rgba(0,0,255,0.1)
 }
+.nofill{
+background-color:transparent;
+border-right:1px solid;
+border-left:1px solid;
+border-top:0px;
 
+margin:1%;
+border-right-color:rgba(255,102,0,0.5);
+border-left-color:rgba(255,102,0,0.5);
+
+}
+
+
+.question-boxes .boxtext{
+  font-family: 'Oswald';
+  font-size:1.5em;
+  color:blue;
+  border-bottom:1px solid;
+  border-bottom-color:rgba(0,0,255,0.5);
+}
+
+.noborder{
+  border-bottom:0px;
+}
 .lineborder{
    border-top:1px solid;
 
    border-color:rgba(0,0,255,1);
 }
+
+.bottomlineborder{
+   border-bottom:1px solid;
+   font-size:1.2em;
+   border-color:rgba(0,0,255,0.5);
+}
+.descpop{
+  display:none;
+  color:orange;
+  font-style: italic;
+}
+
+.bottomlineborder:hover~.descpop{
+   display:block;
+
+}
 .question-color{
     color:white;
+}
+.question-text{
+  color:white;
+  font-size:1.1em;
+  padding:1%;
+  border:1px solid;
+  border-radius:4px;
+  border-left-color:rgba(255,102,0,0.75);
+  border-right-color:rgba(255,102,0,0.75);
+  border-top-color:rgba(0,0,255,0.5);
+  border-bottom-color:rgba(0,0,255,0.5);
 
 }
 
@@ -120,7 +170,8 @@ li {
 }
 .imgmar{
   margin:5%;
-  border:1px solid blue;
+  border:1px solid;
+  border-color:rgba(0,0,255,0.5);
   border-radius:3px;
   margin-left:auto;
   margin-right:auto;
@@ -143,21 +194,21 @@ li {
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
-#clue1{
-    display:none;
-}
 
-#clue2{
-    display:none;
-}
-
-#clue3{
-    display:none;
-}
 .bkgnd{
     display:none;
+    position:absolute;z-index:0;
+    border:0px;
+    height:100%;
+
+    width: 100%;
 }
 
+.opaque{
+
+    opacity: 0.2;
+    filter: alpha(opacity=40);
+}
 #slideshow > #picOne, #picTwo {
     position: absolute;
     top: 10px;

@@ -4,22 +4,20 @@ class LocationsController < ApplicationController
 
   def index
 
-    @locations = Location.all
+    @locations = Location.all.page(params[:page]).per(8)
     @location_array = []
-
 
     @locations.each do|loc|
        @location_array << [loc.latitude, loc.longitude]
     end
-    #sess = session["warden.user.user.key"]
-    #binding.pry
+
   end
 
 
   def show
-
+    @playflag = false
     @location = Location.find(params[:id])
-    @hunts = @location.hunts
+    @hunts = @location.hunts.page(params[:page]).per(3)
 
   end
 

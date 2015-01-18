@@ -13,7 +13,10 @@
 <div class="row">
   <div class="large-12 columns">
   <% @places_array.each do|place|%>
-  <li><%=place%></li>
+   <% unless place.hunt_photo.blank? %>
+      <%= image_tag(place.hunt_photo) %>
+    <%end%>
+  <li><%=place.address%></li>
   <%end%>
   </div>
 </div>

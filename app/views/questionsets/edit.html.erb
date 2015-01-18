@@ -3,11 +3,13 @@
   <div class="row">
     <div class="large-12 columns blue-box">
       <%= form_for [@hunt, @questionset], url: {action: "update"}, html: {class: "nifty_form"} do |f| %>
-        <%= f.label :question %><br>
-        <%= f.text_field :question%><br>
-        <%= f.label :address %><br>
-        <%= f.text_field :address%><br>
-        <%= f.submit "Update" %>
+        <li><%= f.label :hunt_photo %></li>
+        <li><%= f.file_field :hunt_photo %></li><br>
+        <li><%= f.label :question %></li>
+        <li><%= f.text_field :question%></li><br>
+        <li><%= f.label :address %></li><br>
+        <li><%= f.text_field :address%></li><br>
+        <li><%= f.submit "Update" %></li>
       <% end %>
     </div>
   </div>

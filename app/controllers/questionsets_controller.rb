@@ -27,7 +27,7 @@ class QuestionsetsController < ApplicationController
 
   # GET /quizzes/1
   def show
-
+    binding.pry
     @hunt = Hunt.find(params[:hunt_id])
     @itinerary_array = []
     @content_array = []

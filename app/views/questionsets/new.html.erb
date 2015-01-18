@@ -10,11 +10,12 @@
         <% end %>
       <% end %><br>
     </ul>
-     <%= f.label :hunt_photo %><br />
-     <%= f.file_field :hunt_photo %>
+
 
     <div class="row">
       <div class="large-8 columns">
+        <li><%= f.label :hunt_photo %></li>
+        <li><%= f.file_field :hunt_photo %></li><br>
         <li><%= f.label :question %></li><br>
         <li><%= f.text_field :question%></li><br>
         <li><%= f.label :address %></li>

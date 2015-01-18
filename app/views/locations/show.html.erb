@@ -1,27 +1,44 @@
-<br>
 
-
-
-  <div class="row">
-    <div class="large-12 columns">
-      <h3 style="font-family:'Oswald';color:Orange"><%=@location.address.split(',').first.upcase%><h3>
-
-      <h3>Choose your hunt</h3>
+<div class="row">
+  <div class="large-10 large-offset-1 columns  question-boxes nofill">
+      <h3 class="boxtext" style="color:orange"><%=@location.address.split(',').first.upcase%></h3>
+      <br>
+      <h3 class="boxtext" style="border:0px">Choose Hunt</h3>
+       <div class="large-10 large-offset-1 columns question-boxes hvr-float">
         <%@hunts.each do|hunt|%>
 
-          <li>Name : <%=hunt.name%></li>
-          <li>What : <%=hunt.description%></li>
-           <li><%= link_to ">>", location_hunt_path(@location, hunt) %></li>
+          <%if Questionset.if_exists?(hunt.id).empty? == false%>
+            <%@playflag = true %>
+            <%id = hunt.questionsets.first.id%>
+          <%end%>
+          <div class="large-10 large-offset-1 columns hvr-float">
+            <li class="bottomlineborder"><%=hunt.name%> (mouseover for info)</li>
+            <li class="descpop"><%=hunt.description%></li>
+            <%if current_user.id == hunt.user_id%>
 
+              <li><%= link_to "Hunt Details", location_hunt_path(@location, hunt) %></li>
+            <%else%>
 
+              <%if @playflag == true%>
+                <li><%= link_to "Play Hunt", location_hunt_path(@location, hunt) %></li>
+              <%end%>
+            <%end%>
+          </div>
         <%end%>
-        <h3> Create your hunt </h3>
-        <li><%= link_to "New Hunt", new_location_hunt_path(@location) %></li>
+         <div class="large-4 large-offset-4 columns">
+          <li><%= paginate @hunts %></li>
+        </div>
+       </div>
+      <p></p>
+      <h3 class="boxtext" style="margin-top:35%;border-bottom:0px"> Create Hunt </h3>
+        <div class="large-10 large-offset-1 columns question-boxes">
+          <li><%= link_to "New Hunt", new_location_hunt_path(@location) %></li>
 
-        <li><%= link_to "All locations", locations_path %></li>
+          <li><%= link_to "All locations", locations_path %></li>
+        </div>
 
 
-    </div>
   </div>
+</div>
 
 

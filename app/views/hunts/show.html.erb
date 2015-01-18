@@ -11,8 +11,8 @@
     <li>Name : <%=@hunt.name%></li><br>
     <li>Location : <%=@hunt.location.address.split(',').first%></li><br>
     <h3>Your itenirary</h3>
-
-    <div class="row">
+    <% if current_user.id == @hunt.user_id %>
+      <div class="row">
 
 
           <%@hunt.questionsets.each do|question|%>
@@ -70,3 +70,18 @@
 
     </div>
   </div>
+  <%end%>
+
+<div class="row">
+  <div class="large-12 columns blue-box">
+  <li><%=link_to "New hunt", new_location_path%></li>
+  <li><%=link_to "All hunts", hunts_path%></li>
+  <% if @hunt.questionsets.count == 5 %>
+         <li><%=link_to "Start", hunt_questionset_path(@hunt, @hunt.questionsets.first)%></li>
+  <%end%>
+  </div>
+</div>
+
+
+
+

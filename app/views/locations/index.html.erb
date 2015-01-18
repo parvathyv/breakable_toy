@@ -1,32 +1,31 @@
+<script type="text/javascript">
+  var map_array = <%= @location_array.inspect %>
+  var my_zoom =  <%= 4 %>
+  var flag = <%= 1 %>
+  var mapcenterlat = <%= 39.8282 %>
+  var mapcenterlong = <%= -98.5795 %>
+</script>
 
 
-  <script type="text/javascript">
-    var map_array = <%= @location_array.inspect %>
-    var my_zoom =  <%= 4 %>
-    var flag = <%= 1 %>
-    var mapcenterlat = <%= 39.8282 %>
-    var mapcenterlong = <%= -98.5795 %>
-  </script>
+<div id="map_canvas" style="height:75%;width:100%"></div>
 
 
-  <div id="map_canvas" style="height:75%;width:100%"></div>
-
-
-  <div class="row">
-    <div class="large-12 columns blue-box">
-      <h3>Choose your location</h3>
-      <div class="large-12 columns question-boxes hvr-float">
-        <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-12">
+<div class="row">
+  <div class="large-10 large-offset-1 columns  question-boxes nofill">
+    <h3 class="boxtext">Choose Location</h3>
+      <div class="large-12 columns blue-box hvr-float">
+        <li>
           <%@locations.each do|loc|%>
-            <li style="margin-left:20%"><%= link_to "#{loc.address.split(',').first}", location_path(loc.id) %></li>
-
+            <%= link_to "#{loc.address.split(',').first}", location_path(loc.id), class: "question-text hvr-float" %>
           <%end%>
-        </ul>
-
-    </div>
+        </li>
+        <div class="large-4 large-offset-4 columns">
+          <li><%= paginate @locations %></li>
+        </div>
+      </div>
 
   </div>
-
+</div>
 
 
 

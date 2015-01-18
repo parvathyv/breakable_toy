@@ -22,7 +22,9 @@ class Questionset < ActiveRecord::Base
     hunt.questionsets.where("id > ?", id).order("id ASC").first
   end
 
-
+  def self.if_exists?(huntid)
+     where("hunt_id=?",huntid)
+  end
 
   def upto
 

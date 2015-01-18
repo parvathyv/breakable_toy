@@ -12,7 +12,7 @@ class TreesController < ApplicationController
     @content_array = @hunt.questionsets.map{|question| question.description}
 
     #@content_array = @content_array.map{|x| x.tr(?", ?') if x != nil}
-    binding.pry
+
 
 
 

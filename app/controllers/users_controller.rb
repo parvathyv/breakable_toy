@@ -4,10 +4,10 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
-    @user = current_user
-    @hunts_owned = @user.hunts
-    binding.pry
+   @users = User.all
+   @user = current_user
+   @hunts_owned = @user.hunts
+
    # @hunts_completed = Huntsplayeduser.where("user_id=?",current_user.id).group(:hunt_id).count(:id)
    @hunts_completed = Huntsplayeduser.find_hunts(@user.id)
 

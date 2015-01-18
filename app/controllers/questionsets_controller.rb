@@ -27,7 +27,7 @@ class QuestionsetsController < ApplicationController
 
   # GET /quizzes/1
   def show
-    binding.pry
+
     @hunt = Hunt.find(params[:hunt_id])
     @itinerary_array = []
     @content_array = []
@@ -79,7 +79,7 @@ class QuestionsetsController < ApplicationController
    else
 
     if @huntsplayed.count == 5
-        binding.pry
+
         @content_array = @hunt.questionsets.map{|question| question.description}
         redirect_to tree_path(@questionset.hunt.id), notice: 'You are done with this hunt! If you want to play again, sign in or Sign up'
 

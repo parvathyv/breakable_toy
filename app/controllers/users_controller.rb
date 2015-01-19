@@ -2,30 +2,40 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  # GET /users
-  def index
-   @users = User.all
-   @user = current_user
-   @hunts_owned = @user.hunts
-
-   # @hunts_completed = Huntsplayeduser.where("user_id=?",current_user.id).group(:hunt_id).count(:id)
-   @hunts_completed = Huntsplayeduser.find_hunts(@user.id)
-
-  end
-
-  # GET /users/1
   def show
-   @user = User.find(params[:id])
+    @user = current_user
+    @hunts_owned = @user.hunts
+    @hunts_completed = Huntsplayeduser.find_hunts(@user.id)
   end
 
 
+  def edit
+
+     @user = User.find(params[:id])
+
+
+  end
+
+  def update
+
+    @user = User.find(params[:id])
+
+
+    @user.update(user_params)
+
+    if @user.save
+      redirect_to root_path, notice: 'User was successfully updated.'
+    else
+      flash[:notice] = 'User was not updated.'
+      render action: 'edit'
+    end
+  end
+
+ private
+ def user_params
+    params.require(:user).permit(:profile_photo, :name, :email, :password)
+ end
 
 
 
-  private
-
-  # Never trust parameters from the scary internet, only allow the white list through.
-  #def question_params
-  #  params.require(:user).permit(:title, :description, :url, :submitter)
-  #end
 end

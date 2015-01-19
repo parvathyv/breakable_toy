@@ -22,10 +22,9 @@ Rails.application.routes.draw do
   end
 
 
-  resources :dashboards, only: [:show]
   resources :trees, only: [:show]
 
-
+  resources :users, only: [:show, :update, :edit]
 
 
 end

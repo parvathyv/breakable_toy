@@ -11,12 +11,14 @@
 <div id="map_canvas" style="height:80%;width:100%"></div>
 
 <div class="row">
-  <div class="large-12 columns">
-  <% @places_array.each do|place|%>
-   <% unless place.hunt_photo.blank? %>
-      <%= image_tag(place.hunt_photo) %>
+  <div class="large-12 columns" style="margin-left:-15%">
+    <% @places_array.each do|place|%>
+      <div class="large-2 columns question-boxes nofill">
+        <% unless place.hunt_photo.blank? %>
+          <%= image_tag(place.hunt_photo) %>
+        <%end%>
+        <li><%=place.question_no%>. <%=place.address%><li>
+      </div>
     <%end%>
-  <li><%=place.address%></li>
-  <%end%>
   </div>
 </div>

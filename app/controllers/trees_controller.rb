@@ -11,22 +11,8 @@ class TreesController < ApplicationController
 
     @content_array = @hunt.questionsets.map{|question| question.description}
 
-    #@content_array = @content_array.map{|x| x.tr(?", ?') if x != nil}
-
-
-
-
 
   end
 
 
-
-
-
-  private
-
-  # Never trust parameters from the scary internet, only allow the white list through.
-  #def question_params
-  #  params.require(:user).permit(:title, :description, :url, :submitter)
-  #end
 end

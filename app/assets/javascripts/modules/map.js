@@ -133,9 +133,7 @@
 
    for (var i = 0; i < map_array.length; i++){
 
-        var location = new google.maps.LatLng(map_array[i][0], map_array[i][1]);
-
-
+      var location = new google.maps.LatLng(map_array[i][0], map_array[i][1]);
 
       var marker = new google.maps.Marker({
         position: location,

@@ -1,5 +1,4 @@
 
-Pop up boxes (string info problem)
 Link Clues(changing action)
 Style
 parallax scrolling integration

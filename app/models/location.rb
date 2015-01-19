@@ -29,9 +29,6 @@ class Location < ActiveRecord::Base
     @location = Location.find(lid).address
     @hunts = Location.find(lid).hunts
 
-
-
-
     @my_hash1 = {}
     hash = {}
     hash1= {}
@@ -50,32 +47,23 @@ class Location < ActiveRecord::Base
         hash = {}
         arr = []
         hash["name"] = hunt.name
-        # @hunts[n1]
         arr1 << hash
-
-        #@questionsets.size.times do |n2|
         sample_order = hunt.questionsets.shuffle
 
-
-       # hunt.questionsets.each do|ques|
-          sample_order.each do|ques|
+        sample_order.each do|ques|
           hash1={}
-          #arr = []
+
           hash1["name"] = ques.address
-          #@questionsets[n2]
+
           hash1["size"] = 1000 + rand(120)
           arr << hash1
 
          end
+
          hash["children"] = arr
          @my_hash1["children"] = arr1
 
         end
-          # @my_hash1["children"] = hash
-
-
-
-
 
     end
 

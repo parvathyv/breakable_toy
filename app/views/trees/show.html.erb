@@ -1,11 +1,10 @@
 <script type="text/javascript">
-  var map_array = <%= @itinerary_array %>
-
-  var my_zoom =  <%= 12 %>
-  var mapcenterlat = <%= @hunt.location.latitude %>
-  var mapcenterlong = <%= @hunt.location.longitude %>
-  var flag = <%= 2 %>
-
+  var map_array = <%= @itinerary_array %>;
+  var content_array = <%= raw @content_array.to_json %>;
+  var my_zoom =  <%= 12 %>;
+  var mapcenterlat = <%= @hunt.location.latitude %>;
+  var mapcenterlong = <%= @hunt.location.longitude %>;
+  var flag = 2;
 </script>
 
 <div id="map_canvas" style="height:80%;width:100%"></div>

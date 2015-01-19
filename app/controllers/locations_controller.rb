@@ -6,11 +6,15 @@ class LocationsController < ApplicationController
 
     @locations = Location.all.page(params[:page]).per(8)
     @location_array = []
+    @content_array = []
 
     @locations.each do|loc|
        @location_array << [loc.latitude, loc.longitude]
     end
-
+     @locations.each do|loc|
+       @content_array << loc.address.split(',').first
+    end
+     @content_array = @content_array.to_json
   end
 
 

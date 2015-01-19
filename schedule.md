@@ -11,6 +11,7 @@ Issues
 Github callback URL in production
 geocoder fake/stub
 has_many_and_belongs_to factorygirl check
+Check everything
 
 
 

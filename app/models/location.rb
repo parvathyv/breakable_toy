@@ -2,8 +2,8 @@ class Location < ActiveRecord::Base
 
   has_many :hunts,  dependent:  :destroy
   has_many :users, through: :hunts
-  validates :latitude, numericality: true
-  validates :longitude, numericality: true
+  validates :latitude, presence: true
+  validates :longitude, presence: true
   validates :address, presence: true
 
   geocoded_by :address

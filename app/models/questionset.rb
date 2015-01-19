@@ -3,25 +3,21 @@ class Questionset < ActiveRecord::Base
 
   belongs_to :hunt
 
-
-
   validates :question_no, presence: true,
   :inclusion => {:in => [1,2,3,4,5]}
 
   validates :question, presence: true, length: { maximum: 300 }
   validates :description, presence: true
   validates :description, length: { maximum: 500 }
-  validates :latitude, numericality: true
-  validates :longitude, numericality: true
   validates :hunt_id, presence: true
   validates_numericality_of :hunt_id, :only_integer => true
 
   validates :address, presence: true
 
   geocoded_by :address
-  after_validation :geocode, :if => :address_changed?
+  after_validation :geocode
 
-   mount_uploader :hunt_photo, QuestionsetPhotoUploader
+  mount_uploader :hunt_photo, QuestionsetPhotoUploader
 
   def next
     hunt.questionsets.where("id > ?", id).order("id ASC").first

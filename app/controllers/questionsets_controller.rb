@@ -102,11 +102,13 @@ class QuestionsetsController < ApplicationController
 
   # POST /quizzes
   def create
+    binding.pry
     @hunt = Hunt.find(params[:hunt_id])
 
     @questionset = @hunt.questionsets.build(questionset_params)
 
     @last_quiz = Questionset.where("hunt_id=?", @hunt.id)
+
 
     if @last_quiz == nil || @last_quiz.empty?
       @questionset.question_no = 1

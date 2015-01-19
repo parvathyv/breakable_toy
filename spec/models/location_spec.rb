@@ -4,26 +4,28 @@ describe Location do
 
   #it { should belong_to :user }
 
-  it { should have_many(:hunts).dependent(:destroy) }
+  it {should have_many(:hunts).dependent(:destroy) }
+  it {should have_many(:huntsplayedusers).dependent(:destroy) }
 
-  describe "#address" do
+  describe "#address",focus: true do
     it { should have_valid(:address).when("Boston, MA", "New York, NY, USA", "Alcatraz, San Fransisco, CA") }
     it { should_not have_valid(:address).when(nil) }
   end
 
   describe "#latitude",focus: true do
-#    subject { FactoryGirl.create(:location) }
+    it { should have_valid(:latitude).when(44.1222, 22.12) }
     it { should allow_value(44.1222).for(:latitude) }
-    #it { should validate_numericality_of(:latitude).is_equal_to(44.1222)}
+    it { should allow_value(-119.1222).for(:longitude) }
+    it { should validate_numericality_of(:latitude)}
     it { should_not allow_value("abc").for(:latitude) }
-    it { should validate_uniqueness_of([:latitude, :longitude]) }
+    it { validate_uniqueness_of(:latitude).scoped_to(:longitude) }
   end
 
-  describe "#longitude" do
-    subject { FactoryGirl.create(:location) }
-   # it { should have_valid(:longitude).when(-119.1289, -139.2222) }
-    it { should_not have_valid(:longitude).when("abc", nil, "www.web.com") }
-    it { should validate_uniqueness_of([:latitude, :longitude]) }
+  describe "#longitude",focus: true do
+    it { should allow_value(-119.1222).for(:longitude) }
+    it { should validate_numericality_of(:latitude)}
+    it { should_not allow_value("abc").for(:longitude) }
+    it { validate_uniqueness_of(:latitude).scoped_to(:longitude) }
   end
 
 

@@ -14,9 +14,6 @@ feature 'user adds a location', %Q{
   let!(:huntsplayeduser) { FactoryGirl.build(:huntsplayeduser) }
   let!(:questionset) { FactoryGirl.create(:questionset)}
 
-
-
-
   scenario 'user signs in and answers a question correctly' do
     sign_in_as(huntsplayeduser.user)
     visit hunt_questionset_path(questionset.hunt_id,questionset)

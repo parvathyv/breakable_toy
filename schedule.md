@@ -10,7 +10,7 @@ Refactor(AJAX)
 Issues
 Github callback URL in production
 geocoder fake/stub
-has_many_and_belongs_to factorygirl
+has_many_and_belongs_to factorygirl check
 
 
 

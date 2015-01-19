@@ -6,16 +6,13 @@ class QuestionsetsController < ApplicationController
     hunts = Hunt.all
 
     locs = hunts.map{|hunt| hunt.location_id}.uniq!
-
-    index = locs.sample
-
-
-    @my_hash1 = Location.get_tree(index)
-
-
-    respond_to do |format|
-      format.html { render :index }
-      format.json { render json: @my_hash1}
+    if locs.empty? == false
+      index = locs.sample
+      @my_hash1 = Location.get_tree(index)
+      respond_to do |format|
+        format.html { render :index }
+        format.json { render json: @my_hash1}
+      end
     end
 
 

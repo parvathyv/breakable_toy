@@ -7,7 +7,7 @@ class TreesController < ApplicationController
     @hunt = Hunt.find(params[:id])
 
     @itinerary_array = @hunt.questionsets.first.uptoquestion(5)
-    @places_array = @hunt.questionsets
+    @places_array = @hunt.questionsets.order(:question_no)
 
     @content_array = @hunt.questionsets.map{|question| question.description}
 

@@ -32,8 +32,9 @@
 <div class="row">
   <div class="large-12 columns blue-box">
     <h3>Hunt</h3>
-    <li>Name : <%=@hunt.name%></li><br>
-    <li>Location : <%=@hunt.location.address.split(',').first%></li><br>
+    <li>Name : <%=@hunt.name%>
+     Creator: <%=@hunt.user.name%>
+     Location : <%=@hunt.location.address.split(',').first%></li><br>
     <h3>Your itenirary</h3>
     <% if current_user.id == @hunt.user_id %>
       <div class="row">

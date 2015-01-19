@@ -96,6 +96,14 @@ border-left-color:rgba(255,102,0,0.5);
   border-bottom-color:rgba(0,0,255,0.5);
 
 }
+.smallfont{
+  font-size:1em;
+  font-family:'Poiret One';
+  color:white;
+  padding:2%;
+
+
+}
 
 
 .question-boxes:hover{background-color:rgba(0,0,255,0.10);color:blue;}

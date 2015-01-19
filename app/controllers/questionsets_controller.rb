@@ -3,8 +3,6 @@ class QuestionsetsController < ApplicationController
   # GET /quizzes
   def index
 
-
-
     hunts = Hunt.all
 
     locs = hunts.map{|hunt| hunt.location_id}.uniq!

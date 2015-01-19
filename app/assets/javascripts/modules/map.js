@@ -146,7 +146,7 @@
     var j = i + 1;
     var j = 1
     marker.setTitle(j.toString());
-    createinfoWindow(marker, map_array[i][2]);
+    createinfoWindow(marker, content_array[i]);
 
     }
 
@@ -154,13 +154,13 @@
 
     function createinfoWindow(marker, contentString){
 
-    var infowindow = new google.maps.InfoWindow({
-      content: contentString,
-      maxWidth: 200
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString,
+        maxWidth: 200
     });
 
     google.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(map,marker);
+    infowindow.open(map, marker);
     });
   }
 

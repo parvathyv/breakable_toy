@@ -59,6 +59,6 @@ RSpec.configure do |config|
 
   config.infer_spec_type_from_file_location!
   config.include AuthenticationHelper
-  #config.include ArticleHelper
+  config.include GeocodeHelper
   #config.include ReviewHelper
 end

@@ -2,6 +2,20 @@ class Huntsplayeduser < ActiveRecord::Base
 
   has_many :hunts
   has_and_belongs_to_many :users
+  validates :question_no, presence: true,
+  :inclusion => {:in => [1,2,3,4,5]}
+  validates :hunt_id, presence: true
+  validates_numericality_of :hunt_id, :only_integer => true
+  validates :user_id, presence: true
+  validates_numericality_of :user_id, :only_integer => true
+
+  validates :user_session_id, presence: true
+  validates :user_session_id,
+  length: {
+  minimum: 32,
+  maximum: 32
+  }
+  validates :address, presence: true
   validates_uniqueness_of :question_no, scope: [:hunt_id, :user_id, :user_session_id]
 
 

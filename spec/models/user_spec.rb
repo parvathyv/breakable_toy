@@ -1,8 +1,23 @@
 require 'rails_helper'
 
-RSpec.describe User, :type => :model do
-  VCR.use_cassette("synopsis") do
-    response = Net::HTTP.get_response(URI("https://github.com/login?return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3Dd7d188230cb45197c709%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A3000%252Fusers%252Fauth%252Fgithub%252Fcallback%26response_type%3Dcode%26scope%3Duser%252Cpublic_repo%26state%3D77acf81f42d086ea8dfd7a93dfa67daf04d43bff71ae73fa"))
+describe User do
 
+  describe "#password", focus: true do
+    it { should have_valid(:password).when("abcd1234", "asd^2jk@%#&!!") }
+    it { should_not have_valid(:password).when("abc", nil, "") }
+  end
+
+  describe "#password_confirmation", focus: true do
+    subject { FactoryGirl.build(:user, password: "abcd1234") }
+    it { should have_valid(:password_confirmation).when("abcd1234") }
+    it { should_not have_valid(:password_confirmation).when("asdasd") }
+  end
+
+  describe "#email", focus: true do
+    subject { FactoryGirl.create(:user) }
+    it { should have_valid(:email).when("meow@aol.com", "paddington@meow.com") }
+    it { should_not have_valid(:email).when("wasd", "kitty.com", "ki@", nil, "") }
+    it { should validate_uniqueness_of(:email) }
   end
 end
+

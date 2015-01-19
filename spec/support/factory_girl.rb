@@ -13,17 +13,17 @@ FactoryGirl.define do
   factory :location do
     #sequence(:address) { |n| "#{n}New York, NY, USA"}
     address 'New York, NY, USA'
-    #latitude 41.4222
-    #longitude -119.8888
+   # after_build do |addr|
+   #   addr.stub(:validate_img).and_return true
+   # end
   end
 
   factory :hunt do
     sequence(:name) { |n| "#{n}nnn"}
     description "Discover SanFran on a foggy day"
-
     user
     location
-
+    huntsplayeduser
   end
 
   factory :questionset do
@@ -37,10 +37,13 @@ FactoryGirl.define do
   end
 
   factory :huntsplayeduser do
-    user_session_id "1h199199199991"
+    user_session_id "a9200101a111111a9200101a11111132"
     address "King's Chapel, Boston, MA"
 
     question_no 1
+
+    after(:create) {|huntsplayeduser| huntsplayeduser.users = [create(:user)]}
+  end
 
   end
 

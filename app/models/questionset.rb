@@ -1,15 +1,20 @@
-require 'open-uri'
+
 class Questionset < ActiveRecord::Base
 
   belongs_to :hunt
 
 
 
-  validates :question_no, presence: true
-  validates :question, presence: true
+  validates :question_no, presence: true,
+  :inclusion => {:in => [1,2,3,4,5]}
+
+  validates :question, presence: true, length: { maximum: 300 }
   validates :description, presence: true
   validates :description, length: { maximum: 500 }
-
+  validates :latitude, numericality: true
+  validates :longitude, numericality: true
+  validates :hunt_id, presence: true
+  validates_numericality_of :hunt_id, :only_integer => true
 
   validates :address, presence: true
 
@@ -97,67 +102,6 @@ class Questionset < ActiveRecord::Base
          #{5 - self.question_no} questions to go "
       end
      msg
-
-  end
-
-  def get_clue
-
-    paragraphs = []
-    search_item = self.address.split(',').first
-
-    search_item = search_item.split(' ').each { | word | word.capitalize! }.join(' ')
-
-    if search_item.strip.size > 1
-      search_item = search_item.split(' ').join('_')
-    end
-
-    search_parameter = search_item
-
-
-
-      url = "https://en.wikipedia.org/wiki/#{search_parameter}"
-
-
-
-      doc = Nokogiri::HTML(open(url))
-
-      characters = doc.css("#mw-content-text p")
-
-
-
-      if characters[1].to_s.length > 100 && characters[0].to_s.length < 10
-        paragraphs << characters[1].to_s.split(',').first
-        paragraphs << characters[1].to_s.split(',')[1]
-        paragraphs << characters[1].to_s.split(',')[2]
-      else
-        paragraphs << characters[0].to_s.split(',').first
-        paragraphs << characters[0].to_s.split(',')[1]
-        paragraphs << characters[0].to_s.split(',')[2]
-      end
-
-      search_parameter = search_parameter.split('_').join(' ')
-
-
-      paragraphs = paragraphs.map do|paragraph|
-        if paragraph.nil? == false
-          paragraph = paragraph.gsub(search_parameter, '---')
-        end
-      end
-
-      paragraphs = paragraphs.map do|paragraph|
-        if paragraph.nil? == false
-          paragraph = paragraph.gsub(search_parameter.split(' ').first,'---')
-        end
-      end
-
-      paragraphs = paragraphs.map do|paragraph|
-        if paragraph.nil? == false
-          paragraph = paragraph.split('.').first
-        end
-      end
-
-    paragraphs
-
 
   end
 

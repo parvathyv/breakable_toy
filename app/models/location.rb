@@ -41,33 +41,44 @@ class Location < ActiveRecord::Base
 
       @my_hash1["name"] = @location
 
-
-    # @hunts.size.times do |n1|
       @hunts.each do|hunt|
-        hash = {}
-        arr = []
-        hash["name"] = hunt.name
-        arr1 << hash
-        sample_order = hunt.questionsets.shuffle
+        if hunt.questionsets.count == 5
+          hash = {}
+          arr = []
+          hash["name"] = hunt.name
+          arr1 << hash
 
-        sample_order.each do|ques|
-          hash1={}
+            sample_order = hunt.questionsets.shuffle
 
-          hash1["name"] = ques.address
+            sample_order.each do|ques|
+              hash1={}
 
-          hash1["size"] = 1000 + rand(120)
-          arr << hash1
+              hash1["name"] = ques.address
 
-         end
+              hash1["size"] = 1000 + rand(120)
+              arr << hash1
 
-         hash["children"] = arr
-         @my_hash1["children"] = arr1
+             end
 
-        end
+           hash["children"] = arr
+           @my_hash1["children"] = arr1
 
+
+
+    else
+        @my_hash1 = {"name"=>"Boston, MA",
+                     "children"=>
+                      [{"name"=>"Freedom Trail",
+                        "children"=>
+                         [{"name"=>"Boston Commons, Boston, MA", "size"=>1048},
+                          {"name"=>"Paul Revere House, Boston, MA", "size"=>1067},
+                          {"name"=>"King's Chapel, Boston, MA", "size"=>1055},
+                          {"name"=>"USS Constitution, Boston, MA", "size"=>1028},
+                          {"name"=>"Old State House, Boston, MA", "size"=>1096}]}]}
+      end
     end
-
-  @my_hash1
+   end
+   @my_hash1
 
   end
 

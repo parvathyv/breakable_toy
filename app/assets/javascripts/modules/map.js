@@ -164,6 +164,9 @@
     google.maps.event.addListener(marker, 'click', function() {
     infowindow.open(map, marker);
     });
+    google.maps.event.addListener(marker, 'mouseover', function() {
+    infowindow.open(map, marker);
+    });
   }
 
 
@@ -224,7 +227,9 @@
   function placeMarker(position, map) {
   var marker = new google.maps.Marker({
     position: position,
-    map: map
+    map: map,
+    draggable:true,
+    title:"Drag me!"
   });
 
 }

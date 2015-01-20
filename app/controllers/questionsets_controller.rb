@@ -2,16 +2,16 @@ class QuestionsetsController < ApplicationController
   before_action :authenticate_user!, :only => [:show, :edit, :update, :destroy]
   # GET /quizzes
   def index
-
     hunts = Hunt.all
 
     locs = hunts.map{|hunt| hunt.location_id}.uniq!
     if locs.empty? == false
       index = locs.sample
-      @my_hash1 = Location.get_tree(index)
+      @my_hash = Location.get_tree(1)
+
       respond_to do |format|
         format.html { render :index }
-        format.json { render json: @my_hash1}
+        format.json { render json: @my_hash}
       end
     end
 

@@ -39,7 +39,7 @@ class Location < ActiveRecord::Base
 
     1.times do |n|
 
-      @my_hash1["name"] = @location[n]
+      @my_hash1["name"] = @location
 
 
     # @hunts.size.times do |n1|

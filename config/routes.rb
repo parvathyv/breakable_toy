@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
 
   resources :trees, only: [:show]
+  resources :clues, only: [:show]
 
   resources :users, only: [:show, :update, :edit]
 

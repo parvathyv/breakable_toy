@@ -223,7 +223,7 @@
 
   google.maps.event.addListener(map, 'click', function(e) {
 
-     //document.getElementsByClassName("address")[0].value = e.latLng.lat() + ', ' + e.latLng.lng();
+     document.getElementsByClassName("address")[0].value = e.latLng.lat() + ', ' + e.latLng.lng();
      placeMarker(e.latLng, map);
      /*$.ajax({
       url: '/questionsets/' + quiz_id+'/huntsplayedusers',

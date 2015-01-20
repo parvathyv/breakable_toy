@@ -16,19 +16,21 @@
       <li> <%=@msg%></li>
         <li class="question-text boxques">Q <%=@questionset.question_no%>.  <%=@questionset.question%></li>
 
+          <li><%=link_to "Get Help", clue_path(@questionset.hunt.location_id)%></li>
           <%= form_for [@questionset, @huntsplayed] do |f| %>
            <li class="italictext ismall"> Enter answer in (Location, State, Country) format </li>
             <li><%= f.label :address %></li>
             <li><%= f.text_field :address, placeholder: "Address", :class => "address"%></li>
             <% if flash[:notice] != "You are done ! Congrats" %>
             <div class="large-6 large-offset-3 columns">
-              <li><%= submit_tag "Answer", :class => "answer large button marginadj" %></li>
+            <li><%= submit_tag "Answer", :class => "answer large button marginadj" %></li>
             </div>
 
           <%end%>
          <% end %>
   </div>
 </div>
+
 
 
 

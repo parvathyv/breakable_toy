@@ -11,11 +11,7 @@ FactoryGirl.define do
   end
 
   factory :location do
-    #sequence(:address) { |n| "#{n}New York, NY, USA"}
     address 'New York, NY, USA'
-   # after_build do |addr|
-   #   addr.stub(:validate_img).and_return true
-   # end
   end
 
   factory :hunt do
@@ -23,7 +19,7 @@ FactoryGirl.define do
     description "Discover SanFran on a foggy day"
     user
     location
-    huntsplayeduser
+    #huntsplayeduser
   end
 
   factory :questionset do
@@ -33,7 +29,6 @@ FactoryGirl.define do
     question_no 1
 
     hunt
-
   end
 
   factory :huntsplayeduser do
@@ -45,13 +40,7 @@ FactoryGirl.define do
     after(:create) {|huntsplayeduser| huntsplayeduser.users = [create(:user)]}
   end
 
-  end
-
-
   factory :admin_user, parent: :user do
     role 'admin'
   end
-
-
-
 end

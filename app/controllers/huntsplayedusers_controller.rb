@@ -16,14 +16,16 @@ class HuntsplayedusersController < ApplicationController
 
   # POST /huntsplayedusers
   def create
-
+    binding.pry
     @flm = 0
     @is_order = false
-    # check if hunt exists in table
 
+    if params[:huntsplayeduser] == nil
+      addr = "#{params[:latitude]}, #{params[:longitude]}"
+    else
+      addr = params[:huntsplayeduser][:address]
+    end
 
-    # if maxqno is 1 less than current qno, add the record
-    # if not, tell the user not to cheat
     @questionset = Questionset.find(params[:questionset_id])
 
     @hunt = @questionset.hunt
@@ -36,12 +38,7 @@ class HuntsplayedusersController < ApplicationController
 
       if maxquestion_no.question_no == @questionset.question_no - 1
 
-         if params[:huntsplayeduser] == nil
-          addr = "#{params[:latitude]},#{params[:longitude]}"
 
-         else
-          addr = params[:huntsplayeduser][:address]
-         end
 
          @msg = @questionset.check_answer(addr)
           if !@msg.include?'Sorry'
@@ -60,40 +57,46 @@ class HuntsplayedusersController < ApplicationController
        # if params[:latitude] != nil
        #   params[:huntsplayeduser][:address] = "{params[:latitude]},#{params[:longitude]}"
        # end
-
-        params[:huntsplayeduser][:hunt_id] = @hunt.id
-        params[:huntsplayeduser][:user_id] = current_user.id
-        params[:huntsplayeduser][:user_session_id] = session.id
-        params[:huntsplayeduser][:question_no]= @questionset.question_no
-         binding.pry
-
-
-      @huntsplayeduser = Huntsplayeduser.create(huntsplayeduser_params)
-
-      #@huntsplayeduser.user = current_user
-      @flm = 1
-      if @huntsplayeduser.save
-        if @huntsplayeduser.question_no < 5
-          @prize = 0
-          if @questionset.next
-            redirect_to hunt_questionset_path(@hunt, @questionset.next), notice: 'Correct, move on!'
-          else
-            redirect_to root_path, notice: 'Hunt incomplete'
-          end
-          else
-          @prize = 1
-
-          redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'You are done ! Congrats'
+        if params[:latitude] == nil
+          params[:huntsplayeduser][:hunt_id] = @hunt.id
+          params[:huntsplayeduser][:user_id] = current_user.id
+          params[:huntsplayeduser][:user_session_id] = session.id
+          params[:huntsplayeduser][:question_no]= @questionset.question_no
+        else
+          params[:hunt_id] = @hunt.id
+          params[:user_id] = current_user.id
+          params[:user_session_id] = session.id
+          params[:question_no]= @questionset.question_no
         end
+
+
+        @huntsplayeduser = Huntsplayeduser.build(huntsplayeduser_params)
+
+        @huntsplayeduser.address = addr
+
+        @flm = 1
+        if @huntsplayeduser.save
+          if @huntsplayeduser.question_no < 5
+            @prize = 0
+            if @questionset.next
+              redirect_to hunt_questionset_path(@hunt, @questionset.next), notice: 'Correct, move on!'
+            else
+              redirect_to root_path, notice: 'Hunt incomplete'
+            end
+            else
+            @prize = 1
+
+            redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'You are done ! Congrats'
+          end
+        else
+
+          redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'Please play in order'
+        end
+
       else
 
-        redirect_to hunt_questionset_path(@hunt, @questionset), notice: 'Please play in order'
+          redirect_to hunt_questionset_path(@hunt, @hunt.questionsets.first), notice: @msg
       end
-
-    else
-
-        redirect_to hunt_questionset_path(@hunt, @hunt.questionsets.first), notice: @msg
-    end
 
 
 

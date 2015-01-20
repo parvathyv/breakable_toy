@@ -1,14 +1,28 @@
 <script type="text/javascript">
   var map_array = <%= @location_array.inspect %>;
-
-  var my_zoom =  4 ;
+  var content_array = <%= raw @content_array.to_json %>;
+  var my_zoom =  4;
   var flag = 1;
   var mapcenterlat = 39.8282;
   var mapcenterlong = -98.5795;
 </script>
 
 
-<div id="map_canvas" style="height:75%;width:100%"></div>
+<div id="map_canvas" style="height:100%;width:100%"></div>
+
+<div class="row">
+    <div class="large-6 columns layer-box boxloc">
+
+        <li class="question-text boxques">Click or mouseover on markers to proceed</li>
+  </div>
+</div>
+
+
+
+
+
+
+
 
 
 <div class="row">

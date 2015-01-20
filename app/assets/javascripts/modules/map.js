@@ -163,10 +163,22 @@
 
     google.maps.event.addListener(marker, 'click', function() {
     infowindow.open(map, marker);
+    /*$.ajax({
+      url: '/locations/' + 'loc_id',
+      method: 'get',
+      data: {
+        latitude: e.latLng.lat(),
+        longitude: e.latLng.lng()
+      }
+    });*/
+
+
     });
-    google.maps.event.addListener(marker, 'mouseover', function() {
-    infowindow.open(map, marker);
-    });
+
+      google.maps.event.addListener(marker, 'mouseover', function() {
+      infowindow.open(map, marker);
+      });
+
   }
 
 
@@ -211,16 +223,17 @@
 
   google.maps.event.addListener(map, 'click', function(e) {
 
-     document.getElementsByClassName("address")[0].value = e.latLng.lat() + ', ' + e.latLng.lng();
+     //document.getElementsByClassName("address")[0].value = e.latLng.lat() + ', ' + e.latLng.lng();
      placeMarker(e.latLng, map);
      /*$.ajax({
-      url: '/hunts/' + hunt_id + '/quizzes/' + quiz_id,
-      method: 'get',
+      url: '/questionsets/' + quiz_id+'/huntsplayedusers',
+      method: 'post',
       data: {
-        lat: e.latLng.lat(),
-        lng: e.latLng.lng()
+        latitude: e.latLng.lat(),
+        longitude: e.latLng.lng()
       }
     });*/
+
 
   });
 

@@ -16,6 +16,7 @@ class HuntsplayedusersController < ApplicationController
 
   # POST /huntsplayedusers
   def create
+
     @flm = 0
     @is_order = false
     # check if hunt exists in table
@@ -35,7 +36,14 @@ class HuntsplayedusersController < ApplicationController
 
       if maxquestion_no.question_no == @questionset.question_no - 1
 
-         @msg = @questionset.check_answer(params[:huntsplayeduser][:address])
+         if params[:huntsplayeduser] == nil
+          addr = "#{params[:latitude]},#{params[:longitude]}"
+
+         else
+          addr = params[:huntsplayeduser][:address]
+         end
+
+         @msg = @questionset.check_answer(addr)
           if !@msg.include?'Sorry'
             @flm = 1
 
@@ -46,13 +54,19 @@ class HuntsplayedusersController < ApplicationController
     end
 
 
-    #redirect_to hunt_questionset_path(@hunt, @questionset)
+
     if @is_order == true || @questionset.question_no == 1
-     # @huntsplayeduser = Huntsplayeduser.new
-      params[:huntsplayeduser][:hunt_id] = @hunt.id
-      params[:huntsplayeduser][:user_id] = current_user.id
-      params[:huntsplayeduser][:user_session_id] = session.id
-      params[:huntsplayeduser][:question_no]= @questionset.question_no
+
+       # if params[:latitude] != nil
+       #   params[:huntsplayeduser][:address] = "{params[:latitude]},#{params[:longitude]}"
+       # end
+
+        params[:huntsplayeduser][:hunt_id] = @hunt.id
+        params[:huntsplayeduser][:user_id] = current_user.id
+        params[:huntsplayeduser][:user_session_id] = session.id
+        params[:huntsplayeduser][:question_no]= @questionset.question_no
+         binding.pry
+
 
       @huntsplayeduser = Huntsplayeduser.create(huntsplayeduser_params)
 

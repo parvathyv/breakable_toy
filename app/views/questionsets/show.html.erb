@@ -1,59 +1,35 @@
 
-  <script type="text/javascript">
-    var map_array = <%= @itinerary_array %>
+<script type="text/javascript">
+  var map_array = <%= @itinerary_array %>;
+  var my_zoom =  12;
+  var mapcenterlat = <%= @hunt.location.latitude %>;
+  var mapcenterlong = <%= @hunt.location.longitude %>;
+  var flag = 2;
+  var quiz_id = <%= @questionset.id %>;
+  var hunt_id = <%= @questionset.hunt.id %>;
 
-    var my_zoom =  <%= 12 %>
-    var mapcenterlat = <%= @hunt.location.latitude %>
-    var mapcenterlong = <%= @hunt.location.longitude %>
-    var flag = <%= 2 %>
-    var quiz_id = <%= @questionset.id %>
-    var hunt_id = <%= @questionset.hunt.id %>
+ </script>
 
-   </script>
+<div id="map_canvas" style="height:100%;width:100%"></div>
+ <div class="row">
+    <div class="large-6 columns layer-box">
+      <li> <%=@msg%></li>
+        <li class="question-text boxques">Q <%=@questionset.question_no%>.  <%=@questionset.question%></li>
 
-  <div id="map_canvas" style="height:70%;width:100%"></div>
-
-
-
-    <div class="row">
-      <div class="large-8 columns blue-box">
-
-         <li> <%=@msg%></li>
-        <li>Q <%=@questionset.question_no%>.  <%=@questionset.question%></li>
-
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="large-4 columns blue-box">
-        <li><%=link_to "Help", questionsets_path%></li>
-      </div>
-    </div>
-
-    <section class="signinwhite">
-
-
-      <div class="row">
-        <div class="large-6 columns">
-        <li class="italictext"> Enter answer in (Location, State, Country) format <li>
           <%= form_for [@questionset, @huntsplayed] do |f| %>
+           <li class="italictext ismall"> Enter answer in (Location, State, Country) format </li>
             <li><%= f.label :address %></li>
             <li><%= f.text_field :address, placeholder: "Address", :class => "address"%></li>
             <% if flash[:notice] != "You are done ! Congrats" %>
+            <div class="large-6 large-offset-3 columns">
+              <li><%= submit_tag "Answer", :class => "answer large button marginadj" %></li>
+            </div>
 
-            <%= submit_tag "Answer", :class => "answer large button" %>
-            <%end%>
-          <% end %>
+          <%end%>
+         <% end %>
+  </div>
+</div>
 
-
-
-        </div>
-      </div>
-
-
-
-    </section>
 
 
 

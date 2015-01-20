@@ -102,7 +102,7 @@ class QuestionsetsController < ApplicationController
 
   # POST /quizzes
   def create
-    binding.pry
+
     @hunt = Hunt.find(params[:hunt_id])
 
     @questionset = @hunt.questionsets.build(questionset_params)

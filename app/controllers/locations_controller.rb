@@ -11,10 +11,9 @@ class LocationsController < ApplicationController
     @locations.each do|loc|
        @location_array << [loc.latitude, loc.longitude]
     end
-     @locations.each do|loc|
-       @content_array << loc.address.split(',').first
+    @locations.each do|loc|
+      @content_array << "<a style=\"font-style:italic\"href=\"locations/#{loc.id}\">#{loc.address.split(',').first}</a>"
     end
-     @content_array = @content_array.to_json
   end
 
 

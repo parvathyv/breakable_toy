@@ -12,7 +12,7 @@ feature 'user registers', %Q{
   # * If I don't specify the required information, I am presented with
   #   an error message
 
-  scenario 'provide valid registration information' do
+  scenario 'provide valid registration information',focus:true do
     visit new_user_registration_path
     attach_file "user[profile_photo]", "spec/data/img4.jpg"
     fill_in 'Email', with: 'john@example.com'
@@ -26,7 +26,7 @@ feature 'user registers', %Q{
     expect(page).to have_content('Sign Out')
   end
 
-  scenario 'provide invalid registration information' do
+  scenario 'provide invalid registration information',focus:true do
     visit new_user_registration_path
 
     click_button 'Sign Up'

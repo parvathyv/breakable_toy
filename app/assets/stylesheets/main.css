@@ -428,3 +428,9 @@ main {
         page-break-after: avoid;
     }
 }
+
+.bcg .hsContainer .hsContent .italictext{
+    font-size:0.8em;
+    font-family:'Oswald';
+    color:orange;
+}

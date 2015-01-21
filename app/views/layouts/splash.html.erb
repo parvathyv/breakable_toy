@@ -11,7 +11,7 @@
  <%= stylesheet_link_tag "main" %>
 
  <link href='http://fonts.googleapis.com/css?family=Niconne|Tangerine|Great+Vibes' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   <style type="text/css">
     body {
       font-family: 'Tangerine', sans-serif;
@@ -33,9 +33,11 @@
       <main>
 
        <section id="slide-0" class="homeSlide" style="height:682px">
+
           <div class="bcg">
             <div class="hsContainer">
             <div class="hsContent">
+             <div><%= link_to "SKIP INTRO", trips_path, class: "italictext"%></div>
               <h2 style="word-wrap:normal;font-size:2.2em" id ="heading">
               Wherever you go, go with all your heart - Confucius<br>
 
@@ -98,7 +100,7 @@
               <br> - Ibn Battuta.<br><br>
               So go forth, create your own
               or share someone's else's...</h2>
-              <%= link_to "ENTER", trips_path%>
+
             </div>
 
         </div>

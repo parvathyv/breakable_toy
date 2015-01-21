@@ -13,7 +13,7 @@ feature 'user adds a location', %Q{
   let!(:user) { FactoryGirl.create(:user) }
   let!(:location) { FactoryGirl.create(:location) }
 
-  scenario 'user signs in and adds an location' do
+  scenario 'user signs in and adds an location', focus: true do
     sign_in_as(user)
     visit new_location_path
 

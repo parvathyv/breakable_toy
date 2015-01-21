@@ -21,23 +21,23 @@
 
       <div class="row">
         <div class="large-8 large-offset-2 columns" id="inputloc">
-          <li class="italictext"> Enter location in (Location, State, Country) format <li>
+          <li class="italictext"> Enter location in (Location, State, Country) format </li>
           <li>
             <%= f.label :address %>
           </li>
           <li>
-            <%= f.text_field :address, placeholder: "Address", :class => "text_boxes"%>
+            <%= f.text_field :address, placeholder: "Address", class: "text_boxes"%>
           </li>
         </div>
       </div>
 
       <div class="row">
         <li>
-          <%= f.submit "Create", :class => "large-4 large-offset-4 columns answer large button"%>
+          <%= f.submit "Create", class: "large-4 large-offset-4 columns answer large button"%>
         </li>
 
         <li>
-          <%= link_to "VIEW ALL", locations_path,:class => "large-4 large-offset-4 columns secondary small button" %>
+          <%= link_to "VIEW ALL", locations_path,class: "large-4 large-offset-4 columns secondary small button" %>
         </li>
         <br>
       </div>

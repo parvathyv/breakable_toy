@@ -88,7 +88,7 @@ class QuestionsetsController < ApplicationController
 
 
    end
-   #@clues = @questionset.get_clue
+
 
   end
 
@@ -143,7 +143,14 @@ class QuestionsetsController < ApplicationController
     @questionset = Questionset.find(params[:id])
     @questionset.update(questionset_params)
 
-    redirect_to @hunt, notice: 'Questionset was successfully updated'
+    if @questionset.save
+      redirect_to @hunt, notice: 'Questionset was successfully updated'
+    else
+      @questionset = Questionset.find(params[:id])
+      @huntsplayed = Huntsplayeduser.new
+      flash[:notice] = 'Questionset not updated'
+      render 'show'
+    end
 
   end
 

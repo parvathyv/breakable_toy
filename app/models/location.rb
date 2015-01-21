@@ -27,7 +27,9 @@ class Location < ActiveRecord::Base
 
   def self.get_tree(lid)
     @location = Location.find(lid).address
-    @hunts = Location.find(lid).hunts
+
+    @hunts = Location.find(lid).hunts.map{|hunt|  hunt if hunt.questionsets.count == 5}
+    @hunts.reject! { |hunt| hunt == nil }
 
     @my_hash1 = {}
     hash = {}
@@ -66,6 +68,8 @@ class Location < ActiveRecord::Base
 
 
     else
+
+
         @my_hash1 = {"name"=>"Boston, MA",
                      "children"=>
                       [{"name"=>"Freedom Trail",
@@ -76,6 +80,8 @@ class Location < ActiveRecord::Base
                           {"name"=>"USS Constitution, Boston, MA", "size"=>1028},
                           {"name"=>"Old State House, Boston, MA", "size"=>1096}]}]}
       end
+
+
     end
    end
    @my_hash1

@@ -42,7 +42,7 @@ font-family:'Poiret One';
    border-right:2px solid;
    border-top:1px solid;
    border-bottom:1px solid;
-   height:350px;
+   height:370px;
    width:300px;
    padding:1%;
    border-radius:4px;
@@ -144,7 +144,7 @@ border-left-color:rgba(255,102,0,0.5);
 .boxques{
   padding:3%;
   font-family:'Roboto';
-  font-size:0.8em;
+  font-size:0.7em;
   border:2px solid;
   border-left-color:rgba(255,102,0,1);
   border-right-color:rgba(255,102,0,1);

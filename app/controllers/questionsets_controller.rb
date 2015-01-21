@@ -25,7 +25,7 @@ class QuestionsetsController < ApplicationController
 
     @hunt = Hunt.find(params[:hunt_id])
     @itinerary_array = []
-    @content_array = []
+    @content_array = ["1","2","3","4","5"]
 
     @questionset = Questionset.find(params[:id])
     @itinerary =['You have to play']

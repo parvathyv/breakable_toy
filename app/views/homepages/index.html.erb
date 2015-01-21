@@ -16,7 +16,6 @@
 
         <% if user_signed_in? == false %>
             <li style="margin-left:-10%;" class="github large button"><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></li><br>
-            <li style="margin-left:-10%;"class="github large button"><%= link_to "Sign in with Google", new_user_session_path%></li> <br>
 
         <%else%>
            <li>What is your path this iteration ? </li>

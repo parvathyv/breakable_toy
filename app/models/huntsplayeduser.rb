@@ -1,13 +1,16 @@
 class Huntsplayeduser < ActiveRecord::Base
+  #belongs_to :hunt
+  #belongs_to :user
+
 
   has_many :hunts
   has_and_belongs_to_many :users
   validates :question_no, presence: true,
   :inclusion => {:in => [1,2,3,4,5]}
   validates :hunt_id, presence: true
-  validates_numericality_of :hunt_id, :only_integer => true
+  validates_numericality_of :hunt_id, only_integer: true
   validates :user_id, presence: true
-  validates_numericality_of :user_id, :only_integer => true
+  validates_numericality_of :user_id, only_integer: true
 
   validates :user_session_id, presence: true
   validates :user_session_id,

@@ -9,12 +9,12 @@ describe Hunt do
   it {should have_many(:questionsets).dependent(:destroy) }
 
 
-  describe "#name", focus: true do
+  describe "#name" do
     it { should have_valid(:name).when("Freedom Trial", "Foggy Day") }
     it { should_not have_valid(:name).when(nil,"er") }
   end
 
-  describe "#description", focus: true do
+  describe "#description" do
 
     text = ""
       501.times do

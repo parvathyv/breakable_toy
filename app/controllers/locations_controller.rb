@@ -47,8 +47,6 @@ class LocationsController < ApplicationController
 
       @location= Location.create(location_params)
 
-      #@locations = Location.all
-
       if @location.save
         redirect_to new_location_path, notice: 'Location was successfully created.'
       else

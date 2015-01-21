@@ -1,0 +1,21 @@
+
+<script type="text/javascript">
+  var location_id= <%=@index%>
+</script>
+
+<div class="row">
+<div class="large-10 large-offset-1 small-6 medium-6 columns">
+  <li> Click on the circle next to your hunt's name to expand.
+   See the answers, but not in order !
+   Guess away !!</li>
+   <li><%= link_to 'Back to Question', 'javascript:history.go(-1);' %></li>
+</div>
+</div>
+
+<div class="row">
+  <div class="large-8 small-4 medium-6 columns">
+   <div id="collapsibletree1" style="margin-top:-5%"></div>
+  </div>
+</div>
+
+<%= javascript_include_tag "collapsible" %>

@@ -13,14 +13,13 @@ feature 'user adds a location', %Q{
   let!(:user) { FactoryGirl.create(:user) }
   let!(:location) { FactoryGirl.create(:location) }
 
-
   scenario 'user signs in and adds an location' do
     sign_in_as(user)
     visit new_location_path
 
     fill_in 'Address', with: 'Boston, MA, USA'
     click_button 'Create'
-    #save_and_open_page
+
     expect(page).to have_content('Location was successfully created')
 
   end

@@ -2,16 +2,16 @@ class QuestionsetsController < ApplicationController
   before_action :authenticate_user!, :only => [:show, :edit, :update, :destroy]
   # GET /quizzes
   def index
-
     hunts = Hunt.all
 
     locs = hunts.map{|hunt| hunt.location_id}.uniq!
     if locs.empty? == false
       index = locs.sample
-      @my_hash1 = Location.get_tree(index)
+      @my_hash = Location.get_tree(1)
+
       respond_to do |format|
         format.html { render :index }
-        format.json { render json: @my_hash1}
+        format.json { render json: @my_hash}
       end
     end
 
@@ -25,7 +25,7 @@ class QuestionsetsController < ApplicationController
 
     @hunt = Hunt.find(params[:hunt_id])
     @itinerary_array = []
-    @content_array = []
+    @content_array = ["1","2","3","4","5"]
 
     @questionset = Questionset.find(params[:id])
     @itinerary =['You have to play']
@@ -88,7 +88,7 @@ class QuestionsetsController < ApplicationController
 
 
    end
-   #@clues = @questionset.get_clue
+
 
   end
 
@@ -143,7 +143,14 @@ class QuestionsetsController < ApplicationController
     @questionset = Questionset.find(params[:id])
     @questionset.update(questionset_params)
 
-    redirect_to @hunt, notice: 'Questionset was successfully updated'
+    if @questionset.save
+      redirect_to @hunt, notice: 'Questionset was successfully updated'
+    else
+      @questionset = Questionset.find(params[:id])
+      @huntsplayed = Huntsplayeduser.new
+      flash[:notice] = 'Questionset not updated'
+      render 'show'
+    end
 
   end
 

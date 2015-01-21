@@ -16,8 +16,7 @@ class HuntsplayedusersController < ApplicationController
 
   # POST /huntsplayedusers
   def create
-
-    @flm = 0
+   @flm = 0
     @is_order = false
     # check if hunt exists in table
 
@@ -65,7 +64,6 @@ class HuntsplayedusersController < ApplicationController
         params[:huntsplayeduser][:user_id] = current_user.id
         params[:huntsplayeduser][:user_session_id] = session.id
         params[:huntsplayeduser][:question_no]= @questionset.question_no
-         binding.pry
 
 
       @huntsplayeduser = Huntsplayeduser.create(huntsplayeduser_params)

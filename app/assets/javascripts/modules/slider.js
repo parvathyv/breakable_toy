@@ -26,4 +26,6 @@ $('.clue3.small.button').click(function(){
 
  $(".bkgnd").delay(200).fadeIn(200);
 
+
+
 });

@@ -124,7 +124,7 @@
 
   var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
-  //var icon = 'search.png';
+  //var icon = 'https://localhost:3000/assets/search.png';
 
   map.mapTypes.set('map_style', styledMap);
   map.setMapTypeId('map_style');
@@ -139,8 +139,10 @@
         position: location,
         map: map,
         draggable:true,
-        title:"Drag me!"
-       // icon: icon
+        title:"Drag me!",
+        animation: google.maps.Animation.DROP,
+        //animation: google.maps.Animation.BOUNCE
+        //icon: icon
 
       });
 
@@ -178,6 +180,7 @@
       google.maps.event.addListener(marker, 'mouseover', function() {
       infowindow.open(map, marker);
       });
+      //google.maps.event.addListener(marker, 'click', toggleBounce);
 
   }
 
@@ -248,7 +251,7 @@
 }
 
 function animateCircle() {
-    var count = 0;
+  var count = 0;
    window.setInterval(function() {
       count = (count + 1) % 200;
 
@@ -257,6 +260,16 @@ function animateCircle() {
       flightPath.set('icons', icons);
   }, 30);
 }
+
+function toggleBounce() {
+
+  if (marker.getAnimation() != null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
+
 
 
 }

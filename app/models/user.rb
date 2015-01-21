@@ -3,9 +3,14 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :hunts
+  #has_many :hunts
   has_many :locations, through: :hunts
-  has_and_belongs_to_many :huntsplayedusers
+  #has_and_belongs_to_many :huntsplayedusers
+
+  has_many :hunts, class_name: "Hunt"
+  has_many :huntsplayeduser, class_name: "Huntsplayeduser"
+
+
   devise :omniauthable, :omniauth_providers => [:github]
   mount_uploader :profile_photo, ProfilePhotoUploader
 

@@ -8,7 +8,4 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( collapsibletree.js )
-Rails.application.config.assets.precompile += %w( collapsible.js )
-
-Rails.application.config.assets.precompile += %w( hover-min.css )
+Rails.application.config.assets.precompile += %w( collapsible.js skrollr.js hover-min.css main.css _main.js imagesloaded.js)

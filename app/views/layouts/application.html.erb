@@ -15,103 +15,102 @@
   <link href='//fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Niconne|Tangerine|Great+Vibes' rel='stylesheet' type='text/css'>
+
+
+
+  <section class="signin">
+
+    <div class="main-wrapper">
+      <nav class="top-bar" data-topbar role="navigation">
+      <div class="button-group">
+
+
+
+      <% if current_user %>
+         <li><%=current_user.name%></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "signinlinks" %></li>
+         <li><%= link_to 'Dashboard', user_path(current_user), :class => "signinlinks" %></li>
+          <li><%= link_to 'Edit Profile', edit_user_path(current_user), :class => "signinlinks" %></li>
+      <% else %>
+        <li><%= link_to 'Sign Up', new_user_registration_path, :class => "signinlinks" %></li>
+
+        <li><%= link_to 'Sign In', new_user_session_path, :class => "signinlinks" %></li>
+
+
+
+      <%- end -%>
+
+        <li><%= link_to 'Home', root_path, :class => "signinlinks" %></li>
+
+         <% if flash.any? %>
+            <li class="flash">
+              <%= flash[:notice] %>
+            </li>
+
+        <%end%>
 
 
 
 
-<section class="signin">
+        <a href="#" data-reveal-id="firstModal" class="signinlinks">RULES</a>
 
-  <div class="main-wrapper">
-    <nav class="top-bar" data-topbar role="navigation">
-    <div class="button-group">
+        <div id="firstModal" class="reveal-modal modal-box" data-reveal>
+         <div class="row">
+          <div class="large-10 large-offset-1 columns">
+          <h3>To create your hunt</h3>
+          <li>>> Choose the your hunt location</li>
+          <li>>> Enter your hunt name and description</li>
+          <li>>> Enter 5 questions and you are all set</li><br>
+          <div class="row">
+          <div class="large-4 large-offset-4 columns">
+            <a href="#" data-reveal-id="secondModal"
+            class="rules large button blankit" >NEW HUNT</a>
+           </div>
+           </div>
 
-
-
-    <% if current_user %>
-       <li><%=current_user.name%></li>
-      <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "signinlinks" %></li>
-       <li><%= link_to 'Dashboard', user_path(current_user), :class => "signinlinks" %></li>
-        <li><%= link_to 'Edit Profile', edit_user_path(current_user), :class => "signinlinks" %></li>
-    <% else %>
-      <li><%= link_to 'Sign Up', new_user_registration_path, :class => "signinlinks" %></li>
-
-      <li><%= link_to 'Sign In', new_user_session_path, :class => "signinlinks" %></li>
-
-
-
-    <%- end -%>
-
-      <li><%= link_to 'Home', root_path, :class => "signinlinks" %></li>
-
-       <% if flash.any? %>
-          <li class="flash">
-            <%= flash[:notice] %>
-          </li>
-
-      <%end%>
-
-
-
-
-      <a href="#" data-reveal-id="firstModal" class="signinlinks">RULES</a>
-
-      <div id="firstModal" class="reveal-modal modal-box" data-reveal>
-       <div class="row">
-        <div class="large-10 large-offset-1 columns">
-        <h3>To create your hunt</h3>
-        <li>>> Choose the your hunt location</li>
-        <li>>> Enter your hunt name and description</li>
-        <li>>> Enter 5 questions and you are all set</li><br>
-        <div class="row">
-        <div class="large-4 large-offset-4 columns">
-          <a href="#" data-reveal-id="secondModal"
-          class="rules large button blankit" >NEW HUNT</a>
-         </div>
-         </div>
-
+            </div>
           </div>
+          <a class="close-reveal-modal">&#215;</a>
         </div>
-        <a class="close-reveal-modal">&#215;</a>
-      </div>
 
-      <div id="secondModal" class="reveal-modal modal-box" data-reveal>
-        <div class="row">
-        <div class="large-10 large-offset-1 columns">
-        <h3>To play a hunt</h3>
-        <li>>> Answer the question by filling the box</li>
-        <li>>> Or answer by clicking on location in map</li>
-        <li>>> Answer all 5 questions and you win !!</li><br>
-        <div class="row">
-        <div class="large-4 large-offset-4 columns">
-          <a href="#" data-reveal-id="firstModal"
-          class="rules large button">PLAY HUNT</a>
-         </div>
-         </div>
+        <div id="secondModal" class="reveal-modal modal-box" data-reveal>
+          <div class="row">
+          <div class="large-10 large-offset-1 columns">
+          <h3>To play a hunt</h3>
+          <li>>> Answer the question by filling the box</li>
+          <li>>> Or answer by clicking on location in map</li>
+          <li>>> Answer all 5 questions and you win !!</li><br>
+          <div class="row">
+          <div class="large-4 large-offset-4 columns">
+            <a href="#" data-reveal-id="firstModal"
+            class="rules large button">PLAY HUNT</a>
+           </div>
+           </div>
 
+            </div>
           </div>
+          <a class="close-reveal-modal">&#215;</a>
         </div>
-        <a class="close-reveal-modal">&#215;</a>
+
+
+
+        </div>
+       </nav>
       </div>
-       <a href="//twitter.com/share" class="signinlinks" data-count="none" data-hashtags="Maps, Game, Travel,Tresurehunts"><%=image_tag("twitter.png")%></a>
-
-       <a href="//www.pinterest.com/pin/create/button/" class="signinlinks"><%=image_tag("pin.png")%></a>
-
-      </div>
-     </nav>
-    </div>
 
 
-  <%= yield %>
+    <%= yield %>
 
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_tag do %>
-    $(function(){
-      $(document).foundation();
-    });
-  <% end %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_tag do %>
+      $(function(){
+        $(document).foundation();
+      });
+    <% end %>
 
-</section>
-<section class="signin">
-</section>
+  </section>
+  <section class="signin">
+  </section>
 </body>
 </html>

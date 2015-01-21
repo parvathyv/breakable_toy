@@ -4,6 +4,8 @@ class Location < ActiveRecord::Base
   has_many :users, through: :hunts
   validates :latitude, presence: true
   validates :longitude, presence: true
+  validates_numericality_of :latitude
+  validates_numericality_of :longitude
   validates :address, presence: true
 
   geocoded_by :address

@@ -11,11 +11,12 @@ class Questionset < ActiveRecord::Base
   validates :description, length: { maximum: 500 }
   validates :hunt_id, presence: true
   validates_numericality_of :hunt_id, :only_integer => true
-
+  #validates_numericality_of :latitude
+  #validates_numericality_of :longitude
   validates :address, presence: true
 
   geocoded_by :address
-  after_validation :geocode
+  after_validation :geocode, :if => :address_changed?
 
   mount_uploader :hunt_photo, QuestionsetPhotoUploader
 

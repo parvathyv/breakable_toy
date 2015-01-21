@@ -24,7 +24,7 @@ feature 'user adds a location', %Q{
 
   end
 
-  scenario 'User chooses existing location' do
+  scenario 'User chooses existing location',focus: true do
     sign_in_as(user)
 
     visit new_location_path

@@ -1,4 +1,3 @@
-
 <script type="text/javascript">
   var map_array = <%= @itinerary_array %>;
   var content_array = <%= raw @content_array.to_json %>;
@@ -8,32 +7,23 @@
   var flag = 2;
   var quiz_id = <%= @questionset.id %>;
   var hunt_id = <%= @questionset.hunt.id %>;
-
- </script>
+</script>
 
 <div id="map_canvas" style="height:100%;width:100%"></div>
- <div class="row">
+  <div class="row">
     <div class="large-6 columns layer-box">
-   <!--   <li> <%=@msg%></li>-->
-        <li><%=link_to image_tag("help.png"), clue_path(@questionset.hunt.location_id), class: "issmall help"%></li>
-        <li class="question-text boxques">Q <%=@questionset.question_no%>.  <%=@questionset.question%></li>
-
-
-          <%= form_for [@questionset, @huntsplayed] do |f| %>
-
-            <li><%= f.label :address, class: "issmall" %></li>
-            <li><%= f.text_field :address, placeholder: "Address", class: "address"%></li>
-            <% if flash[:notice] != "You are done ! Congrats" %>
-             <li class="italictext issmall"> Enter answer in (Location, State, Country) format </li>
-            <div class="large-6 large-offset-3 columns">
-
-            <li><%= submit_tag "Answer", :class => "answer large button marginadj" %></li>
-
-            </div>
-          <%end%>
-
-         <% end %>
-
+      <li><%=link_to image_tag("help.png"), clue_path(@questionset.hunt.location_id), class: "issmall help"%></li>
+      <li class="question-text boxques">Q <%=@questionset.question_no%>.  <%=@questionset.question%></li>
+      <%= form_for [@questionset, @huntsplayed] do |f| %>
+        <li><%= f.label :address, class: "issmall" %></li>
+        <li><%= f.text_field :address, placeholder: "Address", class: "address"%></li>
+        <% if flash[:notice] != "You are done ! Congrats" %>
+          <li class="italictext issmall"> Enter answer in (Location, State, Country) format </li>
+          <div class="large-6 large-offset-3 columns">
+            <li><%= submit_tag "Answer", class: "answer large button marginadj" %></li>
+          </div>
+        <%end%>
+      <%end%>
   </div>
 </div>
 

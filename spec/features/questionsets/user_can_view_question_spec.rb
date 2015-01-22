@@ -1,50 +1,39 @@
 require 'rails_helper'
 
-feature "user can view all locations", %q(
+feature 'user answers a question', %Q{
 
   As a user
-  I want to be able to look at all locations
-  So that I can decide which part of the country I am interested in getting into
+  I want to be able to answer a question
+  So that I can move on to the next part of the hunt
 
   Acceptance criteria
-  [ ] A user can view an articles name, description and url
+  [ ] A user can view a question
+  [ ] A user answers the question
+  [ ] A user moves on to the next part of the question
+)} do
 
-) do
   let!(:questionset) { FactoryGirl.create(:questionset) }
 
 
-
-
-  scenario "a user can view question" do
+  scenario "a user can view question",focus:true do
     sign_in_as(questionset.hunt.user)
     visit hunt_questionset_path(questionset.hunt, questionset)
 
     expect(page).to have_content(questionset.question)
   end
 
-=begin
-  scenario "a user answers question" do
+
+
+  scenario "a user answers question",focus:true do
     sign_in_as(questionset.hunt.user)
     visit hunt_questionset_path(questionset.hunt, questionset)
 
-    fill_in 'Address', with: questionset.address
+    fill_in 'Address', with: "Boston, MA, USA"
     click_on 'Answer'
 
-    expect(page).to have_content("Great job on guessing")
-  end
+    expect(page).to have_content("Correct, move on!")
 
-
-  scenario "a user answers question and moves forward one question" do
-    questionset = FactoryGirl.create(:questionset)
-    sign_in_as(questionset.hunt.user)
-    visit hunt_questionset_path(questionset.hunt, questionset)
-
-    fill_in 'Address', with: questionset.address
-    click_on 'Answer'
-
-    expect(page).to have_content("Great job on guessing")
-
-=end
+end
 
 
 

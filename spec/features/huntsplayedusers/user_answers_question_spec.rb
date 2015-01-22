@@ -17,11 +17,11 @@ feature 'user adds a location', %Q{
   scenario 'user signs in and answers a question correctly' do
     sign_in_as(huntsplayeduser.user)
     visit hunt_questionset_path(questionset.hunt_id,questionset)
-    save_and_open_page
 
-    fill_in 'Address', with: "King's Chapel, Boston, MA"
 
-    click_button 'answer'
+    fill_in 'Address', with: "Boston, MA, USA"
+
+    click_button 'Answer'
 
     expect(page).to have_content('Correct, move on!')
 

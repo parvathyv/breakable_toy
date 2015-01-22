@@ -13,11 +13,11 @@ feature "user can view all locations", %q(
   let!(:hunt) { FactoryGirl.create(:hunt) }
 
 
-  scenario "a user can view location details" do
+  scenario "a user can view location details",focus: true do
     sign_in_as(hunt.user)
     visit location_path(hunt.location)
 
-    expect(page).to have_content('Create your hunt')
+    expect(page).to have_content('Choose Hunt')
 
     expect(page).to have_content(hunt.location.address.split(',').first.upcase)
     expect(page).to have_content(hunt.name)

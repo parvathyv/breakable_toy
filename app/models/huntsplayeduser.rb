@@ -1,6 +1,6 @@
 class Huntsplayeduser < ActiveRecord::Base
 
-  belongs_to :hunts
+  belongs_to :hunt
   has_and_belongs_to_many :users
   validates :question_no, presence: true,
   :inclusion => {:in => [1,2,3,4,5]}

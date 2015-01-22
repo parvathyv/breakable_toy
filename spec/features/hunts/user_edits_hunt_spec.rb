@@ -31,9 +31,5 @@ feature 'User edits an article', %q(
     expect(page).to have_content('Hunt was successfully updated.')
   end
 
-  scenario 'User must be logged in',focus:true do
-    visit location_hunt_path(questionset.hunt.location, questionset.hunt)
-    expect(page).to have_content 'Sign In'
-    expect(page).to have_content 'Sign Up'
-  end
+
 end

@@ -16,14 +16,7 @@ feature "user can view all locations", %q(
   scenario "a user can view all locations",focus:true do
     sign_in_as(user)
     visit locations_path
-
-    #click_on location.address.split(',').first.upcase
-
-    #expect(page).to have_content('Choose your location')
     expect(page).to have_content(user.name)
-
-    #expect(page).to have_content(location.address.split(',').first)
-
   end
 
 

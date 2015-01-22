@@ -4,42 +4,53 @@
   </div>
 <% end %>
 <div class="row">
-  <div class="large-12 columns blue-box">
-    <li><%=link_to "New hunt", new_location_path%>
-    <%=link_to "All hunts", hunts_path%>
+  <div class="large-6 large-offset-3 columns blue-box">
+    <li><%=link_to "New hunt", new_location_path,class: "question-text hvr-float"%>
+    <%=link_to "All hunts", hunts_path,class: "question-text hvr-float"%>
     <% if @hunt.questionsets.count == 5 %>
-      <%=link_to "Play", hunt_questionset_path(@hunt, @hunt.questionsets.first)%>
+      <%=link_to "Play", hunt_questionset_path(@hunt, @hunt.questionsets.first),class: "question-text hvr-float"%>
+      <%=link_to "Edit Hunt", edit_location_hunt_path(@location, @hunt),class: "question-text hvr-float"%>
+      <%= link_to "Delete", @hunt, :method => :delete,class: "question-text hvr-float" %></li>
     <%end%>
       <% if @hunt.questionsets.empty? == false %>
         <% if (5 - @hunt.questionsets.maximum(:question_no)) != 0 %>
-          You have <%= 5 - @hunt.questionsets.maximum(:question_no)%> questions left to complete <%=@hunt.name%>
-          <%=link_to "Add Question", new_hunt_questionset_path(@hunt)%>
+          <div class="row">
+            <div class="large-8 large-offset-2 columns">
+              You have <%= 5 - @hunt.questionsets.maximum(:question_no)%> questions left to complete<%=@hunt.name%>
+            </div>
+          </div>
+          <%=link_to "Add Question", new_hunt_questionset_path(@hunt),class: "question-text hvr-float"%>
         <%else%>
-        <%=@hunt.name%> Complete
+          <div class="row">
+            <div class="large-6 large-offset-3 columns ">
+              <li><%=@hunt.name%> Complete</li>
+            </div>
+          </div>
         <%end%>
-
       <%else%>
         <%=link_to "Add Question", new_hunt_questionset_path(@hunt)%>
+        <%=link_to "Edit Hunt", edit_location_hunt_path(@location, @hunt)%>
+        <%= link_to "Delete", @hunt, :method => :delete %></li>
       <%end%>
 
-      <%=link_to "Edit Hunt", edit_location_hunt_path(@location, @hunt)%>
-      <%= link_to "Delete", @hunt, :method => :delete,:class => "signinlinks" %></li>
   </div>
 </div>
 
 <div class="row">
   <div class="large-12 columns blue-box">
-    <h3>Hunt</h3>
-    <li>Name : <%=@hunt.name%>
-     Creator: <%=@hunt.user.name%>
-     Location : <%=@hunt.location.address.split(',').first%></li><br>
-    <h3>Your itenirary</h3>
+    <div class="large-6 large-offset-3 columns">
+      <li>Name : <%=@hunt.name%>
+       Creator: <%=@hunt.user.name%>
+       Location : <%=@hunt.location.address.split(',').first%></li><br>
+       <h3>Your itenirary</h3>
+    </div>
+
     <% if current_user.id == @hunt.user_id %>
       <div class="row">
         <%@hunt.questionsets.each do|question|%>
           <div class="large-4 medium-4 small-4 columns question-boxes hvr-float">
             <% unless question.hunt_photo.blank? %>
-              <%= image_tag(question.hunt_photo, :class => "imgmar") %>
+              <%= image_tag(question.hunt_photo, class: "imgmar") %>
             <%end%>
             <li class="question-color"><%=question.question_no%>.  <%=question.question.capitalize%></li>
             <li class="lineborder"><%=link_to "Edit question", edit_hunt_questionset_path(@hunt, question)%>

@@ -10,17 +10,11 @@ class UsersController < ApplicationController
 
 
   def edit
-
      @user = User.find(params[:id])
-
-
   end
 
   def update
-
     @user = User.find(params[:id])
-
-
     @user.update(user_params)
 
     if @user.save
@@ -32,10 +26,9 @@ class UsersController < ApplicationController
   end
 
  private
- def user_params
-    params.require(:user).permit(:profile_photo, :name, :email, :password)
- end
 
-
+   def user_params
+      params.require(:user).permit(:profile_photo, :name, :email, :password)
+   end
 
 end

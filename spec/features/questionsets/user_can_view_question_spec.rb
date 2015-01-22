@@ -1,15 +1,17 @@
 require 'rails_helper'
 
-feature 'user adds a location', %Q{
+feature 'user answers a question', %Q{
 
   As a user
-  I want to be able to look at all locations
-  So that I can decide which part of the country I am interested in getting into
+  I want to be able to answer a question
+  So that I can move on to the next part of the hunt
 
   Acceptance criteria
-  [ ] A user can view an articles name, description and url
-
+  [ ] A user can view a question
+  [ ] A user answers the question
+  [ ] A user moves on to the next part of the question
 )} do
+
   let!(:questionset) { FactoryGirl.create(:questionset) }
 
 

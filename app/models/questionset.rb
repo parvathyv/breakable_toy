@@ -11,8 +11,7 @@ class Questionset < ActiveRecord::Base
   validates :description, length: { maximum: 500 }
   validates :hunt_id, presence: true
   validates_numericality_of :hunt_id, :only_integer => true
-  #validates_numericality_of :latitude
-  #validates_numericality_of :longitude
+
   validates :address, presence: true
 
   geocoded_by :address
@@ -29,26 +28,19 @@ class Questionset < ActiveRecord::Base
   end
 
   def upto
-
     hunt.questionsets.where("id < ?", id).order("id ASC")
-
   end
 
   def uptoquestion(qno)
-
     objarr = hunt.questionsets.where("question_no <= ?", qno).order("id ASC")
     arr = objarr.map{|x| [x.latitude, x.longitude]}
     return arr
-
-
   end
 
   def get_distance(address)
-
-      lat = address.split(',').first.to_f
-      lng = address.split(',')[1].to_f
-      dist = Geocoder::Calculations.distance_between([lat, lng], [self.latitude,self.longitude])
-
+    lat = address.split(',').first.to_f
+    lng = address.split(',')[1].to_f
+    dist = Geocoder::Calculations.distance_between([lat, lng], [self.latitude,self.longitude])
   end
 
   def is_answer?(address)
@@ -66,7 +58,6 @@ class Questionset < ActiveRecord::Base
       checkanswer = address.upcase.split(',').first
 
       if (correctanswer.include? checkanswer) || (checkanswer.include? correctanswer)
-
         flag = 1
       else
         @nonmatch = 'address'
@@ -82,26 +73,26 @@ class Questionset < ActiveRecord::Base
 
   def check_answer(address)
 
-     flm = self.is_answer?(address)
+    flm = self.is_answer?(address)
 
-      if flm == 0
+    if flm == 0
 
-        if self.get_nonmatch == 'dist'
+      if self.get_nonmatch == 'dist'
 
-          dist = self.get_distance(address).round(1)
-          msg = " Sorry, you are about #{dist} miles off, try again"
-        else
-           msg = "Sorry, try again"
-        end
+        dist = self.get_distance(address).round(1)
+        msg = " Sorry, you are about #{dist} miles off, try again"
       else
-
-         msg = "Great job on guessing #{self.address.split(',').first}.
-         #{5 - self.question_no} questions to go "
+         msg = "Sorry, try again"
       end
-     msg
+    else
+
+       msg = "Great job on guessing #{self.address.split(',').first}.
+       #{5 - self.question_no} questions to go "
+    end
+
+    msg
 
   end
-
 
 
 end

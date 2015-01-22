@@ -11,11 +11,6 @@ class HuntsController < ApplicationController
   def show
     @hunt = Hunt.find(params[:id])
     @location = @hunt.location
-
-    #@location = Location.find(params[:location_id])
-
-
-
     @questionsets = @hunt.questionsets.order(question_no: :desc)
 
   end

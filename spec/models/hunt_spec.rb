@@ -4,8 +4,7 @@ describe Hunt do
 
   it { should belong_to :user }
   it { should belong_to :location }
-  it { should belong_to :huntsplayedusers }
-
+  #it {should have_many(:huntsplayedusers).dependent(:destroy) }
   it {should have_many(:questionsets).dependent(:destroy) }
 
 

@@ -13,7 +13,7 @@ feature "user can view all locations", %q(
   let!(:hunt) { FactoryGirl.create(:hunt) }
 
 
-  scenario "a user can view hunt details" do
+  scenario "a user can view hunt details",focus:true do
     sign_in_as(hunt.user)
     visit location_hunt_path(hunt.location, hunt)
 

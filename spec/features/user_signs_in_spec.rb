@@ -6,30 +6,24 @@ feature 'user signs in', %Q{
   So that I can regain access to my account
 } do
   let!(:user) { FactoryGirl.create(:user) }
-  scenario 'specify valid credentials' do
-    sign_in_as(user)
 
+  scenario 'specify valid credentials',focus:true do
+    visit root_path
+    sign_in_as(user)
     expect(page).to have_content('Signed in successfully')
     expect(page).to have_content('Sign Out')
   end
-=begin
-  scenario 'user uses github to sign in' do
-    Capybara.current_driver = :mechanize
+
+  scenario 'user uses github to sign in', focus:true do
+    set_omniauth
     visit root_path
-    click_link 'Sign in with Github'
-    fill_in 'Username or Email', with: 'something'
-    fill_in 'Password', with: 'password'
-    click_button 'Sign in'
-
-    expect(page).to have_content('This repository Explore Features Enterprise Blog Incorrect username or password.')
-    expect(page).to_not have_content('Successfully authenticated')
+    log_in(user)
+    expect(page).to have_content('Successfully authenticated from Github account.')
   end
-=end
-  scenario 'specify invalid credentials' do
+
+  scenario 'specify invalid credentials',focus:true do
     visit new_user_session_path
-
     click_button 'Log in'
-
     expect(page).to have_content('New Iteration')
     expect(page).to_not have_content('Sign Out')
   end

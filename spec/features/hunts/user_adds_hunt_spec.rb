@@ -13,7 +13,7 @@ feature 'user adds a location', %Q{
 
   let!(:hunt) { FactoryGirl.create(:hunt) }
 
-  scenario 'user signs in and adds a hunt', focus: true do
+  scenario 'user signs in and adds a hunt',focus: true do
     sign_in_as(hunt.user)
     visit new_location_hunt_path(hunt.location)
 
@@ -26,11 +26,9 @@ feature 'user adds a location', %Q{
   end
 
 
-  scenario 'user signs in and adds a hunt incorrectly' do
+  scenario 'user signs in and adds a hunt incorrectly',focus: true do
     sign_in_as(hunt.user)
     visit new_location_hunt_path(hunt.location)
-
-
     click_button 'Create'
 
     expect(page).to_not have_content('Hunt was successfully created')
@@ -38,7 +36,7 @@ feature 'user adds a location', %Q{
 
   end
 
-  scenario 'User must be logged in' do
+  scenario 'User must be logged in',focus: true do
     visit new_location_hunt_path(hunt.location)
     expect(page).to have_content 'Sign In'
     expect(page).to have_content 'Sign Up'

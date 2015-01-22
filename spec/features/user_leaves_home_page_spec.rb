@@ -8,7 +8,7 @@ feature 'user leaves home', %Q{
   let!(:user) { FactoryGirl.create(:user) }
 
 
-  scenario 'have access to add a new location' do
+  scenario 'have access to add a new location',focus:true do
     sign_in_as(user)
     visit root_path
     click_link 'CREATE'
@@ -16,11 +16,11 @@ feature 'user leaves home', %Q{
     expect(page).to have_content("Your hunt's location")
   end
 
-  scenario 'have access to view all locations' do
+  scenario 'have access to view all locations',focus:true do
     sign_in_as(user)
     visit root_path
     click_link 'EXPERIENCE'
 
-    expect(page).to have_content('Choose your location')
+    expect(page).to have_content('Click or mouseover on markers to proceed')
   end
 end

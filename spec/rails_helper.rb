@@ -57,6 +57,8 @@ RSpec.configure do |config|
 
   config.include AuthenticationHelper
   config.include GeocodeHelper
+  config.include OmniauthHelper
+  config.include LoginHelper
 
   config.before(:each) do
     add_geocoder_stubs

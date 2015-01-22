@@ -10,7 +10,7 @@ feature 'user leaves home', %Q{
 
   scenario 'have access to add a new location',focus:true do
     sign_in_as(user)
-    visit trips_path
+    visit root_path
     click_link 'CREATE'
 
     expect(page).to have_content("Your hunt's location")
@@ -18,7 +18,7 @@ feature 'user leaves home', %Q{
 
   scenario 'have access to view all locations',focus:true do
     sign_in_as(user)
-    visit trips_path
+    visit root_path
     click_link 'EXPERIENCE'
 
     expect(page).to have_content('Click or mouseover on markers to proceed')

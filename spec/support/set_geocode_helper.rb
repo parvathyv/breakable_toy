@@ -43,5 +43,18 @@ module GeocodeHelper
         }
       ]
     )
+    Geocoder::Lookup::Test.add_stub(
+      "Boston Commons, Boston, MA", [
+        {
+          'latitude'     => 42.119,
+          'longitude'    => -118.000,
+          'address'      => 'Boston Commons, Boston, USA',
+          'state'        => 'Massachusetts',
+          'state_code'   => 'MA',
+          'country'      => 'United States',
+          'country_code' => 'US'
+        }
+      ]
+    )
   end
 end

@@ -12,7 +12,6 @@ class Location < ActiveRecord::Base
   after_validation :geocode, :if => :address_changed?
 
   def address_type?(address)
-
     flag = true
     if address == '' or address == nil
       flag = false
@@ -24,8 +23,6 @@ class Location < ActiveRecord::Base
     end
     flag
   end
-
-
 
   def self.get_tree(lid)
     @location = Location.find(lid).address
@@ -52,27 +49,23 @@ class Location < ActiveRecord::Base
           hash["name"] = hunt.name
           arr1 << hash
 
-            sample_order = hunt.questionsets.shuffle
+          sample_order = hunt.questionsets.shuffle
 
-            sample_order.each do|ques|
-              hash1={}
+          sample_order.each do|ques|
+            hash1={}
 
-              hash1["name"] = ques.address
+            hash1["name"] = ques.address
 
-              hash1["size"] = 1000 + rand(120)
-              arr << hash1
+            hash1["size"] = 1000 + rand(120)
+            arr << hash1
 
-             end
+          end
 
-           hash["children"] = arr
-           @my_hash1["children"] = arr1
+          hash["children"] = arr
+          @my_hash1["children"] = arr1
 
-
-
-    else
-
-
-        @my_hash1 = {"name"=>"Boston, MA",
+        else
+          @my_hash1 = {"name"=>"Boston, MA",
                      "children"=>
                       [{"name"=>"Freedom Trail",
                         "children"=>
@@ -81,13 +74,9 @@ class Location < ActiveRecord::Base
                           {"name"=>"King's Chapel, Boston, MA", "size"=>1055},
                           {"name"=>"USS Constitution, Boston, MA", "size"=>1028},
                           {"name"=>"Old State House, Boston, MA", "size"=>1096}]}]}
+        end
       end
-
-
     end
-   end
-   @my_hash1
-
+  @my_hash1
   end
-
 end

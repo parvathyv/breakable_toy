@@ -8,18 +8,16 @@
     <li><%=link_to "New hunt", new_location_path%>
     <%=link_to "All hunts", hunts_path%>
     <% if @hunt.questionsets.count == 5 %>
-    <%=link_to "Play", hunt_questionset_path(@hunt, @hunt.questionsets.first)%>
+      <%=link_to "Play", hunt_questionset_path(@hunt, @hunt.questionsets.first)%>
     <%end%>
       <% if @hunt.questionsets.empty? == false %>
         <% if (5 - @hunt.questionsets.maximum(:question_no)) != 0 %>
           You have <%= 5 - @hunt.questionsets.maximum(:question_no)%> questions left to complete <%=@hunt.name%>
           <%=link_to "Add Question", new_hunt_questionset_path(@hunt)%>
-
-
         <%else%>
         <%=@hunt.name%> Complete
-
         <%end%>
+
       <%else%>
         <%=link_to "Add Question", new_hunt_questionset_path(@hunt)%>
       <%end%>
@@ -49,10 +47,10 @@
           </div>
         <%end%>
       </div>
-
-
-      </div>
     <%end%>
+  </div>
+</div>
+
 
 
 

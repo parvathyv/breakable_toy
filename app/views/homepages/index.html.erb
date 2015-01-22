@@ -13,14 +13,11 @@
   <div class="large-4 large-offset-4 columns medium-4 medium-offset-4 columns small-4 small-offset-4 columns about-box">
     <div class="blue-box" style="z-index:1">
       <div class="button-group">
-
         <% if user_signed_in? == false %>
             <li style="margin-left:-10%;" class="github large button"><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></li><br>
-
         <%else%>
            <li>What is your path this iteration ? </li>
         <%end%>
-
       </div>
     </div>
   </div>
@@ -28,11 +25,9 @@
 
 <div class="row">
   <div class="large-6 large-offset-3 columns medium-6 medium-offset-3 columns small-6 small-offset-3 columns about-box" style="z-index:1">
-
     <div class="button-group">
     <li class="secondary large button"><%= link_to "EXPERIENCE", locations_path%></li>
     <li class="secondary large button"><%= link_to "CREATE", new_location_path%></li>
-
     </div>
   </div>
 </div>

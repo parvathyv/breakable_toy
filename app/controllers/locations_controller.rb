@@ -16,14 +16,11 @@ class LocationsController < ApplicationController
     end
   end
 
-
   def show
     @playflag = false
     @location = Location.find(params[:id])
     @hunts = @location.hunts.page(params[:page]).per(3)
-
   end
-
 
   def new
     @location = Location.new
@@ -35,13 +32,10 @@ class LocationsController < ApplicationController
   end
 
   def create
-
     params[:address] = params[:location][:address]
     params[:id] = params[:location][:id]
 
-
     flag = Location.new.address_type?(params[:address])
-
 
     if flag == true
 
@@ -59,25 +53,18 @@ class LocationsController < ApplicationController
 
 
   def destroy
-
     @location = Location.find(params[:id]).destroy
     redirect_to @location, notice: 'Location was successfully deleted'
   end
 
 
   def edit
-
-     @location = Location.find(params[:id])
-
+    @location = Location.find(params[:id])
   end
 
   def update
     @location = Location.find(params[:id])
-
-
     @location.update(location_params)
-
-
     if @location.save
       redirect_to @location, notice: 'Location was successfully created.'
     else
@@ -85,18 +72,8 @@ class LocationsController < ApplicationController
     end
   end
 
-
-  # GET /questions/search
-  def search
-    query = "%#{params[:query]}%"
-    @questions = Location.where('title like ? or description like ? or url like ?',
-             query, query, query)
-  end
-
-
   private
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def location_params
     params.require(:location).permit(:latitude, :longitude, :address)
   end

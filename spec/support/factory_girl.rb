@@ -27,7 +27,7 @@ FactoryGirl.define do
     address "King's Chapel, Boston, MA"
 
     question_no 1
-
+    description 'The best city to walk in the US'
     hunt
   end
 

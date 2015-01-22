@@ -15,13 +15,11 @@ feature 'User edits an article', %q(
 
   let!(:questionset){ FactoryGirl.create(:questionset) }
 
-  scenario 'User edits an hunt' do
+  scenario 'User edits an hunt',focus:true do
     sign_in_as(questionset.hunt.user)
     visit location_hunt_path(questionset.hunt.location, questionset.hunt)
 
-    click_link 'Edit hunt name'
-
-
+    click_link 'Edit Hunt'
 
     fill_in 'Name', with: 'New article on Devise'
 
@@ -33,7 +31,7 @@ feature 'User edits an article', %q(
     expect(page).to have_content('Hunt was successfully updated.')
   end
 
-  scenario 'User must be logged in' do
+  scenario 'User must be logged in',focus:true do
     visit location_hunt_path(questionset.hunt.location, questionset.hunt)
     expect(page).to have_content 'Sign In'
     expect(page).to have_content 'Sign Up'

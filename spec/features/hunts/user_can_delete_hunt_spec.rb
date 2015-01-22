@@ -10,7 +10,7 @@ feature "User can delete an article", %q{
 
   let!(:hunt) { FactoryGirl.create(:hunt) }
 
-  scenario "User deletes an article" do
+  scenario "User deletes an article",focus:true do
 
     sign_in_as(hunt.user)
 

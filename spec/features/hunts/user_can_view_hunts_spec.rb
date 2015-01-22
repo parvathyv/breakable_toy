@@ -11,7 +11,7 @@ feature "user can view all locations", %q(
 
 ) do
   let!(:user) { FactoryGirl.create(:user) }
-  let!(:location) { FactoryGirl.create(:location) }
+  let!(:hunt) { FactoryGirl.create(:hunt) }
 
   scenario "a user can view all locations",focus:true do
     sign_in_as(user)

@@ -46,8 +46,6 @@ ActiveRecord::Schema.define(version: 20150119045251) do
     t.datetime "updated_at"
   end
 
-  add_index "locations", ["latitude", "longitude"], name: "index_locations_on_latitude_and_longitude", unique: true, using: :btree
-
   create_table "questionsets", force: :cascade do |t|
     t.integer  "hunt_id",     null: false
     t.string   "question",    null: false

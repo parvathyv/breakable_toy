@@ -1,33 +1,30 @@
 
-  <h1>Quiz</h1>
-  <h3><%=@hunt.name%></h3>
-   <ul>
-      <% if @questionset.errors.any? %>
-        <% @questionset.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      <% end %><br>
-    </ul>
+<h1>Quiz</h1>
+<h3><%=@hunt.name%></h3>
+ <ul>
+    <% if @questionset.errors.any? %>
+      <% @questionset.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    <% end %><br>
+  </ul>
 
 
 
-    <%= form_for([@hunt, @questionset]) do |f| %>
-
-      <div class="row">
-        <div class="large-8 columns">
-          <li><%= f.label :hunt_photo %></li>
-          <li><%= f.file_field :hunt_photo %></li><br>
-          <li><%= f.label :question %></li><br>
-          <li><%= f.text_field :question%></li><br>
-          <li><%= f.label :address %></li>
-          <li><%= f.text_field :address, placeholder: "Address", :class => "text_boxes"%></li>
-          <li><%= f.label :description %></li>
-          <li><%= f.text_area :description, :class => "text_boxes"%></li>
-          <%= f.submit "Create" %>
-
-
-      <li><%=link_to "See hunt details", hunt_path(@hunt)%></li>
-       </div>
-      </div>
-    <% end %>
+  <%= form_for([@hunt, @questionset]) do |f| %>
+    <div class="row">
+      <div class="large-8 columns">
+        <li><%= f.label :hunt_photo %></li>
+        <li><%= f.file_field :hunt_photo %></li><br>
+        <li><%= f.label :question %></li><br>
+        <li><%= f.text_field :question%></li><br>
+        <li><%= f.label :address %></li>
+        <li><%= f.text_field :address, placeholder: "Address", :class => "text_boxes"%></li>
+        <li><%= f.label :description %></li>
+        <li><%= f.text_area :description, :class => "text_boxes"%></li>
+        <%= f.submit "Create" %>
+        <li><%=link_to "See hunt details", hunt_path(@hunt)%></li>
+     </div>
+    </div>
+  <% end %>
 

@@ -8,19 +8,12 @@ class UsersController < ApplicationController
     @hunts_completed = Huntsplayeduser.find_hunts(@user.id)
   end
 
-
   def edit
-
      @user = User.find(params[:id])
-
-
   end
 
   def update
-
     @user = User.find(params[:id])
-
-
     @user.update(user_params)
 
     if @user.save
@@ -35,7 +28,5 @@ class UsersController < ApplicationController
  def user_params
     params.require(:user).permit(:profile_photo, :name, :email, :password)
  end
-
-
 
 end

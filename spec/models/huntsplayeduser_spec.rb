@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Huntsplayeduser do
   it { should belong_to :user }
-  it {has belong_to :hunt}
+  it {should belong_to :hunt}
 
   describe "#question_no" do
     it { should have_valid(:question_no).when(1, 2) }

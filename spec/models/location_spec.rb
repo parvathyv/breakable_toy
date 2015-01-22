@@ -2,10 +2,7 @@ require 'rails_helper'
 
 describe Location do
 
-  #it { should belong_to :user }
-
   it {should have_many(:hunts).dependent(:destroy) }
-  it {should have_many(:huntsplayedusers).dependent(:destroy) }
 
   describe "#address" do
     it { should have_valid(:address).when("Boston, MA", "New York, NY, USA", "Alcatraz, San Fransisco, CA") }

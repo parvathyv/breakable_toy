@@ -23,7 +23,6 @@ FactoryGirl.define do
   factory :questionset do
     sequence(:question) { |n| "#{n}What is the oldest public garden in the US"}
     address "Boston, MA, USA"
-
     question_no 3
     description 'The best city to walk in the US'
     hunt
@@ -32,7 +31,6 @@ FactoryGirl.define do
   factory :huntsplayeduser do
     user_session_id "a9200101a111111a9200101a11111132"
     address "Boston, MA, USA"
-
     question_no 1
     hunt
     user

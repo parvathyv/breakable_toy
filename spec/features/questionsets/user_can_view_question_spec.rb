@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "user can view all locations", %q(
+feature 'user adds a location', %Q{
 
   As a user
   I want to be able to look at all locations
@@ -9,42 +9,29 @@ feature "user can view all locations", %q(
   Acceptance criteria
   [ ] A user can view an articles name, description and url
 
-) do
+)} do
   let!(:questionset) { FactoryGirl.create(:questionset) }
 
 
-
-
-  scenario "a user can view question" do
+  scenario "a user can view question",focus:true do
     sign_in_as(questionset.hunt.user)
     visit hunt_questionset_path(questionset.hunt, questionset)
 
     expect(page).to have_content(questionset.question)
   end
 
-=begin
-  scenario "a user answers question" do
+
+
+  scenario "a user answers question",focus:true do
     sign_in_as(questionset.hunt.user)
     visit hunt_questionset_path(questionset.hunt, questionset)
 
-    fill_in 'Address', with: questionset.address
+    fill_in 'Address', with: "Boston, MA, USA"
     click_on 'Answer'
 
-    expect(page).to have_content("Great job on guessing")
-  end
+    expect(page).to have_content("Correct, move on!")
 
-
-  scenario "a user answers question and moves forward one question" do
-    questionset = FactoryGirl.create(:questionset)
-    sign_in_as(questionset.hunt.user)
-    visit hunt_questionset_path(questionset.hunt, questionset)
-
-    fill_in 'Address', with: questionset.address
-    click_on 'Answer'
-
-    expect(page).to have_content("Great job on guessing")
-
-=end
+end
 
 
 

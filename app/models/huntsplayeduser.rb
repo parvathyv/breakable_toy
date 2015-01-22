@@ -1,7 +1,4 @@
 class Huntsplayeduser < ActiveRecord::Base
-  #belongs_to :hunt
-  #belongs_to :user
-
 
   has_many :hunts
   belongs_to :user

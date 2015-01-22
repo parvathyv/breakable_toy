@@ -13,7 +13,7 @@ feature 'user adds a location', %Q{
   let!(:user) { FactoryGirl.create(:user) }
   let!(:location) { FactoryGirl.create(:location) }
 
-  scenario 'user signs in and adds an location', focus: true do
+  scenario 'user signs in and adds an location',focus: true do
     sign_in_as(user)
     visit new_location_path
 
@@ -24,7 +24,7 @@ feature 'user adds a location', %Q{
 
   end
 
-  scenario 'User chooses existing location' do
+  scenario 'User chooses existing location',focus: true  do
     sign_in_as(user)
 
     visit new_location_path
@@ -37,7 +37,7 @@ feature 'user adds a location', %Q{
     expect(page).to have_content('Name')
   end
 
-  scenario 'User must be logged in' do
+  scenario 'User must be logged in',focus: true  do
     visit new_location_path
     expect(page).to have_content 'Sign In'
     expect(page).to have_content 'Sign Up'

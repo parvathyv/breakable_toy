@@ -11,11 +11,11 @@
  <%= stylesheet_link_tag "main" %>
 
  <link href='http://fonts.googleapis.com/css?family=Niconne|Tangerine|Great+Vibes' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   <style type="text/css">
     body {
       font-family: 'Tangerine', sans-serif;
-
+      background-color: blue;
     }
   </style>
   </head>
@@ -33,9 +33,11 @@
       <main>
 
        <section id="slide-0" class="homeSlide" style="height:682px">
+
           <div class="bcg">
             <div class="hsContainer">
             <div class="hsContent">
+             <div><%= link_to "SKIP INTRO", trips_path, class: "italictext"%></div>
               <h2 style="word-wrap:normal;font-size:2.2em" id ="heading">
               Wherever you go, go with all your heart - Confucius<br>
 
@@ -52,6 +54,7 @@
           <div class="bcg">
             <div class="hsContainer">
             <div class="hsContent">
+             <div><%= link_to "SKIP INTRO", trips_path, class: "italictext"%></div>
               <h2 style="word-wrap:normal">I do not speak with any fondness but the language of coolest history, when I say that Boston commands attention as the town which was appointed in the destiny of nations to lead the civilization of North America.<br>
               - Ralph Waldo Emerson
               </h2>
@@ -65,6 +68,7 @@
         <div class="bcg">
           <div class="hsContainer">
             <div class="hsContent">
+             <div><%= link_to "SKIP INTRO", trips_path, class: "italictext"%></div>
               <h2>You wouldn’t think such a place as San Francisco could exist.  The wonderful sunlight here, the hills, the great bridges, the Pacific at your shoes.  Beautiful Chinatown.  Every race in the world.  The sardine fleets sailing out.  The little cable-cars whizzing down The City hills….And all the people are open and friendly.<br>
               - Dylan Thomas</h2>
               <h2> Keep scrolling </h2>
@@ -77,6 +81,7 @@
       <div class="bcg">
           <div class="hsContainer">
             <div class="hsContent">
+             <div><%= link_to "SKIP INTRO", trips_path, class: "italictext"%></div>
               <h2>Hog Butcher for the World,
                  Tool Maker, Stacker of Wheat,
                  Player with Railroads and the Nation's Freight Handler;
@@ -98,7 +103,7 @@
               <br> - Ibn Battuta.<br><br>
               So go forth, create your own
               or share someone's else's...</h2>
-              <%= link_to "ENTER", trips_path%>
+
             </div>
 
         </div>
@@ -130,6 +135,9 @@
 
   </body>
   <footer>
+  <li style="color:orange"> Boston images inspired by - Theresa Tibbot license istockphoto
+  . San Fransisco images inspired by avNY license shutterstock
+  </li>
 
   </footer>
 </html>

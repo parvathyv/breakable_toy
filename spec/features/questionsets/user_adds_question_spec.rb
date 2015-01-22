@@ -11,24 +11,26 @@ feature 'user adds a location', %Q{
 } do
 
 
-  let!(:questionset) { FactoryGirl.build(:questionset) }
+  let!(:questionset) { FactoryGirl.build(:questionset,question_no: 3) }
 
-=begin
-  scenario 'user signs in and adds a hunt' do
+
+  scenario 'user signs in adds a question',focus:true do
     sign_in_as(questionset.hunt.user)
     visit new_hunt_questionset_path(questionset.hunt)
-    attach_file "questionset[hunt_photo]", "spec/data/img4.jpg"
-    fill_in 'Question', with: "What is the oldest public garden in the US"
-    fill_in 'Address', with: "Boston Commons, Boston, MA"
 
+
+    attach_file "questionset[hunt_photo]", "spec/data/img4.jpg"
+    fill_in 'Question', with: "The most vibrant city this side of the coast "
+    fill_in 'Address', with: "New York, NY, USA"
+    fill_in 'Description', with: 'This dhshfhjsfjshfhgsdhjfgshjfg'
     click_button 'Create'
 
     expect(page).to have_content('Question was successfully created')
 
   end
-=end
 
-  scenario 'user signs in and adds a questionset incorrectly' do
+
+  scenario 'user signs in and adds a questionset incorrectly',focus:true do
     sign_in_as(questionset.hunt.user)
     visit new_hunt_questionset_path(questionset.hunt)
 

@@ -6,6 +6,7 @@ A google maps based Rails application that is a platform for users to share itin
 * A user has to answer the questions in order to complete the hunt.
 * A user can leave a hunt at any point during a sign in session and return to continue the hunt.
 * A user can play a hunt only once in a sign in session. User has to sign out and login to replay a hunt.
+* A user can use clues(infobox on the question page) for help.
 
 
 # Third party tools

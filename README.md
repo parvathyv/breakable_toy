@@ -1,12 +1,11 @@
 # the5questiontrip
-A google maps based Rails application that is a way for users to share itineraries in the form
-of question and answer sets.
+A google maps based Rails application that is a platform for users to share itineraries in the form of question and answer sets.
 
 # Rules
-* A user has to answer all five questions to complete the hunt and obtain an itinerary
-* A user can play a hunt only once in a session. User has to sign out to replay a hunt
-
-![Home Page]('http://www.filedropper.com/homepage_2')
+* A user has to answer all five questions to complete the hunt and obtain an itinerary.
+* A user has to answer the questions in order to complete the hunt.
+* A user can leave a hunt at any point during a sign in session and return to continue the hunt.
+* A user can play a hunt only once in a sign in session. User has to sign out and login to replay a hunt.
 
 
 # Third party tools

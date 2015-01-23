@@ -15,7 +15,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-
     if @user.save
       redirect_to root_path, notice: 'User was successfully updated.'
     else

@@ -12,7 +12,7 @@ class QuestionsetsController < ApplicationController
     @content_array = ["1","2","3","4","5"]
 
     @questionset = Questionset.find(params[:id])
-    @itinerary =['You have to play']
+   # @itinerary =['You have to play']
     @itinerary_array = [@hunt.location.latitude, @hunt.location.longitude]
     @huntsplayed = Huntsplayeduser.if_exists?(params[:hunt_id], session.id, current_user.id)
 
@@ -30,7 +30,7 @@ class QuestionsetsController < ApplicationController
             @huntsplayed = Huntsplayeduser.new
 
             if @questionset.question_no - maxquestion_no.question_no > 1
-              @msg = "Try again"
+              @msg = "Wrong Order"
             else
               @msg = "Try again"
             end
@@ -93,7 +93,7 @@ class QuestionsetsController < ApplicationController
 
   def update
 
-   @hunt = Hunt.find(params[:hunt_id])
+    @hunt = Hunt.find(params[:hunt_id])
     @questionset = Questionset.find(params[:id])
     @questionset.update(questionset_params)
 

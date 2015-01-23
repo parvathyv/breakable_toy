@@ -23,14 +23,8 @@ class HuntsplayedusersController < ApplicationController
 
     if @huntcheck.empty? == false
       maxquestion_no = Huntsplayeduser.hunt_check(@questionset.question_no,@hunt.id, session.id)
-
       if maxquestion_no.question_no == @questionset.question_no - 1
-        if params[:huntsplayeduser] == nil
-          addr = "#{params[:latitude]},#{params[:longitude]}"
-        else
-          addr = params[:huntsplayeduser][:address]
-        end
-
+        addr = params[:huntsplayeduser][:address]
         @msg = @questionset.check_answer(addr)
           if !@msg.include?'Sorry'
             @flm = 1

@@ -10,14 +10,15 @@ A google maps based Rails application that is a platform for users to share itin
 
 
 # Third party tools
-* Google maps Javascript API for integration of the map.
+* Google Maps Javascript API for integration of the map.
 * Geocoder gem for geolocation. The app uses the gem to store locations in the database for
 persistence of data.
-* Cookies for keeping track of user sessions in the database
-* Imagemagick, along with Amazon's AWS S3 service for file uploads.
-* D3 for the collapsible tree data visualization
-* Devise for user management
-* Omniauth for user authentication
+* Cookies for keeping track of user sessions in the database.
+* D3.js for data visualization.
+* Devise for user management.
+* Omniauth for user authentication.
+* Imagemagick and Minimagick for image manipulation.
+* Carrier Wave and Amazon's AWS S3 service for file uploads.
 
 
 

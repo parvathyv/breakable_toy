@@ -33,7 +33,7 @@ document.body.style.backgroundImage="http://localhost:3000/assets/images/";
             <%else%>
 
               <%if @playflag == true%>
-                <li><%= link_to "Play Hunt", location_hunt_path(@location, hunt) %></li>
+                <li><%= link_to "Hunt Details", location_hunt_path(@location, hunt) %></li>
               <%end%>
             <%end%>
           </div>

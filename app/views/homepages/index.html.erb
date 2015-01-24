@@ -14,9 +14,9 @@
     <div class="blue-box" style="z-index:1">
       <div class="button-group">
         <% if user_signed_in? == false %>
-            <li style="margin-left:-10%;" class="github large button"><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></li><br>
+          <li style="margin-left:-10%;" class="github large button"><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></li><br>
         <%else%>
-           <li>What is your path this iteration ? </li>
+          <li>What is your path this iteration ? </li>
         <%end%>
       </div>
     </div>
@@ -34,6 +34,12 @@
 
 <br>
 <br>
+<section class="signin">
+  <div class="large-12 columns" style="height:300px;margin-top:50%">
+    <li class="isverysmall"> Boston buildings inspired by - Theresa Tibbot license  istockphoto. San Fransisco bridge inspired by avNY license shutterstock
+    </li>
+  </div>
+</section>
 
 
 

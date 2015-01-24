@@ -26,6 +26,10 @@ color:white;
 font-family:'Poiret One';
 }
 
+.isverysmall{
+font-size:0.5em;
+}
+
 .help{
   color:orange;
   font-family:'Oswald';
@@ -42,7 +46,7 @@ font-family:'Poiret One';
    border-right:2px solid;
    border-top:1px solid;
    border-bottom:1px solid;
-   height:370px;
+   height:400px;
    width:300px;
    padding:1%;
    border-radius:4px;

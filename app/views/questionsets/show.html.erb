@@ -19,7 +19,7 @@
         <li><%= f.label :address, class: "issmall" %></li>
         <li><%= f.text_field :address, placeholder: "Address", class: "address"%></li>
         <% if flash[:notice] != "You are done ! Congrats" %>
-          <li class="italictext issmall"> Enter answer as (Location, Address, State, Country) for accuracy</li>
+          <li class="italictext issmall"> Enter answer as (Location, Address, State, Country) or simply Location for accuracy</li>
           <div class="large-6 large-offset-3 columns">
             <li><%= submit_tag "Answer", class: "answer large button marginadj" %></li>
           </div>

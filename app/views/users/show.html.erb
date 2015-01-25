@@ -9,11 +9,22 @@
         <li><%= hunt.name %></li><br>
       <%end%>
     </ul>
-    <h3>Hunts Played</h3>
+    <h3><%=current_user.name%> Hunts Played - Count</h3>
     <ul class="side-nav">
       <%@hunts_completed.each do|hunt, questions|%>
-        <li><%= Hunt.find(hunt).name%></li><br>
-        <li><%=questions%></li><br>
+        <li><%= Hunt.find(hunt).name%> -
+       <%=questions/5.round(0)%></li><br>
+      <%end%>
+    </ul>
+     <h3>Others Hunts Played - Count</h3>
+    <ul class="side-nav">
+      <%@other_user_hunts.each do|hunthash|%>
+        <%hunthash.each do|key, value|%>
+          <% if Hunt.find(key).blank? == false %>
+            <li><%= Hunt.find(key).name%> -
+           <%=(value/5).round(0)%></li><br>
+          <%end%>
+        <%end%>
       <%end%>
     </ul>
   </div>

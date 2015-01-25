@@ -22,15 +22,15 @@
       <div class="button-group">
       <% if current_user %>
         <li><%=current_user.name%></li>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "signinlinks" %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "signinlinks" %></li>
         <li><%= link_to 'Dashboard', user_path(current_user), :class => "signinlinks" %></li>
-        <li><%= link_to 'Edit Profile', edit_user_path(current_user), :class => "signinlinks" %></li>
+        <li><%= link_to 'Edit Profile', edit_user_path(current_user), class: "signinlinks" %></li>
       <% else %>
-        <li><%= link_to 'Sign Up', new_user_registration_path, :class => "signinlinks" %></li>
-        <li><%= link_to 'Sign In', new_user_session_path, :class => "signinlinks" %></li>
+        <li><%= link_to 'Sign Up', new_user_registration_path, class: "signinlinks" %></li>
+        <li><%= link_to 'Sign In', new_user_session_path, class: "signinlinks" %></li>
       <% end %>
 
-      <li><%= link_to 'Home', root_path, :class => "signinlinks" %></li>
+      <li><%= link_to 'Home', root_path, class: "signinlinks" %></li>
 
       <% if flash.any? %>
         <li class="flash">
@@ -41,52 +41,75 @@
       <a href="#" data-reveal-id="firstModal" class="signinlinks rulestext"> How It Works</a>
 
       <div id="firstModal" class="reveal-modal modal-box" data-reveal>
-       <div class="row">
-        <div class="large-10 large-offset-1 small-4 medium-6 columns rules">
-          <h3>Create Hunt</h3>
-          <li>>> Choose your hunt location</li>
-          <li>>> Enter your hunt name and description</li>
-          <li>>> Enter 5 questions in the form of questions and addresses</li>
-          <li>>> Enter descriptions and photos along with the questions</li>
-          <li>>> A hunt is complete only when 5 questions are entered</li>
-          <li>>> A hunt and a question are editable</li><br>
-          <div class="row">
-            <div class="large-4 large-offset-4 columns">
-              <a href="#" data-reveal-id="secondModal"
-              class="rules button" >PLAY</a>
-
+        <div class="row">
+          <div class="large-10 large-offset-1 small-4 medium-6 columns rules">
+            <h3>Create Hunt</h3>
+            <li>>> Choose your hunt location</li>
+            <li>>> Enter your hunt name and description</li>
+            <li>>> Enter 5 questions in the form of questions and addresses</li>
+            <li>>> Enter descriptions and photos along with the questions</li>
+            <li>>> A hunt is complete only when 5 questions are entered</li>
+            <li>>> A hunt and a question are editable</li><br>
+            <div class="row">
+              <div class="large-4 large-offset-4 columns">
+                <a href="#" data-reveal-id="secondModal"
+                class="rules button" >PLAY</a>
+              </div>
+               <a class="close-reveal-modal">&#215;</a>
             </div>
-         </div>
-       </div>
-      </div>
-       <a class="close-reveal-modal">&#215;</a>
+          </div>
+        </div>
       </div>
 
       <div id="secondModal" class="reveal-modal modal-box" data-reveal>
         <div class="row">
           <div class="large-10 large-offset-1 small-4 medium-6 columns rules">
-          <h3>Play Hunt</h3>
-          <li>>> Answer the question by filling the box/clicking on location in map</li>
-          <li>>> To proceed, answer in numerical order</li>
-          <li>>> Answer all 5 questions and you win the itinerary !</li>
-          <li>>> Play a hunt only once per signed in session</li><br>
-          <div class="row">
-            <div class="large-4 large-offset-4 columns">
-              <a href="#" data-reveal-id="firstModal"
-              class="rules button">CREATE</a>
+            <h3>Play Hunt</h3>
+            <li>>> Answer the question by filling the box/clicking on location in map</li>
+            <li>>> To proceed, answer in numerical order</li>
+            <li>>> Answer all 5 questions and you win the itinerary !</li>
+            <li>>> Play a hunt only once per signed in session</li><br>
+            <div class="row">
+              <div class="large-4 large-offset-4 columns">
+                <a href="#" data-reveal-id="thirdModal"
+                class="rules button">EDIT</a>
+              </div>
+              <a class="close-reveal-modal">&#215;</a>
             </div>
           </div>
         </div>
       </div>
-        <a class="close-reveal-modal">&#215;</a>
-      </div>
-        <a href="//twitter.com/share" class="signinlinks" data-count="none" data-hashtags="Maps, Game, Travel,Tresurehunts"><%=image_tag("twitter.png")%></a>
 
-        <a href="//www.pinterest.com/pin/create/button/" class="signinlinks"><%=image_tag("pin.png")%></a>
-
+      <div class="row">
+        <div class="large-4 large-offset-5 small-2 medium-4 columns rules">
+          <a href="#" data-reveal-id="thirdModal" class="signinlinks"></a>
+          <div id="thirdModal" class="reveal-modal modal-box" data-reveal>
+           <div class="row">
+            <div class="large-10 large-offset-1 small-4 medium-6 columns rules">
+              <h3>Edit or Delete a Hunt</h3>
+              <li>>> Click on Experience </li>
+              <li>>> Click on the Infobox over the Location Marker on Map</li>
+              <li>>> Click on Edit / Delete hunt</li><br>
+               <h3>Edit a Question / Add a Question</h3>
+              <li>>> Click on Experience</li>
+              <li>>> Click on the infobox over the location marker on map</li>
+              <li>>> Click on Add a Question / Edit question </li><br>
+              <div class="row">
+                <div class="large-4 large-offset-4 columns">
+                  <a href="#" data-reveal-id="firstModal"
+                  class="rules button">CREATE</a>
+                </div>
+               <a class="close-reveal-modal">&#215;</a>
+              </div>
+             </div>
+           </div>
+          </div>
+        </div>
       </div>
-    </nav>
-  </div>
+
+    </div>
+  </nav>
+</div>
 
 
   <%= yield %>

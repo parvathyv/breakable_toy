@@ -6,10 +6,16 @@ class UsersController < ApplicationController
     @user = current_user
     @hunts_owned = @user.hunts
     @hunts_completed = Huntsplayeduser.find_hunts(@user.id)
+    @other_users = User.where("id != ?", current_user.id)
+    @other_user_hunts = @other_users.map do|user|
+      Huntsplayeduser.find_hunts(user.id)
+    end
+    @other_user_hunts.reject! { |c| c.empty? }
+
   end
 
   def edit
-     @user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def update

@@ -16,7 +16,7 @@
         <% if (5 - @hunt.questionsets.maximum(:question_no)) != 0 %>
          <%=link_to "Add Question", new_hunt_questionset_path(@hunt),class: "question-text hvr-float"%>
           <div class="row">
-            <div class="large-8 large-offset-2 columns">
+            <div class="large-12 columns">
               <%= 5 - @hunt.questionsets.maximum(:question_no)%> questions left to complete <%=@hunt.name%>
            </div>
           </div>

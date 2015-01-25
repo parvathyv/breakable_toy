@@ -73,7 +73,7 @@ class QuestionsetsController < ApplicationController
       @questionset.question_no = @last_quiz.last.question_no + 1
     end
 
-    if current_user.id == @hunt.user_id
+
       if @questionset.save
        if @questionset.question_no < 6
           redirect_to new_hunt_questionset_path(@hunt), notice: 'Question was successfully created.'
@@ -83,9 +83,7 @@ class QuestionsetsController < ApplicationController
       else
         redirect_to hunt_path(@hunt), notice: 'Question was not created.'
       end
-    else
-      redirect_to hunt_path(@hunt), notice: 'You cannot add questions to this hunt'
-    end
+
 
   end
 

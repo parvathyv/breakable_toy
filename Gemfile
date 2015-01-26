@@ -29,6 +29,7 @@ gem 'd3-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+gem 'rack-mini-profiler'
 
 group :development, :test do
   gem 'dotenv-rails'

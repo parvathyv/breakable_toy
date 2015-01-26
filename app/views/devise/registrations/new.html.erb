@@ -7,19 +7,19 @@
    <div class="row">
      <div class="large-6 large-offset-3 columns medium-6 medium-offset-3 columns small-6 small-offset-3 columns about-box">
            <div class="field">
-            <%= f.label :name, "Name" %><br />
+            <%= f.label :name, "Name", class: "signintext" %><br />
             <%= f.text_field :name, autofocus: true %>
           </div>
-           <%= f.label :profile_photo %><br />
+           <%= f.label :profile_photo, class: "signintext" %><br />
            <%= f.file_field :profile_photo %>
 
           <div class="field">
-            <%= f.label :email, "Email" %><br />
+            <%= f.label :email, "Email",class: "signintext" %><br />
             <%= f.email_field :email %>
           </div>
 
            <div class="field">
-            <%= f.label :password, "Password" %>
+            <%= f.label :password, "Password",class: "signintext" %>
             <% if @validatable %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
@@ -27,12 +27,12 @@
           </div>
 
           <div class="field">
-            <%= f.label :password_confirmation, "Password confirmation" %><br />
+            <%= f.label :password_confirmation, "Password confirmation",class: "signintext" %><br />
             <%= f.password_field :password_confirmation, autocomplete: "off" %>
           </div>
 
           <div class="actions">
-            <%= f.submit "Sign Up", :class => "secondary large button" %>
+            <%= f.submit "Sign Up", class: "secondary large button" %>
           </div>
         <% end %>
    </div>

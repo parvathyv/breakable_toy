@@ -12,9 +12,9 @@
     <%= form_for(@hunt, :url => {action: 'update', id: @hunt.id}) do |f| %>
       <div class="row">
         <div class="large-8 columns blue-box">
-          <%= f.label :name %><br>
+          <%= f.label :name,class: "signintext" %><br>
           <%= f.text_field :name%>
-           <%= f.label :description %><br>
+           <%= f.label :description,class: "signintext" %><br>
           <%= f.text_area :description%>
         </div>
       </div>

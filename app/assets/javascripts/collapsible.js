@@ -20,7 +20,6 @@ var vis = d3.select("#collapsibletree1").append("svg:svg")
 
 
 d3.json('/clues/'+location_id+'.json', function(error, json) {
-//d3.json('questionsets.json', function(error, json) {
   root = json;
 
   root.x0 = h / 2;
@@ -37,9 +36,6 @@ d3.json('/clues/'+location_id+'.json', function(error, json) {
   root.children.forEach(toggleAll);
   toggle(root.children[0]);
   toggle(root.children[0].children[1]);
-  //toggle(root.children[9]);
-  //toggle(root.children[9].children[0]);
-
   update(root);
 });
 
@@ -61,7 +57,7 @@ function update(source) {
       .attr("class", "node")
       .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
       .style("fill","orange")
-      .style("font-size","12px")
+      .style("font-size","14px")
 
       .on("click", function(d) { toggle(d); update(d); })
 

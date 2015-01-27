@@ -238,30 +238,26 @@
   });
 
   function placeMarker(position, map) {
-  var marker = new google.maps.Marker({
-    position: position,
-    map: map,
-    draggable:true,
-    title:"Drag me!"
-  });
+    var marker = new google.maps.Marker({
+      position: position,
+      map: map,
+      draggable:true,
+      title:"Drag me!"
+    });
 
-}
+    google.maps.event.addListener(marker, 'drag', function(evt){
+      document.getElementsByClassName("address")[0].value = evt.latLng.lat() + ', ' + evt.latLng.lng();
+    });
 
-function animateCircle() {
-    var count = 0;
-   window.setInterval(function() {
-      count = (count + 1) % 200;
+    google.maps.event.addListener(marker, 'dragend', function(evt){
+      document.getElementsByClassName("address")[0].value = evt.latLng.lat() + ', ' + evt.latLng.lng();
+    });
 
-      var icons = flightPath.get('icons');
-      icons[0].offset = (count / 2) + '%';
-      flightPath.set('icons', icons);
-  }, 30);
-}
+  }
 
 
 }
 
 $(document).on('ready', function(){
   google.maps.event.addDomListener(window, 'load', initialize);
-
 });

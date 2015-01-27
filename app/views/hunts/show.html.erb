@@ -54,7 +54,7 @@
             <% unless question.hunt_photo.blank? %>
               <%= image_tag(question.hunt_photo, class: "imgmar") %>
             <%end%>
-            <li class="question-color"><%=question.question_no%>.  <%=question.question.capitalize%></li>
+            <li class="question-color"><%=question.question_no%>.  <%=question.question%></li>
             <li class="lineborder"><%=link_to "Edit question", edit_hunt_questionset_path(@hunt, question)%>
             </li>
           </div>

@@ -82,7 +82,9 @@ class QuestionsetsController < ApplicationController
           redirect_to hunt_path(@hunt), notice: 'Question was successfully created.'
         end
       else
-        redirect_to hunt_path(@hunt), notice: 'Question was not created.'
+        flash[:notice] = 'Question was not created.'
+        render :'new'
+        #redirect_to new_hunt_questionset_path(@hunt, Questionset.new), notice: 'Question was not created.'
       end
     else
       redirect_to hunt_path(@hunt), notice: 'Only the hunt owner can add questions'

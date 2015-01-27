@@ -6,9 +6,9 @@ class Questionset < ActiveRecord::Base
   validates :question_no, presence: true,
   :inclusion => {:in => [1,2,3,4,5]}
 
-  validates :question, presence: true, length: { maximum: 300 }
+  validates :question, presence: true, length: { minimum:25, maximum: 300 }
   validates :description, presence: true
-  validates :description, length: { maximum: 500 }
+  validates :description, length: { minimum:50, maximum: 500 }
   validates :hunt_id, presence: true
   validates_numericality_of :hunt_id, :only_integer => true
   validates :address, presence: true

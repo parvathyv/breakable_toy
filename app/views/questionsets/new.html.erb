@@ -1,17 +1,19 @@
-<h1>Quiz</h1>
+<h1>Question</h1><br>
 <h3><%=@hunt.name%></h3>
-  <ul>
+  <div class="row">
+    <div class="large-12 columns">
     <% if @questionset.errors.any? %>
       <% @questionset.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li class="italictext"><%= msg %></li>
       <% end %>
     <% end %>
-  </ul>
+   </div>
+  </div>
 
 <%= form_for([@hunt, @questionset]) do |f| %>
   <div class="row">
     <div class="large-8 columns">
-      <li><%= f.label :hunt_photo,class: "signintext" %></li>
+      <li><%= f.label :hunt_photo,"Photo", class: "signintext" %></li>
       <li><%= f.file_field :hunt_photo %></li>
       <li><%= f.label :question,class: "signintext" %></li>
       <li><%= f.text_field :question%></li>
@@ -21,7 +23,7 @@
       <li><%= f.label :description,class: "signintext" %></li>
       <li><%= f.text_area :description, class: "text_boxes"%></li>
       <%= f.submit "Create", class: "answer large button" %>
-      <li><%=link_to "See hunt details", hunt_path(@hunt), class: "siginlinks"%></li>
+      <li><%=link_to "Hunt Details", hunt_path(@hunt), class: "signinlinks"%></li>
    </div>
   </div>
 <% end %>

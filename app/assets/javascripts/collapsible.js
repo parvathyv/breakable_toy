@@ -18,7 +18,6 @@ var vis = d3.select("#collapsibletree1").append("svg:svg")
     .append("svg:g")
     .attr("transform", "translate(" + m[3] + "," + m[0] + ")")
 
-
 d3.json('/clues/'+location_id+'.json', function(error, json) {
   root = json;
 
@@ -58,7 +57,6 @@ function update(source) {
       .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
       .style("fill","orange")
       .style("font-size","14px")
-
       .on("click", function(d) { toggle(d); update(d); })
 
 

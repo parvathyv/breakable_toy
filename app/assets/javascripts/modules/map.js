@@ -122,12 +122,58 @@
     }
   }
 
-  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+
+  if (geoflag == 1){
+// Try HTML5 geolocation
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = new google.maps.LatLng(position.coords.latitude,
+                                       position.coords.longitude);
+
+      var infowindow = new google.maps.InfoWindow({
+        map: map,
+        position: pos,
+        content: 'Current location'
+      });
+
+      //map.setCenter(pos);
+    }, function() {
+      handleNoGeolocation(true);
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleNoGeolocation(false);
+  }
+
+function handleNoGeolocation(errorFlag) {
+  if (errorFlag) {
+    var content = 'Error: The Geolocation service failed.';
+  } else {
+    var content = 'Error: Your browser doesn\'t support geolocation.';
+  }
+
+  var mapOptions = {
+    map: map,
+    zoom: 12,
+    position: new google.maps.LatLng(mapcenterlat, mapcenterlong),
+    content: content
+  };
+
+  var infowindow = new google.maps.InfoWindow(mapOptions);
+  //map.setCenter(mapOptions.position);
+}
+
+
+}
+
+var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
   //var icon = 'search.png';
 
   map.mapTypes.set('map_style', styledMap);
   map.setMapTypeId('map_style');
+
 
   if (flag === 1 || flag === 2) {
 
@@ -220,6 +266,8 @@
 
 
 }
+
+ // end else for geolocation
 
   google.maps.event.addListener(map, 'click', function(e) {
 

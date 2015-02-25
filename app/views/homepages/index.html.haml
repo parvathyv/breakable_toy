@@ -1,0 +1,78 @@
+= image_tag("img4.jpg", class: "bkgnd")
+.row
+  .large-6.large-offset-3.columns.medium-6.medium-offset-3.columns.small-4.columns.about-box{:style => "z-index:1"}
+    .title-box
+      %br/
+      %br/
+      %h3 the5questiontrip
+.row
+  .large-4.large-offset-4.columns.medium-4.medium-offset-4.columns.small-4.columns.about-box
+    .blue-box{:style => "z-index:1"}
+      .button-group
+        - if user_signed_in? == false
+          %li.github.large.button{:style => "margin-left:-10%;"}= link_to "Sign in with Github", user_omniauth_authorize_path(:github)
+          %br/
+        - else
+          %li What is your path this iteration ?
+%a.signinlinks.rulestext{"data-reveal-id" => "firstModal", :href => "#"}
+#firstModal.reveal-modal.modal-box{"data-reveal" => ""}
+  .row
+    .large-12.small-4.medium-6.columns.rules
+      %h3 Create Hunt
+      %li >> Choose your hunt location
+      %li >> Enter your hunt name and description
+      %li >> Enter 5 questions in the form of questions and addresses
+      %li >> Enter descriptions and photos along with the questions
+      %li >> A hunt is complete only when 5 questions are entered
+      %li >> A hunt and a question are editable
+      %br/
+      .row
+        .large-10.large-offset-1.columns
+          %a.rules.button{"data-reveal-id" => "secondModal", :href => "#"} PLAY
+        %a.close-reveal-modal ×
+#secondModal.reveal-modal.modal-box{"data-reveal" => ""}
+  .row
+    .large-12.small-4.medium-6.columns.rules
+      %h3 Play Hunt
+      %li >> Answer the question by filling the box/clicking on location in map
+      %li >> To proceed, answer in numerical order
+      %li >> Answer all 5 questions and you win the itinerary !
+      %li >> Play a hunt only once per signed in session
+      %br/
+      .row
+        .large-10.large-offset-1.columns
+          %a.rules.button{"data-reveal-id" => "thirdModal", :href => "#"} EDIT
+        %a.close-reveal-modal ×
+.row
+  .large-4.large-offset-5.small-4.small-offset-5.medium-4.medium.offset-5.columns.rulesnew
+    %a{"data-reveal-id" => "thirdModal", :href => "#"} Navigation Instructions
+.row
+  .large-10.large-offset-1.small-6.medium-8.columns.rules
+    #thirdModal.reveal-modal.modal-box{"data-reveal" => ""}
+      .row
+        .large-12.small-4.medium-6.columns.rules
+          %h3 Edit or Delete a Hunt
+          %li >> Click on Experience
+          %li >> Click on the Infobox over the Location Marker on Map
+          %li >> Click on Edit / Delete hunt
+          %br/
+          %h3 Edit a Question / Add a Question
+          %li >> Click on Experience
+          %li >> Click on the infobox over the location marker on map
+          %li >> Click on Add a Question / Edit question
+          %br/
+          .row
+            .large-10.large-offset-1.columns
+              %a.rules.button{"data-reveal-id" => "firstModal", :href => "#"} CREATE
+            %a.close-reveal-modal ×
+.row
+  .large-6.large-offset-3.columns.medium-6.medium-offset-3.columns.small-4.small-offset-2.columns.about-box{:style => "z-index:1"}
+    .button-group
+      %li.secondary.large.button= link_to "EXPERIENCE", locations_path
+      %li.secondary.large.button= link_to "CREATE", new_location_path
+%br/
+%br/
+%section.signin
+  .large-12.columns{:style => "height:300px;margin-top:50%"}
+    %li.isverysmall
+      Boston buildings inspired by - Theresa Tibbot license  istockphoto. San Fransisco bridge inspired by avNY license shutterstock

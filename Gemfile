@@ -29,6 +29,7 @@ gem 'd3-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+gem 'haml'
 
 
 group :development, :test do
